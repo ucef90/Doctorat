@@ -1,0 +1,18 @@
+{
+  "src/recoa_pinn/__init__.py": "9517067e4e9babb3f309d64d129e819840ab0d4cfefb5688edfa0e8246391577",
+  "src/recoa_pinn/adaptation.py": "339f219d844bc18266eed5d90177ba9d3c9662bdce45d3f82d4691b09d8a3e88",
+  "src/recoa_pinn/campaign.py": "24a674473ec3152b486df0931c1c2e5740009640a4432411d9a0a760f1338f9b",
+  "src/recoa_pinn/cli.py": "b115fe67f8ed4312d96112c879579aa8f0ca787af87363ca0047073dcc3925f2",
+  "src/recoa_pinn/config.py": "3436ce24eef783ab78964e221be3f202543b867bda3ead2400b99d9edefa30f3",
+  "src/recoa_pinn/model.py": "8af91b48fe12ae56d67d87a3b5e49cb9694b357abdc1ad8698cf75e55f9dcfd3",
+  "src/recoa_pinn/problems/__init__.py": "2f6c55d113107412023e799b98602f597e7cfa7992a1aa49187b99683b43cf00",
+  "src/recoa_pinn/problems/allen_cahn.py": "fcc640e4040b3d5cd58cff0bb2d8ccf7148d3e446b831dd1475266f66fbe9291",
+  "src/recoa_pinn/problems/base.py": "7215888494cb4fe35b7f266843e4f265d644fdc0072d23b1baba47f993d99f81",
+  "src/recoa_pinn/problems/burgers.py": "37b25e139d8eabc70abb5d7691736aa75d79a1706b479ae8331387af531d7d0e",
+  "src/recoa_pinn/problems/helmholtz.py": "845c85416e0029853825e648abdfde570df33ad2abb2f42c8d96cb6c0e3f41b6",
+  "src/recoa_pinn/problems/wave.py": "ebfc97e523e66abf1b44b19201978badb30dd5712691a6d010d15b7dadb7b1a4",
+  "src/recoa_pinn/reporting.py": "bd80f648717f8e0bb5716a979fc06b436b0070cb2fcc379e6c7d88dbff66ef99",
+  "src/recoa_pinn/reproducibility.py": "73fa23ac382e12aa09a9c296ba04647ee39de7e72f1d5122f54b4c5cc65b9f1e",
+  "src/recoa_pinn/trainer.py": "c6c0e2592db9630b3f71046ae5be3adfaa88aaec194db84fb1f6da974494a046",
+  "config": "cf3a86af892fd4904276e6c1be6a2a99bd971b4ef96287bb441d9a579ba1ed0a"
+}
