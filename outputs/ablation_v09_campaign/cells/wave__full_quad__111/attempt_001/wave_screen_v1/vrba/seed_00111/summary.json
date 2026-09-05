@@ -1,0 +1,122 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vrba",
+  "problem": "wave",
+  "controller_source": "vrba_local_attention_and_global_self_scaling",
+  "seed": 111,
+  "steps_requested": 600,
+  "steps_completed": 600,
+  "initial_fingerprints": {
+    "model": "b4554fa737a4697d798d78a8fe866913da28db4109da56de11af8489020c8e9c",
+    "training_sets": "d38c128dca5fe49dbe09969cf2b3e9626800592d84e32d153abb11d372fcaf10",
+    "audit_sets": "17aa681165a78e698053a765145c180ba8632bcb41602eaff9907db953c33eda"
+  },
+  "elapsed_seconds": 4.657273010000154,
+  "controller_weight_tv": 0.20628819702742984,
+  "controller_updates": 600,
+  "controller_weight_tv_per_update": 0.00034381366171238307,
+  "mean_controller_weight_jump": 0.00034381366171238307,
+  "bias_concentration_correlation": 0.6132196357677305,
+  "temporal_mean_gradient_distribution_tv": 0.1528137102424381,
+  "temporal_mean_loss_distribution_tv": 0.16276177241390688,
+  "temporal_mean_physics_gradient_log_gap": 0.8818507030303112,
+  "gradient_distribution_tv": 0.20397541427809662,
+  "loss_distribution_tv": 0.2975743440922447,
+  "physics_gradient_log_gap": 1.3192947711106915,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.0009765625
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "maximum": 1.0
+  },
+  "importance_effective_sample_fraction": 1.0,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 1.0,
+  "vrba_attention_statistics": {
+    "effective_sample_fraction": 0.912307658059696,
+    "mean": 5.9817055512966775,
+    "minimum": 3.660722333447575,
+    "maximum": 14.979347656174237,
+    "multiplier_mean": 2.4212436804112505,
+    "multiplier_minimum": 1.9133014225279756,
+    "multiplier_maximum": 3.870316221728431,
+    "temperature": 0.038754896441932425
+  },
+  "vrba_attention_effective_sample_fraction": 0.912307658059696,
+  "vrba_multiplier_mean": 2.4212436804112505,
+  "vrba_multiplier_max": 3.870316221728431,
+  "kde_pairwise_distance_evaluations": 0,
+  "measure_correction": {
+    "enabled": false,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": false,
+    "estimator": "none",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "adaptive_objective": {
+    "enabled": true,
+    "method": "vrba_common_backbone_weighting",
+    "potential": "quadratic",
+    "importance_weighting": true,
+    "local_enabled": true,
+    "global_enabled": true,
+    "importance_sampling": false,
+    "local_updates": 600,
+    "eta": 0.01,
+    "phi": 0.8,
+    "lambda_max_initial": 10.0,
+    "lambda_cap": 20.0,
+    "temperature_scale": 1.0
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 0,
+    "sampler": 0,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 166400,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 166400,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.16365250034334095,
+  "max_abs_error": 0.22155056054820987,
+  "final_weights": {
+    "physics": 1.0,
+    "initial": 0.8957465496003021,
+    "boundary": 0.8979652533722681
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/ablation_v08/ReCoA_PINN_v0.7/outputs/ablation_v09_campaign/cells/wave__full_quad__111/attempt_001/wave_screen_v1/vrba/seed_00111"
+}

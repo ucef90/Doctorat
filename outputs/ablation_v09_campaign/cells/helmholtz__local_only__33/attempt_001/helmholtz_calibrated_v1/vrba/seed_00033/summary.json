@@ -1,0 +1,121 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vrba",
+  "problem": "helmholtz",
+  "controller_source": "fixed_component_weights",
+  "seed": 33,
+  "steps_requested": 1500,
+  "steps_completed": 1500,
+  "initial_fingerprints": {
+    "model": "32c9d508e8ef6db8bfa3ae605f432fd74db6793851d219658bbdc6486696a051",
+    "training_sets": "394df36512efe76953ccdf190e457953591e25e7df02e7bbdac12e2a57410f53",
+    "audit_sets": "247302b3412c03110574750882153adacabd64344ee50c1b9759bb7dc23c337c"
+  },
+  "elapsed_seconds": 20.216789745999904,
+  "controller_weight_tv": 0.0,
+  "controller_updates": 0,
+  "controller_weight_tv_per_update": 0.0,
+  "mean_controller_weight_jump": 0.0,
+  "bias_concentration_correlation": 0.4265882954884975,
+  "temporal_mean_gradient_distribution_tv": 0.14386018332194384,
+  "temporal_mean_loss_distribution_tv": 0.21012360721865053,
+  "temporal_mean_physics_gradient_log_gap": 0.780682226152424,
+  "gradient_distribution_tv": 4.6978654615267845e-06,
+  "loss_distribution_tv": 0.3852982666229758,
+  "physics_gradient_log_gap": 1.3303153578335778,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.00048828125
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "maximum": 1.0
+  },
+  "importance_effective_sample_fraction": 1.0,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 1.0,
+  "vrba_attention_statistics": {
+    "effective_sample_fraction": 0.9035624249399719,
+    "mean": 3.9573092355773003,
+    "minimum": 3.271826558830101,
+    "maximum": 16.67606376164988,
+    "multiplier_mean": 1.9736745350861775,
+    "multiplier_minimum": 1.8088191061657053,
+    "multiplier_maximum": 4.083633646845647,
+    "temperature": 0.020433828730238468
+  },
+  "vrba_attention_effective_sample_fraction": 0.9035624249399719,
+  "vrba_multiplier_mean": 1.9736745350861775,
+  "vrba_multiplier_max": 4.083633646845647,
+  "kde_pairwise_distance_evaluations": 0,
+  "measure_correction": {
+    "enabled": false,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": false,
+    "estimator": "none",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "adaptive_objective": {
+    "enabled": true,
+    "method": "vrba_common_backbone_weighting",
+    "potential": "exponential",
+    "importance_weighting": true,
+    "local_enabled": true,
+    "global_enabled": false,
+    "importance_sampling": false,
+    "local_updates": 1500,
+    "eta": 0.01,
+    "phi": 0.8,
+    "lambda_max_initial": 10.0,
+    "lambda_cap": 20.0,
+    "temperature_scale": 1.0
+  },
+  "budget": {
+    "optimization": 768000,
+    "controller": 0,
+    "sampler": 0,
+    "diagnostic": 62464,
+    "total_residual_evaluations": 830464,
+    "training_collocation_cardinality": 512,
+    "audit_collocation_cardinality": 512,
+    "controller_collocation_cardinality": 512,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 830464,
+  "parameter_count": 7249,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.08546450855744707,
+  "max_abs_error": 0.1156114127798427,
+  "final_weights": {
+    "physics": 1.0,
+    "boundary": 1.0
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/ablation_v08/ReCoA_PINN_v0.7/outputs/ablation_v09_campaign/cells/helmholtz__local_only__33/attempt_001/helmholtz_calibrated_v1/vrba/seed_00033"
+}

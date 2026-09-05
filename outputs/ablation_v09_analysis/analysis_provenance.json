@@ -1,0 +1,13 @@
+{
+  "source_hashes": {
+    "analyze_vrba_campaign.py": "d21f82333381055dd963c4fdd642bc3d087e52447e16903cd4cf3a7e3911767e",
+    "vrba_statistics.py": "8da7d365c21ad067bf95c62af2ccfbc6885fcd410af98f73d90ff06c85d4d828"
+  },
+  "evaluated": 200,
+  "expected": 200,
+  "failures": 0,
+  "paired_blocks": 40,
+  "all_initial_hashes_match": true,
+  "bootstrap_repeats": 10000,
+  "analysis_seed": 9092026
+}

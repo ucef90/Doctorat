@@ -1,0 +1,86 @@
+experiment:
+  name: wave_screen_v1
+  output_dir: /workspace/scratch/a5f0879dfaa7/ablation_v08/ReCoA_PINN_v0.7/outputs/ablation_v09_campaign/cells/wave__full_exp__77/attempt_001
+  device: cpu
+  dtype: float64
+  deterministic: true
+problem:
+  name: wave
+  x_min: 0.0
+  x_max: 1.0
+  t_min: 0.0
+  t_max: 1.0
+  wave_speed: 1.0
+model:
+  hidden_layers: 3
+  hidden_width: 32
+  activation: tanh
+training:
+  steps: 600
+  learning_rate: 0.001
+  n_collocation: 256
+  n_initial: 64
+  n_boundary: 64
+  log_every: 25
+  eval_every: 200
+  checkpoint_every: 600
+  grad_clip: 100.0
+  num_threads: 1
+adaptation:
+  controller_every: 25
+  sampler_every: 25
+  diagnostic_every: 25
+  candidate_size: 1024
+  audit_collocation: 256
+  audit_initial: 64
+  audit_boundary: 64
+  ema_beta: 0.95
+  progress_alpha: 0.5
+  weight_min: 0.1
+  weight_max: 10.0
+  residual_power: 1.0
+  residual_mix: 0.8
+  replace_fraction: 0.5
+  vrba_local_enabled: true
+  vrba_global_enabled: true
+  vrba_potential: exponential
+  vw_bandwidth: null
+  vw_bandwidth_scale: 1.0
+  vrba_eta: 0.01
+  vrba_phi: 0.8
+  vrba_temperature_scale: 1.0
+  vrba_lambda_max_initial: 10.0
+  vrba_lambda_cap: 20.0
+  vrba_stage_steps: 50000
+  vrba_initial_fraction: 0.1
+  vrba_gradient_ema: 0.99
+  vrba_global_ema: 0.99975
+  vrba_global_weight_min: 1.0e-06
+  vrba_global_weight_max: 1000000.0
+  vrba_local_every: 1
+  vrba_global_every: 1
+observations:
+  n_observations: 0
+  fraction: 1.0
+  noise_kind: none
+  noise_level: 0.0
+  outlier_fraction: 0.0
+  outlier_scale: 5.0
+  loss: mse
+  missing_pattern: none
+  missing_fraction: 0.0
+ablation:
+  audit_size_multiplier: 1.0
+  audit_design: random
+  audit_rotation_every: 0
+  disable_smoothing: false
+  disable_bounds: false
+  disable_uniform_floor: false
+evaluation:
+  nx: 101
+  nt: 51
+  reference_nx: 257
+  reference_dt: 0.0001
+run:
+  method: vrba
+  seed: 77

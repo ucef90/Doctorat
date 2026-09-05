@@ -1,0 +1,8 @@
+{
+  "completed": 59,
+  "expected": 60,
+  "failed": 0,
+  "interrupted": 1,
+  "valid_timing_windows": 60,
+  "note": "Final run interrupted after step 150; timing window fully recorded; terminal RSS unavailable"
+}

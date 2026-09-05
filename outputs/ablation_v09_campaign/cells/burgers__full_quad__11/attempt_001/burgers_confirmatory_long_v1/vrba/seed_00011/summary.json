@@ -1,0 +1,122 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vrba",
+  "problem": "burgers",
+  "controller_source": "vrba_local_attention_and_global_self_scaling",
+  "seed": 11,
+  "steps_requested": 2500,
+  "steps_completed": 2500,
+  "initial_fingerprints": {
+    "model": "d99c0c55ecf6eee7fcc2358983502ad4312a05bb9ab1494207e596f2f01970ca",
+    "training_sets": "21cb4aa5dc50459169886578c16f31a33ad7a3030e1dad7354ec02a013f2ec1c",
+    "audit_sets": "8efc54b2a9ec12f32c626b35cb41c97cba7d41e032867eac4c5943a7116bd4d8"
+  },
+  "elapsed_seconds": 40.464242557000034,
+  "controller_weight_tv": 6.715643781460377,
+  "controller_updates": 2500,
+  "controller_weight_tv_per_update": 0.002686257512584151,
+  "mean_controller_weight_jump": 0.002686257512584151,
+  "bias_concentration_correlation": 0.10803393342438168,
+  "temporal_mean_gradient_distribution_tv": 0.20096188566421602,
+  "temporal_mean_loss_distribution_tv": 0.2155305439684094,
+  "temporal_mean_physics_gradient_log_gap": 1.3861321362522239,
+  "gradient_distribution_tv": 0.4417328401301686,
+  "loss_distribution_tv": 0.20955127823378655,
+  "physics_gradient_log_gap": 2.0809980493129907,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.00048828125
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "maximum": 1.0
+  },
+  "importance_effective_sample_fraction": 1.0,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 1.0,
+  "vrba_attention_statistics": {
+    "effective_sample_fraction": 0.7416268535084813,
+    "mean": 8.194457661608539,
+    "minimum": 4.272799041622559,
+    "maximum": 38.37373149727492,
+    "multiplier_mean": 2.774569734170627,
+    "multiplier_minimum": 2.0670749966129818,
+    "multiplier_maximum": 6.19465346062836,
+    "temperature": 0.04709289175947883
+  },
+  "vrba_attention_effective_sample_fraction": 0.7416268535084813,
+  "vrba_multiplier_mean": 2.774569734170627,
+  "vrba_multiplier_max": 6.19465346062836,
+  "kde_pairwise_distance_evaluations": 0,
+  "measure_correction": {
+    "enabled": false,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": false,
+    "estimator": "none",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "adaptive_objective": {
+    "enabled": true,
+    "method": "vrba_common_backbone_weighting",
+    "potential": "quadratic",
+    "importance_weighting": true,
+    "local_enabled": true,
+    "global_enabled": true,
+    "importance_sampling": false,
+    "local_updates": 2500,
+    "eta": 0.01,
+    "phi": 0.8,
+    "lambda_max_initial": 10.0,
+    "lambda_cap": 20.0,
+    "temperature_scale": 1.0
+  },
+  "budget": {
+    "optimization": 1280000,
+    "controller": 0,
+    "sampler": 0,
+    "diagnostic": 26624,
+    "total_residual_evaluations": 1306624,
+    "training_collocation_cardinality": 512,
+    "audit_collocation_cardinality": 512,
+    "controller_collocation_cardinality": 512,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 1306624,
+  "parameter_count": 7249,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.31363765862497667,
+  "max_abs_error": 1.8675832087504007,
+  "final_weights": {
+    "physics": 1.0,
+    "initial": 1.723272941299358,
+    "boundary": 6.8939820980124304
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/ablation_v08/ReCoA_PINN_v0.7/outputs/ablation_v09_campaign/cells/burgers__full_quad__11/attempt_001/burgers_confirmatory_long_v1/vrba/seed_00011"
+}

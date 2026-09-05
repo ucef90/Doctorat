@@ -1,0 +1,11 @@
+{
+  "burgers": {
+    "relative_l2": 0.01824703712864399,
+    "max_abs_error": 0.13206727198030577,
+    "q95_abs_error": 0.0067532351779965305,
+    "q99_abs_error": 0.0641222133955327,
+    "coarse_reference_nx": 257,
+    "fine_reference_nx": 513,
+    "interpretation": "Discrepancy between two numerical references, not a certified error bound"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vrba",
+  "problem": "allen_cahn",
+  "controller_source": "fixed_component_weights",
+  "seed": 99,
+  "steps_requested": 600,
+  "steps_completed": 600,
+  "initial_fingerprints": {
+    "model": "ea1462d7b117ea55fe487a8d574215ca82f4cef85420d2d43d88a68aca992c7b",
+    "training_sets": "4454b9cd7bf497039b02aa99a376009116b4a4ebf108c62fa296c5af87479565",
+    "audit_sets": "346283ecc5415c03e4f28ea4a5e0bb232ec86b786640153019a37a25b59f8bb8"
+  },
+  "elapsed_seconds": 2.4209899649999898,
+  "controller_weight_tv": 0.0,
+  "controller_updates": 0,
+  "controller_weight_tv_per_update": 0.0,
+  "mean_controller_weight_jump": 0.0,
+  "bias_concentration_correlation": 0.6929463755646227,
+  "temporal_mean_gradient_distribution_tv": 0.1523467062746233,
+  "temporal_mean_loss_distribution_tv": 0.10312813976164796,
+  "temporal_mean_physics_gradient_log_gap": 0.4913894654075046,
+  "gradient_distribution_tv": 0.06537893699813754,
+  "loss_distribution_tv": 0.15371314429449218,
+  "physics_gradient_log_gap": 1.4623916581224325,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.0009765625
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "maximum": 1.0
+  },
+  "importance_effective_sample_fraction": 1.0,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 1.0,
+  "vrba_attention_statistics": {
+    "effective_sample_fraction": 0.9096841384041318,
+    "mean": 2.752880780165416,
+    "minimum": 2.228529173131985,
+    "maximum": 12.2717306184491,
+    "multiplier_mean": 1.6468099474829987,
+    "multiplier_minimum": 1.4928259018157426,
+    "multiplier_maximum": 3.5031029985498714,
+    "temperature": 0.023328550496608032
+  },
+  "vrba_attention_effective_sample_fraction": 0.9096841384041318,
+  "vrba_multiplier_mean": 1.6468099474829987,
+  "vrba_multiplier_max": 3.5031029985498714,
+  "kde_pairwise_distance_evaluations": 0,
+  "measure_correction": {
+    "enabled": false,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": false,
+    "estimator": "none",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "adaptive_objective": {
+    "enabled": true,
+    "method": "vrba_common_backbone_weighting",
+    "potential": "exponential",
+    "importance_weighting": true,
+    "local_enabled": true,
+    "global_enabled": false,
+    "importance_sampling": false,
+    "local_updates": 600,
+    "eta": 0.01,
+    "phi": 0.8,
+    "lambda_max_initial": 10.0,
+    "lambda_cap": 20.0,
+    "temperature_scale": 1.0
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 0,
+    "sampler": 0,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 166400,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 166400,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.03567561245492099,
+  "max_abs_error": 0.08289691438995128,
+  "final_weights": {
+    "physics": 1.0,
+    "initial": 1.0,
+    "boundary": 1.0
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/ablation_v08/ReCoA_PINN_v0.7/outputs/ablation_v09_campaign/cells/allen_cahn__local_only__99/attempt_001/allen_cahn_screen_v1/vrba/seed_00099"
+}

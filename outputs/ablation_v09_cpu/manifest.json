@@ -1,0 +1,5037 @@
+{
+  "protocol": "v0.9-exploratory-frozen",
+  "hashes": {
+    "VRBA_CAMPAIGN_PROTOCOL_V09.md": "2b6cf8d8358408a7733eb9f5d45516e8a79a7286a7416127f49e1f8543ec0451",
+    "configs/allen_cahn_screen.yaml": "075d617bd51692e47db3fe070c6d5744e1f6d2779ae710655bfc5a5949eaa091",
+    "configs/burgers_confirmatory_long.yaml": "203da71a50f697d0b21ca7a4a06f678f66cb4e9bed5bda21cbc8340aeb27298d",
+    "configs/helmholtz_calibrated.yaml": "34d415df014e587de3bc57fa152ab2ba408a165889b75d42400a44fa36efbdd1",
+    "configs/wave_screen.yaml": "afa84b83fadbe46454664ce4f41c47ec615e626b66f5c84e68080520961ab405",
+    "scripts/run_vrba_campaign.py": "5ab51926b820ff787217e795d7f16386a6a2cba8d904f8bbe92fa8014b658276",
+    "src/recoa_pinn/__init__.py": "9517067e4e9babb3f309d64d129e819840ab0d4cfefb5688edfa0e8246391577",
+    "src/recoa_pinn/adaptation.py": "339f219d844bc18266eed5d90177ba9d3c9662bdce45d3f82d4691b09d8a3e88",
+    "src/recoa_pinn/campaign.py": "24a674473ec3152b486df0931c1c2e5740009640a4432411d9a0a760f1338f9b",
+    "src/recoa_pinn/cli.py": "b115fe67f8ed4312d96112c879579aa8f0ca787af87363ca0047073dcc3925f2",
+    "src/recoa_pinn/config.py": "662073e67dd4c3bbc6b22f7bdb5e2b6f815000817bf5be5920bee0e6d566881b",
+    "src/recoa_pinn/model.py": "8af91b48fe12ae56d67d87a3b5e49cb9694b357abdc1ad8698cf75e55f9dcfd3",
+    "src/recoa_pinn/problems/__init__.py": "2f6c55d113107412023e799b98602f597e7cfa7992a1aa49187b99683b43cf00",
+    "src/recoa_pinn/problems/allen_cahn.py": "fcc640e4040b3d5cd58cff0bb2d8ccf7148d3e446b831dd1475266f66fbe9291",
+    "src/recoa_pinn/problems/base.py": "7215888494cb4fe35b7f266843e4f265d644fdc0072d23b1baba47f993d99f81",
+    "src/recoa_pinn/problems/burgers.py": "37b25e139d8eabc70abb5d7691736aa75d79a1706b479ae8331387af531d7d0e",
+    "src/recoa_pinn/problems/helmholtz.py": "845c85416e0029853825e648abdfde570df33ad2abb2f42c8d96cb6c0e3f41b6",
+    "src/recoa_pinn/problems/wave.py": "ebfc97e523e66abf1b44b19201978badb30dd5712691a6d010d15b7dadb7b1a4",
+    "src/recoa_pinn/reporting.py": "bd80f648717f8e0bb5716a979fc06b436b0070cb2fcc379e6c7d88dbff66ef99",
+    "src/recoa_pinn/reproducibility.py": "b9bc0db1b45eea38a080f6295d4cc5c3fda36d466afdcb788f1506bfbb63c05a",
+    "src/recoa_pinn/trainer.py": "dac3e4eab15806df68207cda8b085349077efea970166cd977b72e116c6ad225"
+  },
+  "cells": [
+    {
+      "id": "wave__local_only__11",
+      "problem": "wave",
+      "variant": "local_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__global_only__11",
+      "problem": "allen_cahn",
+      "variant": "global_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__global_only__11",
+      "problem": "helmholtz",
+      "variant": "global_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__global_only__11",
+      "problem": "burgers",
+      "variant": "global_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__full_exp__11",
+      "problem": "allen_cahn",
+      "variant": "full_exp",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__full_quad__11",
+      "problem": "burgers",
+      "variant": "full_quad",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__full_exp__11",
+      "problem": "burgers",
+      "variant": "full_exp",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__full_exp__11",
+      "problem": "helmholtz",
+      "variant": "full_exp",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__local_only__11",
+      "problem": "allen_cahn",
+      "variant": "local_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__neither__11",
+      "problem": "burgers",
+      "variant": "neither",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__full_quad__11",
+      "problem": "allen_cahn",
+      "variant": "full_quad",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__full_exp__11",
+      "problem": "wave",
+      "variant": "full_exp",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__full_quad__11",
+      "problem": "helmholtz",
+      "variant": "full_quad",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__local_only__11",
+      "problem": "burgers",
+      "variant": "local_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__neither__11",
+      "problem": "wave",
+      "variant": "neither",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__neither__11",
+      "problem": "helmholtz",
+      "variant": "neither",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__neither__11",
+      "problem": "allen_cahn",
+      "variant": "neither",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__full_quad__11",
+      "problem": "wave",
+      "variant": "full_quad",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__local_only__11",
+      "problem": "helmholtz",
+      "variant": "local_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__global_only__11",
+      "problem": "wave",
+      "variant": "global_only",
+      "seed": 11,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__full_quad__22",
+      "problem": "burgers",
+      "variant": "full_quad",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__full_quad__22",
+      "problem": "allen_cahn",
+      "variant": "full_quad",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__neither__22",
+      "problem": "wave",
+      "variant": "neither",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__local_only__22",
+      "problem": "burgers",
+      "variant": "local_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__full_quad__22",
+      "problem": "helmholtz",
+      "variant": "full_quad",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__full_exp__22",
+      "problem": "wave",
+      "variant": "full_exp",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__global_only__22",
+      "problem": "wave",
+      "variant": "global_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__local_only__22",
+      "problem": "wave",
+      "variant": "local_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__full_exp__22",
+      "problem": "allen_cahn",
+      "variant": "full_exp",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__local_only__22",
+      "problem": "helmholtz",
+      "variant": "local_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__neither__22",
+      "problem": "allen_cahn",
+      "variant": "neither",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__global_only__22",
+      "problem": "helmholtz",
+      "variant": "global_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__global_only__22",
+      "problem": "burgers",
+      "variant": "global_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__neither__22",
+      "problem": "helmholtz",
+      "variant": "neither",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__global_only__22",
+      "problem": "allen_cahn",
+      "variant": "global_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__full_exp__22",
+      "problem": "burgers",
+      "variant": "full_exp",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__local_only__22",
+      "problem": "allen_cahn",
+      "variant": "local_only",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__full_quad__22",
+      "problem": "wave",
+      "variant": "full_quad",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__full_exp__22",
+      "problem": "helmholtz",
+      "variant": "full_exp",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__neither__22",
+      "problem": "burgers",
+      "variant": "neither",
+      "seed": 22,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__neither__33",
+      "problem": "wave",
+      "variant": "neither",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__full_quad__33",
+      "problem": "burgers",
+      "variant": "full_quad",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__full_exp__33",
+      "problem": "wave",
+      "variant": "full_exp",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__global_only__33",
+      "problem": "burgers",
+      "variant": "global_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__neither__33",
+      "problem": "helmholtz",
+      "variant": "neither",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__full_exp__33",
+      "problem": "burgers",
+      "variant": "full_exp",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__local_only__33",
+      "problem": "wave",
+      "variant": "local_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__global_only__33",
+      "problem": "wave",
+      "variant": "global_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__full_quad__33",
+      "problem": "helmholtz",
+      "variant": "full_quad",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "wave__full_quad__33",
+      "problem": "wave",
+      "variant": "full_quad",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "wave_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "wave",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "wave_speed": 1.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__local_only__33",
+      "problem": "allen_cahn",
+      "variant": "local_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__local_only__33",
+      "problem": "burgers",
+      "variant": "local_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__neither__33",
+      "problem": "allen_cahn",
+      "variant": "neither",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__full_exp__33",
+      "problem": "allen_cahn",
+      "variant": "full_exp",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__full_exp__33",
+      "problem": "helmholtz",
+      "variant": "full_exp",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__global_only__33",
+      "problem": "allen_cahn",
+      "variant": "global_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "allen_cahn__full_quad__33",
+      "problem": "allen_cahn",
+      "variant": "full_quad",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "allen_cahn_screen_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "allen_cahn",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "diffusion": 0.001,
+          "reaction": 5.0
+        },
+        "model": {
+          "hidden_layers": 3,
+          "hidden_width": 32,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 256,
+          "n_initial": 64,
+          "n_boundary": 64,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 1024,
+          "audit_collocation": 256,
+          "audit_initial": 64,
+          "audit_boundary": 64,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": true,
+          "vrba_potential": "quadratic"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 51,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__global_only__33",
+      "problem": "helmholtz",
+      "variant": "global_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": true,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "burgers__neither__33",
+      "problem": "burgers",
+      "variant": "neither",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "burgers_confirmatory_long_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "burgers",
+          "x_min": -1.0,
+          "x_max": 1.0,
+          "t_min": 0.0,
+          "t_max": 1.0,
+          "viscosity": 0.003183098861837907
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 128,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 100,
+          "sampler_every": 100,
+          "diagnostic_every": 100,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 128,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vrba_local_enabled": false,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 161,
+          "nt": 81,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    },
+    {
+      "id": "helmholtz__local_only__33",
+      "problem": "helmholtz",
+      "variant": "local_only",
+      "seed": 33,
+      "config": {
+        "experiment": {
+          "name": "helmholtz_calibrated_v1",
+          "output_dir": "outputs",
+          "device": "cpu",
+          "dtype": "float64",
+          "deterministic": true
+        },
+        "problem": {
+          "name": "helmholtz",
+          "x_min": 0.0,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "wavenumber": 1.0,
+          "mode_x": 1,
+          "mode_y": 1
+        },
+        "model": {
+          "hidden_layers": 4,
+          "hidden_width": 48,
+          "activation": "tanh"
+        },
+        "training": {
+          "steps": 200,
+          "learning_rate": 0.001,
+          "n_collocation": 512,
+          "n_initial": 0,
+          "n_boundary": 128,
+          "log_every": 50,
+          "eval_every": 200,
+          "checkpoint_every": 200,
+          "grad_clip": 100.0,
+          "num_threads": 1
+        },
+        "adaptation": {
+          "controller_every": 25,
+          "sampler_every": 25,
+          "diagnostic_every": 25,
+          "candidate_size": 2048,
+          "audit_collocation": 512,
+          "audit_initial": 0,
+          "audit_boundary": 128,
+          "ema_beta": 0.95,
+          "progress_alpha": 0.5,
+          "weight_min": 0.1,
+          "weight_max": 10.0,
+          "residual_power": 1.0,
+          "residual_mix": 0.8,
+          "replace_fraction": 0.5,
+          "vw_bandwidth": null,
+          "vw_bandwidth_scale": 1.0,
+          "vrba_local_enabled": true,
+          "vrba_global_enabled": false,
+          "vrba_potential": "exponential"
+        },
+        "observations": {
+          "n_observations": 0,
+          "fraction": 1.0,
+          "noise_kind": "none",
+          "noise_level": 0.0,
+          "outlier_fraction": 0.0,
+          "outlier_scale": 5.0,
+          "loss": "mse"
+        },
+        "ablation": {
+          "audit_size_multiplier": 1.0,
+          "audit_design": "random",
+          "audit_rotation_every": 0,
+          "disable_smoothing": false,
+          "disable_bounds": false,
+          "disable_uniform_floor": false
+        },
+        "evaluation": {
+          "nx": 101,
+          "nt": 101,
+          "reference_nx": 257,
+          "reference_dt": 0.0001
+        }
+      }
+    }
+  ],
+  "profile": {
+    "warmup_steps": 50,
+    "measured_steps": [
+      51,
+      150
+    ],
+    "repeats": 3,
+    "sequential": true,
+    "includes": "optimizer + diagnostics + logging",
+    "excludes": "initialization, first 50 steps, final reference solve, checkpoints",
+    "accuracy_claim": false,
+    "cuda": "not_available; no GPU measurement inferred"
+  },
+  "profile_script_sha256": "fcc55aa2512433f711b4ead81fa5b9f5b2d33417c3eef4a4df2d11d2c25407e7"
+}

@@ -1,0 +1,8 @@
+{
+  "completed": 200,
+  "expected": 200,
+  "failed": 0,
+  "invocation_wall_seconds": 723.8749615629999,
+  "workers": 6,
+  "time_comparisons": "Parallel throughput campaign, not isolated wall-time profiling"
+}

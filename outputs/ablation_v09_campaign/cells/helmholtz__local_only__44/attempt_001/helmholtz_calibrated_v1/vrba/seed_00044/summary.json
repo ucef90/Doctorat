@@ -1,0 +1,121 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vrba",
+  "problem": "helmholtz",
+  "controller_source": "fixed_component_weights",
+  "seed": 44,
+  "steps_requested": 1500,
+  "steps_completed": 1500,
+  "initial_fingerprints": {
+    "model": "b870f6b05216c82c03883531ef21140153e2c38ace11a19f5a403ce3cee45d90",
+    "training_sets": "54e3d05a152014de514f0c8668aed52dff9d12f03bb4d816535ac00fe81fc408",
+    "audit_sets": "04a0300dde5f094e55cbaf4f2afee4ea0d6b325922f33d990ffb963485d13e12"
+  },
+  "elapsed_seconds": 21.4333297820001,
+  "controller_weight_tv": 0.0,
+  "controller_updates": 0,
+  "controller_weight_tv_per_update": 0.0,
+  "mean_controller_weight_jump": 0.0,
+  "bias_concentration_correlation": 0.7196226225322406,
+  "temporal_mean_gradient_distribution_tv": 0.10299032430670757,
+  "temporal_mean_loss_distribution_tv": 0.102664404127811,
+  "temporal_mean_physics_gradient_log_gap": 0.9191824121449348,
+  "gradient_distribution_tv": 0.00587727184300646,
+  "loss_distribution_tv": 0.13390068595649818,
+  "physics_gradient_log_gap": 1.3717236194658278,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.00048828125
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 1.0,
+    "mean": 1.0,
+    "minimum": 1.0,
+    "maximum": 1.0
+  },
+  "importance_effective_sample_fraction": 1.0,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 1.0,
+  "vrba_attention_statistics": {
+    "effective_sample_fraction": 0.8893944228482928,
+    "mean": 3.969426987246503,
+    "minimum": 3.2622069898520283,
+    "maximum": 18.378869722703296,
+    "multiplier_mean": 1.9738734679275822,
+    "multiplier_minimum": 1.806158074436462,
+    "multiplier_maximum": 4.2870583997309035,
+    "temperature": 0.014020339411778429
+  },
+  "vrba_attention_effective_sample_fraction": 0.8893944228482928,
+  "vrba_multiplier_mean": 1.9738734679275822,
+  "vrba_multiplier_max": 4.2870583997309035,
+  "kde_pairwise_distance_evaluations": 0,
+  "measure_correction": {
+    "enabled": false,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": false,
+    "estimator": "none",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "adaptive_objective": {
+    "enabled": true,
+    "method": "vrba_common_backbone_weighting",
+    "potential": "exponential",
+    "importance_weighting": true,
+    "local_enabled": true,
+    "global_enabled": false,
+    "importance_sampling": false,
+    "local_updates": 1500,
+    "eta": 0.01,
+    "phi": 0.8,
+    "lambda_max_initial": 10.0,
+    "lambda_cap": 20.0,
+    "temperature_scale": 1.0
+  },
+  "budget": {
+    "optimization": 768000,
+    "controller": 0,
+    "sampler": 0,
+    "diagnostic": 62464,
+    "total_residual_evaluations": 830464,
+    "training_collocation_cardinality": 512,
+    "audit_collocation_cardinality": 512,
+    "controller_collocation_cardinality": 512,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 830464,
+  "parameter_count": 7249,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.10414759108134472,
+  "max_abs_error": 0.15460344304150409,
+  "final_weights": {
+    "physics": 1.0,
+    "boundary": 1.0
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/ablation_v08/ReCoA_PINN_v0.7/outputs/ablation_v09_campaign/cells/helmholtz__local_only__44/attempt_001/helmholtz_calibrated_v1/vrba/seed_00044"
+}
