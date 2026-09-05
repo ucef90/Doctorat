@@ -1,6 +1,12 @@
 # Doctorat — ReCoA-PINN
 
-État de cette étape : **V09**, historique reconstitué.
+État actuel : **V10**, extension scientifique après le push V09.
+
+Lire [START_HERE_V10.md](START_HERE_V10.md), le
+[bilan français](ARTICLE1_STATUS_V10.md) et le
+[manuscrit V10](ARTICLE1_MANUSCRIPT_V10.md). La V10 ajoute une référence Burgers
+indépendante, les ablations sous données difficiles, les budgets doublés et
+les contrôles M5/M6/M7/VW sous perte d'observation commune.
 
 Projet doctoral : *Trustworthy Physics-Informed Artificial Intelligence for Prediction
 and Control of Complex Dynamical Systems: Application to Tokamak Plasma Instabilities*.
@@ -11,6 +17,7 @@ and Control of Complex Dynamical Systems: Application to Tokamak Plasma Instabil
 | V07 | Travaux M7/VW/vRBA, configurations et résultats consolidés | v0.7.0 (reconstruit) |
 | V08 | Pilote vRBA : cinq variantes, trois germes, 15 entraînements | article1-v0.8 |
 | V09 | Code courant, 200 entraînements, analyses, CPU et rapport final | article1-v0.9 |
+| V10 | Référence indépendante, 560 nouveaux entraînements, analyses et manuscrit actualisé | Branches article1/v10-* |
 
 Chaque étape conserve les fichiers précédents. Les anciens tags sont documentaires,
 sans garantie de code installable. Les dates de commit sont celles de la reconstruction.

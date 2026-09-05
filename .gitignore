@@ -10,3 +10,7 @@ tmp/
 .env.*
 .git-credentials
 outputs/new_experiments/
+outputs/robustness_v10_campaign/
+outputs/budget_v10_campaign/
+outputs/common_loss_v10_campaign/
+outputs/campaign_archives/budget_v10_raw.tar.gz

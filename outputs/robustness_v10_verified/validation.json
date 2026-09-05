@@ -1,0 +1,10 @@
+{
+  "expected": 200,
+  "evaluated": 200,
+  "failed": 0,
+  "paired_blocks": 40,
+  "all_initial_hashes_match": true,
+  "stored_scores_verified": true,
+  "dense_grid_evaluated": true,
+  "analysis_sha256": "c635398cbc6c8a1e10faa07651e394155e105d399f23b9dca6e95d88e75749b1"
+}
