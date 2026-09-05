@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m5",
+  "problem": "burgers",
+  "controller_source": "adaptive_training_sets",
+  "seed": 111,
+  "steps_requested": 600,
+  "elapsed_seconds": 3.058486349999839,
+  "controller_weight_tv": 2.912008748771717,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.11648034995086867,
+  "mean_controller_weight_jump": 0.11648034995086869,
+  "bias_concentration_correlation": 0.8226879451819386,
+  "gradient_distribution_tv": 0.03940502957386828,
+  "loss_distribution_tv": 0.010496518202063702,
+  "physics_gradient_log_gap": 0.5086395026232394,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6854719921368602,
+    "entropy_fraction": 0.9715982441616853,
+    "max_probability": 0.004343535647052009
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6163529155386946,
+  "max_abs_error": 0.9121502251671588,
+  "final_weights": {
+    "physics": 2.4552927138355845,
+    "initial": 0.44041459576192804,
+    "boundary": 0.4470198610158407,
+    "data": 0.6572728293866473
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_clean_v1/m5/seed_00111"
+}

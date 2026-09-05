@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 33,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.580492024000705,
+  "controller_weight_tv": 2.4969027636289898,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.09987611054515959,
+  "mean_controller_weight_jump": 0.09987611054515956,
+  "bias_concentration_correlation": 0.7839072312804596,
+  "gradient_distribution_tv": 0.04040105374641639,
+  "loss_distribution_tv": 0.030037631539128834,
+  "physics_gradient_log_gap": 0.5109580612832578,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7079517850213312,
+    "entropy_fraction": 0.9723788005322841,
+    "max_probability": 0.003627781809219372
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.701222841943366,
+  "max_abs_error": 1.2269395639790337,
+  "final_weights": {
+    "physics": 1.965233936244016,
+    "initial": 0.4107413700679037,
+    "boundary": 1.1773466192781736,
+    "data": 0.44667807440990687
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_clean_v1/m6/seed_00033"
+}

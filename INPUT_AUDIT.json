@@ -1,0 +1,23 @@
+{
+  "archive_sha256": "89120068c9ca51b607c0be9b38df83b9730adf52227bf73ff3dc1b6189072885",
+  "archive_filename": "ReCoA_PINN_V09_Research_Package.zip",
+  "archive_file_count": 1942,
+  "archive_directory_entries": 1313,
+  "supplement_commit": "656050cae337f96fdab3b47ec862ccae4f1c9601",
+  "identical_files_shared_by_inputs": 1936,
+  "supplemental_rows": 6345,
+  "inventory_rows": 8287,
+  "kept_input_files": 8281,
+  "excluded_generated_metadata": 6,
+  "kept_by_stage": {
+    "V06": 2189,
+    "V07": 4101,
+    "V08": 96,
+    "V09": 1895
+  },
+  "max_file_bytes": 2008974,
+  "crc_all_members_pass": true,
+  "archive_extraction_sha256_pass": true,
+  "secret_pattern_scan": "No matches; pattern scan, not a guarantee of absence",
+  "remote_base_commit": "59498a9fde0662dabc0c407300b4d6c89f40f64f"
+}

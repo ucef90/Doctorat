@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 33,
+  "steps_requested": 600,
+  "elapsed_seconds": 3.3194268170000214,
+  "controller_weight_tv": 1.5532738510088864,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06213095404035546,
+  "mean_controller_weight_jump": 0.06213095404035546,
+  "bias_concentration_correlation": 0.7129680182849192,
+  "gradient_distribution_tv": 0.05970125385330099,
+  "loss_distribution_tv": 0.022227386551390997,
+  "physics_gradient_log_gap": 0.7188812433829864,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6948540543336771,
+    "entropy_fraction": 0.9666353043556825,
+    "max_probability": 0.0037544165201579514
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": true
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6319312446895422,
+  "max_abs_error": 0.9494128739858061,
+  "final_weights": {
+    "physics": 1.5883131814435658,
+    "initial": 0.38169914735840266,
+    "boundary": 1.0299876711980311
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/without_uniform_floor/m6/seed_00033"
+}

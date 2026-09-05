@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 55,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.9970510459997968,
+  "controller_weight_tv": 6.527679460551258,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.2611071784220503,
+  "mean_controller_weight_jump": 0.2611071784220503,
+  "bias_concentration_correlation": 0.5220144767304143,
+  "gradient_distribution_tv": 0.013009752898977961,
+  "loss_distribution_tv": 0.00683845484378733,
+  "physics_gradient_log_gap": 0.1753608019153881,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7746125933432758,
+    "entropy_fraction": 0.9794463846665922,
+    "max_probability": 0.0031182638853664403
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": true,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6758365951840342,
+  "max_abs_error": 0.9527783391388197,
+  "final_weights": {
+    "physics": 1.9621614054907939,
+    "initial": 0.24444776137136348,
+    "boundary": 0.7933908331378426
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/without_smoothing/m6/seed_00055"
+}

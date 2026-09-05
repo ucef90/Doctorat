@@ -1,0 +1,69 @@
+experiment:
+  name: burgers_pilot_full
+  output_dir: outputs
+  device: auto
+  dtype: float64
+  deterministic: true
+
+problem:
+  name: burgers
+  x_min: -1.0
+  x_max: 1.0
+  t_min: 0.0
+  t_max: 1.0
+  viscosity: 0.003183098861837907
+
+model:
+  hidden_layers: 6
+  hidden_width: 64
+  activation: tanh
+
+training:
+  steps: 30000
+  learning_rate: 0.001
+  n_collocation: 4096
+  n_initial: 512
+  n_boundary: 512
+  log_every: 100
+  eval_every: 1000
+  checkpoint_every: 5000
+  grad_clip: 100.0
+
+adaptation:
+  controller_every: 250
+  sampler_every: 250
+  diagnostic_every: 250
+  candidate_size: 16384
+  audit_collocation: 4096
+  audit_initial: 512
+  audit_boundary: 512
+  ema_beta: 0.95
+  progress_alpha: 0.5
+  weight_min: 0.1
+  weight_max: 10.0
+  residual_power: 1.0
+  residual_mix: 0.8
+  replace_fraction: 0.5
+
+observations:
+  n_observations: 0
+  fraction: 1.0
+  noise_kind: none
+  noise_level: 0.0
+  outlier_fraction: 0.0
+  outlier_scale: 5.0
+  loss: mse
+
+ablation:
+  audit_size_multiplier: 1.0
+  audit_design: random
+  audit_rotation_every: 0
+  disable_smoothing: false
+  disable_bounds: false
+  disable_uniform_floor: false
+
+evaluation:
+  nx: 257
+  nt: 101
+  reference_nx: 513
+  reference_dt: 0.00005

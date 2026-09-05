@@ -1,0 +1,50 @@
+experiment:
+  name: burgers_pilot_quick
+  output_dir: outputs
+  device: cpu
+  dtype: float64
+  deterministic: true
+problem:
+  name: burgers
+  x_min: -1.0
+  x_max: 1.0
+  t_min: 0.0
+  t_max: 1.0
+  viscosity: 0.003183098861837907
+model:
+  hidden_layers: 3
+  hidden_width: 32
+  activation: tanh
+training:
+  steps: 120
+  learning_rate: 0.001
+  n_collocation: 192
+  n_initial: 64
+  n_boundary: 64
+  log_every: 10
+  eval_every: 40
+  checkpoint_every: 120
+  grad_clip: 100.0
+adaptation:
+  controller_every: 10
+  sampler_every: 10
+  diagnostic_every: 10
+  candidate_size: 768
+  audit_collocation: 192
+  audit_initial: 64
+  audit_boundary: 64
+  ema_beta: 0.9
+  progress_alpha: 0.5
+  weight_min: 0.1
+  weight_max: 10.0
+  residual_power: 1.0
+  residual_mix: 0.8
+  replace_fraction: 0.5
+evaluation:
+  nx: 81
+  nt: 41
+  reference_nx: 257
+  reference_dt: 0.0001
+run:
+  method: m1
+  seed: 22

@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 55,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.9234491340002933,
+  "controller_weight_tv": 1.3248248656491617,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.05299299462596647,
+  "mean_controller_weight_jump": 0.05299299462596647,
+  "bias_concentration_correlation": 0.5086515946474528,
+  "gradient_distribution_tv": 0.09694530845916677,
+  "loss_distribution_tv": 0.033152813391505546,
+  "physics_gradient_log_gap": 0.42635482676263425,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6768078341911308,
+    "entropy_fraction": 0.9690299365601676,
+    "max_probability": 0.004265829766103581
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 1600,
+    "sampler": 24576,
+    "diagnostic": 8000,
+    "total_residual_evaluations": 187776,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 64,
+    "controller_collocation_cardinality": 64,
+    "equal_controller_cardinality": false
+  },
+  "residual_evaluations": 187776,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 0.25,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6267807599495696,
+  "max_abs_error": 1.0778445194244715,
+  "final_weights": {
+    "physics": 1.1626803647905917,
+    "initial": 0.5230197068542691,
+    "boundary": 1.3142999283551395
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/audit_size_025/m6/seed_00055"
+}

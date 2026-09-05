@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 33,
+  "steps_requested": 600,
+  "elapsed_seconds": 3.0081809129997055,
+  "controller_weight_tv": 1.6140796544568325,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06456318617827331,
+  "mean_controller_weight_jump": 0.0645631861782733,
+  "bias_concentration_correlation": 0.6249945422585723,
+  "gradient_distribution_tv": 0.07996935257760854,
+  "loss_distribution_tv": 0.02797014160226293,
+  "physics_gradient_log_gap": 0.38714967241230724,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7881345707758833,
+    "entropy_fraction": 0.9805815119603863,
+    "max_probability": 0.0028319332933306853
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 12800,
+    "sampler": 24576,
+    "diagnostic": 19200,
+    "total_residual_evaluations": 210176,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 512,
+    "controller_collocation_cardinality": 512,
+    "equal_controller_cardinality": false
+  },
+  "residual_evaluations": 210176,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 2.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6369157034741952,
+  "max_abs_error": 0.9754762537746967,
+  "final_weights": {
+    "physics": 1.6439673286607945,
+    "initial": 0.3754469885188385,
+    "boundary": 0.9805856828203667
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/audit_size_200/m6/seed_00033"
+}

@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m5",
+  "problem": "burgers",
+  "controller_source": "adaptive_training_sets",
+  "seed": 66,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.758591334999437,
+  "controller_weight_tv": 1.4022422400202899,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.05608968960081159,
+  "mean_controller_weight_jump": 0.05608968960081159,
+  "bias_concentration_correlation": 0.08635389512340978,
+  "gradient_distribution_tv": 0.05167224627320573,
+  "loss_distribution_tv": 0.020551081677700568,
+  "physics_gradient_log_gap": 0.20571442313950503,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7648568288021632,
+    "entropy_fraction": 0.9780782323171894,
+    "max_probability": 0.0028377725935979942
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.01,
+    "noise_kind": "heteroscedastic",
+    "noise_level": 0.2,
+    "outlier_fraction": 0.05,
+    "outlier_scale": 5.0,
+    "loss": "huber",
+    "effective_count": 1
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.5837576132291329,
+  "max_abs_error": 1.0098707501746371,
+  "final_weights": {
+    "physics": 1.1069895842653121,
+    "initial": 0.4930823000209274,
+    "boundary": 1.131980718347838,
+    "data": 1.2679473973659225
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_extreme_v1/m5/seed_00066"
+}

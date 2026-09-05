@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m5",
+  "problem": "burgers",
+  "controller_source": "adaptive_training_sets",
+  "seed": 11,
+  "steps_requested": 600,
+  "elapsed_seconds": 3.365029513999616,
+  "controller_weight_tv": 1.2656480956077512,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.05062592382431005,
+  "mean_controller_weight_jump": 0.05062592382431006,
+  "bias_concentration_correlation": 0.9086766880279978,
+  "gradient_distribution_tv": 0.13607374730496732,
+  "loss_distribution_tv": 0.08444957216400449,
+  "physics_gradient_log_gap": 0.6634525702410123,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.642927140801755,
+    "entropy_fraction": 0.9650932590715177,
+    "max_probability": 0.0041431988150617185
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.5372885740867476,
+  "max_abs_error": 0.9968227248686414,
+  "final_weights": {
+    "physics": 1.073365458509846,
+    "initial": 0.8752585606426286,
+    "boundary": 1.0885960029477673,
+    "data": 0.9627799778997587
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_clean_v1/m5/seed_00011"
+}

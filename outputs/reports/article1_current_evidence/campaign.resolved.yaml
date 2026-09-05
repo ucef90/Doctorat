@@ -1,0 +1,64 @@
+campaign:
+  name: article1_current_evidence
+  report_dir: outputs/reports/article1_current_evidence
+  methods:
+  - m5
+  - m6
+  seeds:
+  - 11
+  - 22
+  - 33
+  - 44
+  - 55
+  - 66
+  - 77
+  - 88
+  - 99
+  - 111
+  contrasts:
+  - - m5
+    - m6
+  bootstrap_repeats: 10000
+  confidence: 0.95
+  experiments:
+  - id: burgers_long
+    label: Burgers — entraînement long
+    config: burgers_confirmatory_long.yaml
+    experiment_name: burgers_confirmatory_long_v1
+    methods:
+    - m1
+    - m5
+    - m6
+    contrasts:
+    - - m1
+      - m5
+    - - m5
+      - m6
+  - id: allen_cahn
+    label: Allen–Cahn
+    config: allen_cahn_screen.yaml
+    experiment_name: allen_cahn_screen_v1
+  - id: helmholtz
+    label: Helmholtz
+    config: helmholtz_screen.yaml
+    experiment_name: helmholtz_screen_v1
+  - id: wave
+    label: Équation des ondes
+    config: wave_screen.yaml
+    experiment_name: wave_screen_v1
+  - id: sparse_clean
+    label: Burgers — données rares propres
+    config: burgers_data_sparse_clean.yaml
+    experiment_name: burgers_data_sparse_clean_v1
+  - id: sparse_noisy
+    label: Burgers — données rares bruitées
+    config: burgers_data_sparse_noisy.yaml
+    experiment_name: burgers_data_sparse_noisy_v1
+  - id: extreme_noise
+    label: Burgers — un capteur et bruit fort
+    config: burgers_data_extreme.yaml
+    experiment_name: burgers_data_extreme_v1
+  - id: block_missing
+    label: Burgers — bloc de capteurs manquant
+    config: burgers_data_block_missing.yaml
+    experiment_name: burgers_data_block_missing_v1

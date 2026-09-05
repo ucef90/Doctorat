@@ -1,0 +1,41 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m3",
+  "controller_source": "fixed_weights",
+  "seed": 22,
+  "steps_requested": 120,
+  "elapsed_seconds": 1.6526339779998125,
+  "controller_weight_tv": 0.0,
+  "controller_updates": 0,
+  "controller_weight_tv_per_update": 0.0,
+  "gradient_distribution_tv": 0.1584772504061805,
+  "loss_distribution_tv": 0.14927864136772018,
+  "physics_gradient_log_gap": 0.5704063793298471,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7163547551621411,
+    "entropy_fraction": 0.9715951843569096,
+    "max_probability": 0.0036884199067812257
+  },
+  "budget": {
+    "optimization": 23040,
+    "controller": 0,
+    "sampler": 9216,
+    "diagnostic": 4992,
+    "total_residual_evaluations": 37248,
+    "training_collocation_cardinality": 192,
+    "audit_collocation_cardinality": 192,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 37248,
+  "parameter_count": 2241,
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6493870935880994,
+  "max_abs_error": 1.0910549015538553,
+  "final_weights": {
+    "physics": 1.0,
+    "initial": 1.0,
+    "boundary": 1.0
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m3/seed_00022"
+}

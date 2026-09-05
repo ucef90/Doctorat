@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m1",
+  "problem": "wave",
+  "controller_source": "uniform_training_sets",
+  "seed": 99,
+  "steps_requested": 600,
+  "elapsed_seconds": 3.4697509910001827,
+  "controller_weight_tv": 2.2681278406053047,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.09072511362421219,
+  "mean_controller_weight_jump": 0.09072511362421216,
+  "bias_concentration_correlation": null,
+  "gradient_distribution_tv": 0.13035465205052926,
+  "loss_distribution_tv": 0.18216827651823136,
+  "physics_gradient_log_gap": 0.003204695033081606,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.0009765625
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 0,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 172800,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 172800,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.2959205258600914,
+  "max_abs_error": 0.5422960131378867,
+  "final_weights": {
+    "physics": 2.1340639203026526,
+    "initial": 0.3479191095469796,
+    "boundary": 0.5180169701503686
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/wave_screen_v1/m1/seed_00099"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 99,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.4339469180000037,
+  "controller_weight_tv": 1.2529235826830845,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.05011694330732338,
+  "mean_controller_weight_jump": 0.05011694330732336,
+  "bias_concentration_correlation": 0.7777377181347709,
+  "temporal_mean_gradient_distribution_tv": 0.11384771982393808,
+  "temporal_mean_loss_distribution_tv": 0.07476534430142068,
+  "temporal_mean_physics_gradient_log_gap": 0.4762185977496917,
+  "gradient_distribution_tv": 0.12117227143583595,
+  "loss_distribution_tv": 0.059590720869615664,
+  "physics_gradient_log_gap": 0.5192384153963019,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6630282440827165,
+    "entropy_fraction": 0.9673662517584202,
+    "max_probability": 0.004142809387335762
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 1.0,
+    "noise_kind": "correlated",
+    "noise_level": 0.05,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "huber",
+    "missing_pattern": "time_block",
+    "missing_fraction": 0.5,
+    "effective_count": 64
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.5466298711829638,
+  "max_abs_error": 0.8962813398238367,
+  "final_weights": {
+    "physics": 1.1949707945820425,
+    "initial": 0.5406940189890347,
+    "boundary": 1.1039360002858474,
+    "data": 1.1603991861430756
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_block_missing_v1/m6/seed_00099"
+}

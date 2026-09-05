@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m5",
+  "problem": "burgers",
+  "controller_source": "adaptive_training_sets",
+  "seed": 77,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.3689775160000863,
+  "controller_weight_tv": 2.994272030315804,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.11977088121263217,
+  "mean_controller_weight_jump": 0.11977088121263219,
+  "bias_concentration_correlation": 0.587514005922038,
+  "gradient_distribution_tv": 0.06428476674225203,
+  "loss_distribution_tv": 0.04184565123199509,
+  "physics_gradient_log_gap": 0.35864172285610485,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6479268448832696,
+    "entropy_fraction": 0.9668704686097,
+    "max_probability": 0.006040185865844986
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "gaussian",
+    "noise_level": 0.1,
+    "outlier_fraction": 0.05,
+    "outlier_scale": 5.0,
+    "loss": "huber",
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6144696805104212,
+  "max_abs_error": 1.0844005537864208,
+  "final_weights": {
+    "physics": 2.4971360151579023,
+    "initial": 0.3804162040634012,
+    "boundary": 0.5403206006389373,
+    "data": 0.5821271801397591
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_noisy_v1/m5/seed_00077"
+}

@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m5",
+  "problem": "burgers",
+  "controller_source": "adaptive_training_sets",
+  "seed": 55,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.893564834999779,
+  "controller_weight_tv": 1.1658797702412778,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.04663519080965111,
+  "mean_controller_weight_jump": 0.04663519080965112,
+  "bias_concentration_correlation": 0.8164668918924973,
+  "gradient_distribution_tv": 0.08560463836811097,
+  "loss_distribution_tv": 0.03620158460626766,
+  "physics_gradient_log_gap": 0.5031943170664109,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7211427088524552,
+    "entropy_fraction": 0.9732022484795663,
+    "max_probability": 0.0038319570286472126
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.598594061974515,
+  "max_abs_error": 1.0582397398281187,
+  "final_weights": {
+    "physics": 1.2465751999197139,
+    "initial": 0.5800534192233515,
+    "boundary": 1.1733713808569346
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/a1_adaptive_batch/m5/seed_00055"
+}

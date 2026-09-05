@@ -1,0 +1,62 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m5",
+  "problem": "helmholtz",
+  "controller_source": "adaptive_training_sets",
+  "seed": 88,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.952330107999842,
+  "controller_weight_tv": 1.3075633335179044,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.052302533340716176,
+  "mean_controller_weight_jump": 0.052302533340716176,
+  "bias_concentration_correlation": 0.2056955162336308,
+  "gradient_distribution_tv": 0.0023981991616903093,
+  "loss_distribution_tv": 7.242384281244239e-05,
+  "physics_gradient_log_gap": 1.7310595866672036,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7630792209486335,
+    "entropy_fraction": 0.9774009435290612,
+    "max_probability": 0.0024132936581323415
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 1.1653934006352151,
+  "max_abs_error": 1.2080942110609256,
+  "final_weights": {
+    "physics": 0.34621833324104767,
+    "boundary": 1.653781666758952
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/helmholtz_screen_v1/m5/seed_00088"
+}

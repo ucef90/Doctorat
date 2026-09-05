@@ -1,0 +1,68 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m0",
+  "problem": "burgers",
+  "controller_source": "fixed_weights",
+  "seed": 11,
+  "steps_requested": 120,
+  "elapsed_seconds": 1.4508595670001796,
+  "controller_weight_tv": 0.0,
+  "controller_updates": 0,
+  "controller_weight_tv_per_update": 0.0,
+  "mean_controller_weight_jump": 0.0,
+  "bias_concentration_correlation": null,
+  "temporal_mean_gradient_distribution_tv": 0.02852570902671124,
+  "temporal_mean_loss_distribution_tv": 0.008917106851206235,
+  "temporal_mean_physics_gradient_log_gap": 0.06124465688433901,
+  "gradient_distribution_tv": 0.02594447267019069,
+  "loss_distribution_tv": 0.00813908769676094,
+  "physics_gradient_log_gap": 0.007446436509007175,
+  "sampler_statistics": {
+    "effective_sample_fraction": 1.0,
+    "entropy_fraction": 1.0,
+    "max_probability": 0.0013020833333333333
+  },
+  "budget": {
+    "optimization": 23040,
+    "controller": 0,
+    "sampler": 0,
+    "diagnostic": 4992,
+    "total_residual_evaluations": 28032,
+    "training_collocation_cardinality": 192,
+    "audit_collocation_cardinality": 192,
+    "controller_collocation_cardinality": 192,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 28032,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.8693163753560754,
+  "max_abs_error": 1.036582427484632,
+  "final_weights": {
+    "physics": 1.0,
+    "initial": 1.0,
+    "boundary": 1.0
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m0/seed_00011"
+}

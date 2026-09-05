@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 44,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.8623567180002283,
+  "controller_weight_tv": 4.9730386934616435,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.19892154773846574,
+  "mean_controller_weight_jump": 0.19892154773846574,
+  "bias_concentration_correlation": 0.013876362350010094,
+  "gradient_distribution_tv": 0.06203682794293784,
+  "loss_distribution_tv": 0.01626484523907468,
+  "physics_gradient_log_gap": 0.06420827012439949,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6986642747726928,
+    "entropy_fraction": 0.9719198083138838,
+    "max_probability": 0.00411850598956812
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": true,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.7487722933582872,
+  "max_abs_error": 1.1385799911343915,
+  "final_weights": {
+    "physics": 2.6310045509351485,
+    "initial": 0.17575218261366204,
+    "boundary": 0.1932432664511893
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/without_smoothing/m6/seed_00044"
+}

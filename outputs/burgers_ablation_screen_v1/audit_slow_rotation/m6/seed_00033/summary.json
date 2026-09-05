@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 33,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.877315427999747,
+  "controller_weight_tv": 1.5782932576210582,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06313173030484233,
+  "mean_controller_weight_jump": 0.06313173030484233,
+  "bias_concentration_correlation": 0.6044469036808993,
+  "gradient_distribution_tv": 0.0848577413436111,
+  "loss_distribution_tv": 0.030553882853701204,
+  "physics_gradient_log_gap": 0.6912693875930473,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7815850549350816,
+    "entropy_fraction": 0.9799299095223944,
+    "max_probability": 0.0032661001724934207
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 100,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6362576004039799,
+  "max_abs_error": 1.0066049263823973,
+  "final_weights": {
+    "physics": 1.5940337067704775,
+    "initial": 0.37772368589817373,
+    "boundary": 1.028242607331349
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/audit_slow_rotation/m6/seed_00033"
+}

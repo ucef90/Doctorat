@@ -1,0 +1,24 @@
+\begin{tabular}{llllrrrr}
+\toprule
+Expérience & Contraste & Métrique & $n$ & Médiane $\Delta$ & IC 95\% & Victoires & $p$ \\
+\midrule
+Burgers — entraînement long & m5\_minus\_m1 & relative\_l2 & 10 & 0.1415 & [0.0629, 0.2900] & 10\% & 0.021 \\
+Burgers — entraînement long & m5\_minus\_m1 & controller\_weight\_tv\_per\_update & 10 & -7.57e-04 & [-0.0038, 0.0025] & 50\% & 1.000 \\
+Burgers — entraînement long & m6\_minus\_m5 & relative\_l2 & 10 & -0.0291 & [-0.1208, 0.1678] & 60\% & 0.754 \\
+Burgers — entraînement long & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & -0.0011 & [-0.0047, 0.0016] & 60\% & 0.754 \\
+Allen–Cahn & m6\_minus\_m5 & relative\_l2 & 10 & 0.0019 & [-0.0027, 0.0030] & 30\% & 0.344 \\
+Allen–Cahn & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & -2.10e-04 & [-0.0013, 0.0030] & 60\% & 0.754 \\
+Helmholtz & m6\_minus\_m5 & relative\_l2 & 10 & -0.0058 & [-0.0284, 0.0144] & 70\% & 0.344 \\
+Helmholtz & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & 9.44e-08 & [-7.02e-09, 1.74e-07] & 30\% & 0.344 \\
+Équation des ondes & m6\_minus\_m5 & relative\_l2 & 10 & -0.0015 & [-0.0059, 0.0018] & 60\% & 0.754 \\
+Équation des ondes & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & -0.0041 & [-0.0054, -0.0013] & 80\% & 0.109 \\
+Burgers — données rares propres & m6\_minus\_m5 & relative\_l2 & 10 & -0.0054 & [-0.0106, 0.0173] & 60\% & 0.754 \\
+Burgers — données rares propres & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & 0.0015 & [-0.0023, 0.0040] & 40\% & 0.754 \\
+Burgers — données rares bruitées & m6\_minus\_m5 & relative\_l2 & 10 & -0.0044 & [-0.0208, 0.0078] & 50\% & 1.000 \\
+Burgers — données rares bruitées & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & 0.0017 & [-0.0027, 0.0023] & 30\% & 0.344 \\
+Burgers — un capteur et bruit fort & m6\_minus\_m5 & relative\_l2 & 10 & 0.0023 & [-0.0140, 0.0149] & 40\% & 0.754 \\
+Burgers — un capteur et bruit fort & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & -0.0014 & [-0.0038, 0.0039] & 60\% & 0.754 \\
+Burgers — bloc de capteurs manquant & m6\_minus\_m5 & relative\_l2 & 10 & -0.0018 & [-0.0058, 0.0044] & 60\% & 0.754 \\
+Burgers — bloc de capteurs manquant & m6\_minus\_m5 & controller\_weight\_tv\_per\_update & 10 & 2.88e-04 & [-0.0032, 0.0031] & 50\% & 1.000 \\
+\bottomrule
+\end{tabular}

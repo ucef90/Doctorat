@@ -1,0 +1,63 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 11,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.994695065000087,
+  "controller_weight_tv": 0.7625513378327172,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.03050205351330869,
+  "mean_controller_weight_jump": 0.03050205351330869,
+  "bias_concentration_correlation": 0.6978748541273544,
+  "gradient_distribution_tv": 0.16834358725810122,
+  "loss_distribution_tv": 0.10985441864262338,
+  "physics_gradient_log_gap": 0.7848260614798663,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7163731360860378,
+    "entropy_fraction": 0.9726644171673207,
+    "max_probability": 0.002912498660654516
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "latin_hypercube",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.5683482239306775,
+  "max_abs_error": 1.0839119173807679,
+  "final_weights": {
+    "physics": 0.9445799176751274,
+    "initial": 0.9103210474524672,
+    "boundary": 1.145099034872405
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_ablation_screen_v1/audit_latin_hypercube/m6/seed_00011"
+}

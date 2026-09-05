@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 88,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.4174326530001053,
+  "controller_weight_tv": 1.2567456389224831,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.05026982555689932,
+  "mean_controller_weight_jump": 0.050269825556899315,
+  "bias_concentration_correlation": 0.8530287205451323,
+  "gradient_distribution_tv": 0.17835492457913202,
+  "loss_distribution_tv": 0.1152110450316515,
+  "physics_gradient_log_gap": 0.8050249413369829,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.64255068390185,
+    "entropy_fraction": 0.964370892981903,
+    "max_probability": 0.003743637341746758
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.5321311088100105,
+  "max_abs_error": 1.0205804644191565,
+  "final_weights": {
+    "physics": 1.0774462737670842,
+    "initial": 0.6960025512904726,
+    "boundary": 1.0432604203681783,
+    "data": 1.1832907545742646
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_clean_v1/m6/seed_00088"
+}

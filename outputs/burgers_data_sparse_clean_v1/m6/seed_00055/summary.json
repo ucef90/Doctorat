@@ -1,0 +1,64 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m6",
+  "problem": "burgers",
+  "controller_source": "fixed_audit_sets",
+  "seed": 55,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.4630478380004206,
+  "controller_weight_tv": 1.699859357847442,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06799437431389768,
+  "mean_controller_weight_jump": 0.06799437431389768,
+  "bias_concentration_correlation": 0.6381081255743963,
+  "gradient_distribution_tv": 0.060059959920791176,
+  "loss_distribution_tv": 0.033785484666369825,
+  "physics_gradient_log_gap": 0.40025227030265215,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.6551825067514087,
+    "entropy_fraction": 0.9673215629350096,
+    "max_probability": 0.004490742546982766
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6274703919055344,
+  "max_abs_error": 1.2770364408303538,
+  "final_weights": {
+    "physics": 1.437524062242851,
+    "initial": 0.6432627872520165,
+    "boundary": 1.2415337950094958,
+    "data": 0.677679355495638
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_clean_v1/m6/seed_00055"
+}

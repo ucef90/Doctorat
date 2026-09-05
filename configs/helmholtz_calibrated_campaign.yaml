@@ -1,0 +1,20 @@
+campaign:
+  name: article1_helmholtz_calibrated
+  report_dir: outputs/reports/article1_helmholtz_calibrated
+  methods: [m0, m1, m3, m5, m6, m7u, m7, vw, vwca]
+  seeds: [11, 22, 33, 44, 55, 66, 77, 88, 99, 111]
+  contrasts:
+    - [m0, m5]
+    - [m5, m6]
+    - [m5, m7]
+    - [m7u, m7]
+    - [vw, m7]
+    - [vwca, m7]
+    - [vw, vwca]
+  bootstrap_repeats: 10000
+  confidence: 0.95
+  experiments:
+    - id: helmholtz_calibrated
+      label: Helmholtz calibrée — mode (1,1), k=1
+      config: helmholtz_calibrated.yaml
+      experiment_name: helmholtz_calibrated_v1
