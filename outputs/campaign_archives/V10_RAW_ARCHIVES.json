@@ -1,0 +1,54 @@
+[
+  {
+    "suite": "robustness",
+    "path": "outputs/campaign_archives/robustness_v10_raw.tar.gz",
+    "files": 1405,
+    "completed_trainings": 200,
+    "final_checkpoints": 200,
+    "size_bytes": 9250645,
+    "sha256": "f5253286bfb9c167c5d0c0694784420a0263476e7be45c14a6db078969e9b314",
+    "verified_all_members": true
+  },
+  {
+    "suite": "budget",
+    "path": "outputs/campaign_archives/budget_v10_raw.tar.gz",
+    "files": 1405,
+    "completed_trainings": 200,
+    "final_checkpoints": 200,
+    "size_bytes": 18206366,
+    "sha256": "43377948000b99fcc8c968ca6f7e02a50844d92670c972ee1d18fae2a6d99e41",
+    "verified_all_members": true,
+    "parts": [
+      {
+        "path": "outputs/campaign_archives/budget_v10_raw.tar.gz.part01",
+        "size_bytes": 6000000,
+        "sha256": "bf022dc4e878a1ba19167eceb16b978baf2765ec5bd40f56f52cf10158ceef6a"
+      },
+      {
+        "path": "outputs/campaign_archives/budget_v10_raw.tar.gz.part02",
+        "size_bytes": 6000000,
+        "sha256": "1df99aaad481301468ab387b1c5225c2bc846ceff89bf768f37812675863d7c0"
+      },
+      {
+        "path": "outputs/campaign_archives/budget_v10_raw.tar.gz.part03",
+        "size_bytes": 6000000,
+        "sha256": "10982d8ee1e3805fedbc63a0c9dfd7f0059cb23517000da2db9b46708cb4a0f3"
+      },
+      {
+        "path": "outputs/campaign_archives/budget_v10_raw.tar.gz.part04",
+        "size_bytes": 206366,
+        "sha256": "e468a0552fdc7c7abc3f4c21074af522a32804f9eb9edd5ddba59223bca988d8"
+      }
+    ]
+  },
+  {
+    "suite": "common_loss",
+    "path": "outputs/campaign_archives/common_loss_v10_raw.tar.gz",
+    "files": 1124,
+    "completed_trainings": 160,
+    "final_checkpoints": 160,
+    "size_bytes": 7510182,
+    "sha256": "48f6599e77d600ad309bedb8e20b667ac967993a763bf486ddae9baae8f4a784",
+    "verified_all_members": true
+  }
+]
