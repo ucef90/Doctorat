@@ -1,6 +1,6 @@
 # Doctorat — ReCoA-PINN
 
-État de cette étape : **V06**, historique reconstitué.
+État de cette étape : **V07**, historique reconstitué.
 
 Projet doctoral : *Trustworthy Physics-Informed Artificial Intelligence for Prediction
 and Control of Complex Dynamical Systems: Application to Tokamak Plasma Instabilities*.

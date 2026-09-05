@@ -1,0 +1,48 @@
+campaign:
+  name: article1_vrba_sparse_noisy
+  report_dir: outputs/reports/article1_vrba_sparse_noisy
+  methods:
+  - m5
+  - m6
+  - m7
+  - vw
+  - vrba
+  seeds:
+  - 11
+  - 22
+  - 33
+  - 44
+  - 55
+  - 66
+  - 77
+  - 88
+  - 99
+  - 111
+  contrasts:
+  - - m5
+    - vrba
+  - - m6
+    - vrba
+  - - m7
+    - vrba
+  - - vw
+    - vrba
+  bootstrap_repeats: 10000
+  confidence: 0.95
+  experiments:
+  - id: sparse_clean
+    label: Burgers — vRBA, 13 observations propres
+    config: burgers_data_sparse_clean.yaml
+    experiment_name: burgers_data_sparse_clean_v1
+  - id: sparse_noisy
+    label: Burgers — vRBA, 13 observations bruitées
+    config: burgers_data_sparse_noisy.yaml
+    experiment_name: burgers_data_sparse_noisy_v1
+  - id: extreme_noise
+    label: Burgers — vRBA, une observation et bruit fort
+    config: burgers_data_extreme.yaml
+    experiment_name: burgers_data_extreme_v1
+  - id: block_missing
+    label: Burgers — vRBA, bloc de capteurs manquant
+    config: burgers_data_block_missing.yaml
+    experiment_name: burgers_data_block_missing_v1

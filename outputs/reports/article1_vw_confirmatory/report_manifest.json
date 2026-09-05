@@ -1,0 +1,33 @@
+{
+  "campaign": "article1_vw_confirmatory",
+  "report_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory",
+  "n_experiments": 4,
+  "expected_runs": 240,
+  "successful_runs": 240,
+  "files": {
+    "report": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/REPORT.md",
+    "runs_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/data/runs.csv",
+    "method_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/tables/method_summary.csv",
+    "paired_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/tables/paired_summary.csv",
+    "figures": [
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/relative_l2_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/relative_l2_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/stability_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/stability_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/training_time_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/training_time_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/paired_relative_l2_forest.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/paired_relative_l2_forest.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/cost_accuracy.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/cost_accuracy.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_burgers_long.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_burgers_long.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_allen_cahn.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_allen_cahn.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_helmholtz.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_helmholtz.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_wave.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_confirmatory/figures/convergence_wave.pdf"
+    ]
+  }
+}

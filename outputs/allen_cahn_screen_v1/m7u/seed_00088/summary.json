@@ -1,0 +1,80 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m7u",
+  "problem": "allen_cahn",
+  "controller_source": "adaptive_training_sets_matched_resampling",
+  "seed": 88,
+  "steps_requested": 600,
+  "elapsed_seconds": 1.9468017420000479,
+  "controller_weight_tv": 1.6619498008735234,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06647799203494094,
+  "mean_controller_weight_jump": 0.06647799203494094,
+  "bias_concentration_correlation": 0.5423513343032629,
+  "temporal_mean_gradient_distribution_tv": 0.10742759475286925,
+  "temporal_mean_loss_distribution_tv": 0.10293010474115247,
+  "temporal_mean_physics_gradient_log_gap": 0.4043551965242751,
+  "gradient_distribution_tv": 0.04625692833911525,
+  "loss_distribution_tv": 0.15653468149539465,
+  "physics_gradient_log_gap": 0.2104933613411125,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7020370997488282,
+    "entropy_fraction": 0.9710662057601162,
+    "max_probability": 0.0038202660946615157
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.6577302345546234,
+    "mean": 0.9549063066165631,
+    "minimum": 0.2533868383131869,
+    "maximum": 4.655705484878611
+  },
+  "measure_correction": {
+    "enabled": false,
+    "matched_uncorrected_control": true,
+    "estimator": "hansen_hurwitz_finite_candidate",
+    "sampling_with_replacement": true
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.07570001878070903,
+  "max_abs_error": 0.12900824142434786,
+  "final_weights": {
+    "physics": 0.34999412395191637,
+    "initial": 0.9554014526119743,
+    "boundary": 1.6946044234361097
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/allen_cahn_screen_v1/m7u/seed_00088"
+}

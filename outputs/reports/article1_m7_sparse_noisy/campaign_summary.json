@@ -1,0 +1,37 @@
+{
+  "campaign": "article1_m7_sparse_noisy",
+  "report_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy",
+  "n_experiments": 4,
+  "expected_runs": 160,
+  "successful_runs": 160,
+  "files": {
+    "report": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/REPORT.md",
+    "runs_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/data/runs.csv",
+    "method_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/tables/method_summary.csv",
+    "paired_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/tables/paired_summary.csv",
+    "figures": [
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/relative_l2_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/relative_l2_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/stability_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/stability_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/training_time_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/training_time_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/paired_relative_l2_forest.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/paired_relative_l2_forest.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/cost_accuracy.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/cost_accuracy.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_sparse_clean.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_sparse_clean.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_sparse_noisy.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_sparse_noisy.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_extreme_noise.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_extreme_noise.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_block_missing.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_sparse_noisy/figures/convergence_block_missing.pdf"
+    ]
+  },
+  "new_runs": 80,
+  "reused_runs": 80,
+  "failures": [],
+  "missing_runs": []
+}

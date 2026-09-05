@@ -1,0 +1,27 @@
+{
+  "campaign": "article1_vw_pilot",
+  "report_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot",
+  "n_experiments": 1,
+  "expected_runs": 18,
+  "successful_runs": 18,
+  "files": {
+    "report": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/REPORT.md",
+    "runs_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/data/runs.csv",
+    "method_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/tables/method_summary.csv",
+    "paired_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/tables/paired_summary.csv",
+    "figures": [
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/relative_l2_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/relative_l2_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/stability_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/stability_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/training_time_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/training_time_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/paired_relative_l2_forest.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/paired_relative_l2_forest.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/cost_accuracy.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/cost_accuracy.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/convergence_burgers_quick.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_pilot/figures/convergence_burgers_quick.pdf"
+    ]
+  }
+}

@@ -1,0 +1,1198 @@
+{
+  "runs": [
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m0",
+      "problem": "burgers",
+      "controller_source": "fixed_weights",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.4508595670001796,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "mean_controller_weight_jump": 0.0,
+      "bias_concentration_correlation": null,
+      "temporal_mean_gradient_distribution_tv": 0.02852570902671124,
+      "temporal_mean_loss_distribution_tv": 0.008917106851206235,
+      "temporal_mean_physics_gradient_log_gap": 0.06124465688433901,
+      "gradient_distribution_tv": 0.02594447267019069,
+      "loss_distribution_tv": 0.00813908769676094,
+      "physics_gradient_log_gap": 0.007446436509007175,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 28032,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 28032,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.8693163753560754,
+      "max_abs_error": 1.036582427484632,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m0/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m0",
+      "problem": "burgers",
+      "controller_source": "fixed_weights",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.9226268620000155,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "mean_controller_weight_jump": 0.0,
+      "bias_concentration_correlation": null,
+      "temporal_mean_gradient_distribution_tv": 0.09496017765334161,
+      "temporal_mean_loss_distribution_tv": 0.034912769840152146,
+      "temporal_mean_physics_gradient_log_gap": 0.11556978029622214,
+      "gradient_distribution_tv": 0.09210878728041876,
+      "loss_distribution_tv": 0.06773995154313389,
+      "physics_gradient_log_gap": 0.10183679604624149,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 28032,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 28032,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6188029838491315,
+      "max_abs_error": 1.1059794529408409,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m0/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m0",
+      "problem": "burgers",
+      "controller_source": "fixed_weights",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.774160085999938,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "mean_controller_weight_jump": 0.0,
+      "bias_concentration_correlation": null,
+      "temporal_mean_gradient_distribution_tv": 0.03322022475346653,
+      "temporal_mean_loss_distribution_tv": 0.017025459261016174,
+      "temporal_mean_physics_gradient_log_gap": 0.0678030533154878,
+      "gradient_distribution_tv": 0.042672660750597544,
+      "loss_distribution_tv": 0.04106927430660841,
+      "physics_gradient_log_gap": 0.07133380374009235,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 28032,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 28032,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.5735510665140904,
+      "max_abs_error": 0.9368234720435358,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m0/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m1",
+      "problem": "burgers",
+      "controller_source": "uniform_training_sets",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6689158789999965,
+      "controller_weight_tv": 1.107885797960419,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.08522198445849377,
+      "mean_controller_weight_jump": 0.08522198445849377,
+      "bias_concentration_correlation": null,
+      "temporal_mean_gradient_distribution_tv": 0.027877742569745182,
+      "temporal_mean_loss_distribution_tv": 0.007637633435894819,
+      "temporal_mean_physics_gradient_log_gap": 0.04267536721292226,
+      "gradient_distribution_tv": 0.025178909570565178,
+      "loss_distribution_tv": 0.009843344522791592,
+      "physics_gradient_log_gap": 0.0056366445546414115,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 30528,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 30528,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.9051175299787976,
+      "max_abs_error": 1.0677937455415314,
+      "final_weights": {
+        "physics": 0.6074398917696474,
+        "initial": 0.9759415286226815,
+        "boundary": 1.4166185796076713
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m1/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m1",
+      "problem": "burgers",
+      "controller_source": "uniform_training_sets",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 2.629064769000024,
+      "controller_weight_tv": 1.2111574504032454,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09316595772332657,
+      "mean_controller_weight_jump": 0.09316595772332657,
+      "bias_concentration_correlation": null,
+      "temporal_mean_gradient_distribution_tv": 0.09664867412144904,
+      "temporal_mean_loss_distribution_tv": 0.039163609551700396,
+      "temporal_mean_physics_gradient_log_gap": 0.14729391434302658,
+      "gradient_distribution_tv": 0.093198413638111,
+      "loss_distribution_tv": 0.07843494680427984,
+      "physics_gradient_log_gap": 0.10719392167488578,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 30528,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 30528,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.5941110420228853,
+      "max_abs_error": 1.090163841015975,
+      "final_weights": {
+        "physics": 0.9633358796942244,
+        "initial": 1.0419847537461033,
+        "boundary": 0.9946793665596724
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m1/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m1",
+      "problem": "burgers",
+      "controller_source": "uniform_training_sets",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.979513913999881,
+      "controller_weight_tv": 2.041043438282244,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.15700334140632646,
+      "mean_controller_weight_jump": 0.15700334140632646,
+      "bias_concentration_correlation": null,
+      "temporal_mean_gradient_distribution_tv": 0.016449439071823047,
+      "temporal_mean_loss_distribution_tv": 0.004280328405637959,
+      "temporal_mean_physics_gradient_log_gap": 0.06111763382248771,
+      "gradient_distribution_tv": 0.03013039366787334,
+      "loss_distribution_tv": 0.006976269257401163,
+      "physics_gradient_log_gap": 0.06634835292080751,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 30528,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 30528,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6861094313296453,
+      "max_abs_error": 0.9579234892213391,
+      "final_weights": {
+        "physics": 1.6223171082423997,
+        "initial": 0.3689403620669095,
+        "boundary": 1.0087425296906907
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m1/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m3",
+      "problem": "burgers",
+      "controller_source": "fixed_weights",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6807683500001076,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "mean_controller_weight_jump": 0.0,
+      "bias_concentration_correlation": 0.2600586372829129,
+      "temporal_mean_gradient_distribution_tv": 0.03764274944755892,
+      "temporal_mean_loss_distribution_tv": 0.007672958350590003,
+      "temporal_mean_physics_gradient_log_gap": 0.20773486175622125,
+      "gradient_distribution_tv": 0.036918839679976764,
+      "loss_distribution_tv": 0.0073519709198493,
+      "physics_gradient_log_gap": 0.2623556027217623,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.8995149588359085,
+        "entropy_fraction": 0.9902036213899652,
+        "max_probability": 0.0018081330730379877
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 37248,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 37248,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.8582552900259475,
+      "max_abs_error": 1.0262564855171408,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m3/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m3",
+      "problem": "burgers",
+      "controller_source": "fixed_weights",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 2.200784108999869,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "mean_controller_weight_jump": 0.0,
+      "bias_concentration_correlation": 0.8448600481722746,
+      "temporal_mean_gradient_distribution_tv": 0.11277449156792661,
+      "temporal_mean_loss_distribution_tv": 0.05168703146813394,
+      "temporal_mean_physics_gradient_log_gap": 0.2843401635964409,
+      "gradient_distribution_tv": 0.14490594144482571,
+      "loss_distribution_tv": 0.13126660473108742,
+      "physics_gradient_log_gap": 0.4242420647952507,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.7163547551621411,
+        "entropy_fraction": 0.9715951843569096,
+        "max_probability": 0.0036884199067812257
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 37248,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 37248,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6493870935880994,
+      "max_abs_error": 1.0910549015538553,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m3/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m3",
+      "problem": "burgers",
+      "controller_source": "fixed_weights",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.7263871370000743,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "mean_controller_weight_jump": 0.0,
+      "bias_concentration_correlation": 0.7531016305674585,
+      "temporal_mean_gradient_distribution_tv": 0.06586985688636232,
+      "temporal_mean_loss_distribution_tv": 0.04744435873538115,
+      "temporal_mean_physics_gradient_log_gap": 0.26650853724467805,
+      "gradient_distribution_tv": 0.13619341312521524,
+      "loss_distribution_tv": 0.13322366008855424,
+      "physics_gradient_log_gap": 0.5690867504366014,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.6520250823373572,
+        "entropy_fraction": 0.9634993996632705,
+        "max_probability": 0.004087822201946527
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 37248,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 37248,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6267709943055171,
+      "max_abs_error": 0.9105954634019733,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m3/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m5",
+      "problem": "burgers",
+      "controller_source": "adaptive_training_sets",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6715958800000408,
+      "controller_weight_tv": 1.0631763579045377,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.08178279676188752,
+      "mean_controller_weight_jump": 0.08178279676188752,
+      "bias_concentration_correlation": 0.1629611892894501,
+      "temporal_mean_gradient_distribution_tv": 0.03988524986286413,
+      "temporal_mean_loss_distribution_tv": 0.007481815090006552,
+      "temporal_mean_physics_gradient_log_gap": 0.20756497276345748,
+      "gradient_distribution_tv": 0.05330490183700905,
+      "loss_distribution_tv": 0.013422386954569772,
+      "physics_gradient_log_gap": 0.35263860836901506,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.871277941604318,
+        "entropy_fraction": 0.9877346577941553,
+        "max_probability": 0.002132762032116177
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.8988539319484549,
+      "max_abs_error": 1.0566097222956303,
+      "final_weights": {
+        "physics": 0.6127246466861838,
+        "initial": 0.9791136942092771,
+        "boundary": 1.4081616591045396
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m5/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m5",
+      "problem": "burgers",
+      "controller_source": "adaptive_training_sets",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.7230177839999214,
+      "controller_weight_tv": 1.1988593247997958,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09221994806152276,
+      "mean_controller_weight_jump": 0.09221994806152276,
+      "bias_concentration_correlation": 0.813294040804544,
+      "temporal_mean_gradient_distribution_tv": 0.12140903695651864,
+      "temporal_mean_loss_distribution_tv": 0.06446123763634425,
+      "temporal_mean_physics_gradient_log_gap": 0.31164116565329814,
+      "gradient_distribution_tv": 0.17127565228269323,
+      "loss_distribution_tv": 0.17502250209235756,
+      "physics_gradient_log_gap": 0.5753163006906601,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.678508805760918,
+        "entropy_fraction": 0.9667278704186498,
+        "max_probability": 0.003599839120518704
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6209098308153889,
+      "max_abs_error": 1.041599838768379,
+      "final_weights": {
+        "physics": 0.9849260448458714,
+        "initial": 1.0433378306160197,
+        "boundary": 0.971736124538109
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m5/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m5",
+      "problem": "burgers",
+      "controller_source": "adaptive_training_sets",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.86733081400007,
+      "controller_weight_tv": 2.023685830263866,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.15566814078952815,
+      "mean_controller_weight_jump": 0.15566814078952815,
+      "bias_concentration_correlation": 0.7687253643351828,
+      "temporal_mean_gradient_distribution_tv": 0.032486048956479,
+      "temporal_mean_loss_distribution_tv": 0.014043142172914675,
+      "temporal_mean_physics_gradient_log_gap": 0.2805944520595587,
+      "gradient_distribution_tv": 0.052791954462274415,
+      "loss_distribution_tv": 0.0296492365451266,
+      "physics_gradient_log_gap": 0.46738681618825123,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.7127316340254186,
+        "entropy_fraction": 0.9717846197502363,
+        "max_probability": 0.0034977172317464346
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.7393877714149296,
+      "max_abs_error": 1.0418254434894139,
+      "final_weights": {
+        "physics": 1.6247176631204545,
+        "initial": 0.3714071828304316,
+        "boundary": 1.003875154049114
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m5/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m6",
+      "problem": "burgers",
+      "controller_source": "fixed_audit_sets",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6731328240000494,
+      "controller_weight_tv": 1.2291839688029558,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09455261298484276,
+      "mean_controller_weight_jump": 0.09455261298484276,
+      "bias_concentration_correlation": 0.03993197526317874,
+      "temporal_mean_gradient_distribution_tv": 0.03880772402400707,
+      "temporal_mean_loss_distribution_tv": 0.006585867155154034,
+      "temporal_mean_physics_gradient_log_gap": 0.20272585737964854,
+      "gradient_distribution_tv": 0.060431674107566766,
+      "loss_distribution_tv": 0.014736606432352563,
+      "physics_gradient_log_gap": 0.4480103182353722,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.8686053653082625,
+        "entropy_fraction": 0.9874191490472356,
+        "max_probability": 0.002169724084181996
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.9103436831176759,
+      "max_abs_error": 1.044640460842691,
+      "final_weights": {
+        "physics": 0.5706365240861034,
+        "initial": 0.8878753068207642,
+        "boundary": 1.5414881690931324
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m6/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m6",
+      "problem": "burgers",
+      "controller_source": "fixed_audit_sets",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.7763794950001284,
+      "controller_weight_tv": 1.1934654213440261,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09180503241107893,
+      "mean_controller_weight_jump": 0.09180503241107893,
+      "bias_concentration_correlation": 0.8302734573138237,
+      "temporal_mean_gradient_distribution_tv": 0.12123313738692379,
+      "temporal_mean_loss_distribution_tv": 0.06349495026443677,
+      "temporal_mean_physics_gradient_log_gap": 0.31961709281761685,
+      "gradient_distribution_tv": 0.18728029870555207,
+      "loss_distribution_tv": 0.18607755757598363,
+      "physics_gradient_log_gap": 0.6643600643017703,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.6888095877024947,
+        "entropy_fraction": 0.9685464195203718,
+        "max_probability": 0.0033770718916027323
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6370795753653173,
+      "max_abs_error": 1.0849268122412508,
+      "final_weights": {
+        "physics": 0.9675548090037863,
+        "initial": 1.0049739785850993,
+        "boundary": 1.0274712124111143
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m6/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m6",
+      "problem": "burgers",
+      "controller_source": "fixed_audit_sets",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6673659929999758,
+      "controller_weight_tv": 2.0440382740306915,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.15723371338697628,
+      "mean_controller_weight_jump": 0.15723371338697628,
+      "bias_concentration_correlation": 0.6969814383218554,
+      "temporal_mean_gradient_distribution_tv": 0.03102823138896632,
+      "temporal_mean_loss_distribution_tv": 0.013609447620444162,
+      "temporal_mean_physics_gradient_log_gap": 0.26421704243759303,
+      "gradient_distribution_tv": 0.05597099968985487,
+      "loss_distribution_tv": 0.03165796080704855,
+      "physics_gradient_log_gap": 0.4635318526992604,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.7088145908495823,
+        "entropy_fraction": 0.9711953283106161,
+        "max_probability": 0.0034484667047765477
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "controller_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "observations": {
+        "n_observations": 0,
+        "fraction": 1.0,
+        "noise_kind": "none",
+        "noise_level": 0.0,
+        "outlier_fraction": 0.0,
+        "outlier_scale": 5.0,
+        "loss": "mse",
+        "missing_pattern": "none",
+        "missing_fraction": 0.0,
+        "effective_count": 0
+      },
+      "ablation": {
+        "audit_size_multiplier": 1.0,
+        "audit_design": "random",
+        "audit_rotation_every": 0,
+        "disable_smoothing": false,
+        "disable_bounds": false,
+        "disable_uniform_floor": false
+      },
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.7324601259693667,
+      "max_abs_error": 1.0415609944545157,
+      "final_weights": {
+        "physics": 1.5718005864193947,
+        "initial": 0.3703245789783591,
+        "boundary": 1.0578748346022468
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_pilot_automatic/burgers_quick/m6/seed_00033"
+    }
+  ],
+  "methods": {
+    "m0": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.6188029838491315,
+      "median_elapsed_seconds": 1.774160085999938,
+      "median_controller_weight_tv": 0.0,
+      "median_controller_weight_tv_per_update": 0.0,
+      "median_gradient_distribution_tv": 0.042672660750597544,
+      "median_temporal_mean_gradient_distribution_tv": 0.03322022475346653,
+      "median_temporal_mean_physics_gradient_log_gap": 0.0678030533154878,
+      "median_bias_concentration_correlation": null,
+      "median_residual_evaluations": 28032.0
+    },
+    "m1": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.6861094313296453,
+      "median_elapsed_seconds": 1.979513913999881,
+      "median_controller_weight_tv": 1.2111574504032454,
+      "median_controller_weight_tv_per_update": 0.09316595772332657,
+      "median_gradient_distribution_tv": 0.03013039366787334,
+      "median_temporal_mean_gradient_distribution_tv": 0.027877742569745182,
+      "median_temporal_mean_physics_gradient_log_gap": 0.06111763382248771,
+      "median_bias_concentration_correlation": null,
+      "median_residual_evaluations": 30528.0
+    },
+    "m3": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.6493870935880994,
+      "median_elapsed_seconds": 1.7263871370000743,
+      "median_controller_weight_tv": 0.0,
+      "median_controller_weight_tv_per_update": 0.0,
+      "median_gradient_distribution_tv": 0.13619341312521524,
+      "median_temporal_mean_gradient_distribution_tv": 0.06586985688636232,
+      "median_temporal_mean_physics_gradient_log_gap": 0.26650853724467805,
+      "median_bias_concentration_correlation": 0.7531016305674585,
+      "median_residual_evaluations": 37248.0
+    },
+    "m5": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.7393877714149296,
+      "median_elapsed_seconds": 1.7230177839999214,
+      "median_controller_weight_tv": 1.1988593247997958,
+      "median_controller_weight_tv_per_update": 0.09221994806152276,
+      "median_gradient_distribution_tv": 0.05330490183700905,
+      "median_temporal_mean_gradient_distribution_tv": 0.03988524986286413,
+      "median_temporal_mean_physics_gradient_log_gap": 0.2805944520595587,
+      "median_bias_concentration_correlation": 0.7687253643351828,
+      "median_residual_evaluations": 39744.0
+    },
+    "m6": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.7324601259693667,
+      "median_elapsed_seconds": 1.6731328240000494,
+      "median_controller_weight_tv": 1.2291839688029558,
+      "median_controller_weight_tv_per_update": 0.09455261298484276,
+      "median_gradient_distribution_tv": 0.060431674107566766,
+      "median_temporal_mean_gradient_distribution_tv": 0.03880772402400707,
+      "median_temporal_mean_physics_gradient_log_gap": 0.26421704243759303,
+      "median_bias_concentration_correlation": 0.6969814383218554,
+      "median_residual_evaluations": 39744.0
+    }
+  },
+  "paired_analysis": {
+    "m5_minus_m1_gradient_distribution_tv": {
+      "paired_seeds": [
+        11,
+        22,
+        33
+      ],
+      "field": "gradient_distribution_tv",
+      "contrast": "m5_minus_m1",
+      "median_difference": 0.02812599226644387,
+      "difference_ci95": [
+        0.022661560794401077,
+        0.07807723864458223
+      ],
+      "second_win_fraction": 0.0,
+      "two_sided_sign_test_p": 0.25,
+      "differences_by_seed": {
+        "11": 0.02812599226644387,
+        "22": 0.07807723864458223,
+        "33": 0.022661560794401077
+      }
+    },
+    "m5_minus_m1_controller_weight_tv_per_update": {
+      "paired_seeds": [
+        11,
+        22,
+        33
+      ],
+      "field": "controller_weight_tv_per_update",
+      "contrast": "m5_minus_m1",
+      "median_difference": -0.0013352006167983155,
+      "difference_ci95": [
+        -0.003439187696606255,
+        -0.0009460096618038177
+      ],
+      "second_win_fraction": 1.0,
+      "two_sided_sign_test_p": 0.25,
+      "differences_by_seed": {
+        "11": -0.003439187696606255,
+        "22": -0.0009460096618038177,
+        "33": -0.0013352006167983155
+      }
+    },
+    "m6_minus_m5_relative_l2": {
+      "paired_seeds": [
+        11,
+        22,
+        33
+      ],
+      "field": "relative_l2",
+      "contrast": "m6_minus_m5",
+      "median_difference": 0.011489751169221019,
+      "difference_ci95": [
+        -0.006927645445562902,
+        0.016169744549928478
+      ],
+      "second_win_fraction": 0.3333333333333333,
+      "two_sided_sign_test_p": 1.0,
+      "differences_by_seed": {
+        "11": 0.011489751169221019,
+        "22": 0.016169744549928478,
+        "33": -0.006927645445562902
+      }
+    },
+    "m6_minus_m5_controller_weight_tv_per_update": {
+      "paired_seeds": [
+        11,
+        22,
+        33
+      ],
+      "field": "controller_weight_tv_per_update",
+      "contrast": "m6_minus_m5",
+      "median_difference": 0.0015655725974481338,
+      "difference_ci95": [
+        -0.0004149156504438256,
+        0.012769816222955241
+      ],
+      "second_win_fraction": 0.3333333333333333,
+      "two_sided_sign_test_p": 1.0,
+      "differences_by_seed": {
+        "11": 0.012769816222955241,
+        "22": -0.0004149156504438256,
+        "33": 0.0015655725974481338
+      }
+    },
+    "m6_minus_m5_elapsed_seconds": {
+      "paired_seeds": [
+        11,
+        22,
+        33
+      ],
+      "field": "elapsed_seconds",
+      "contrast": "m6_minus_m5",
+      "median_difference": 0.0015369440000085888,
+      "difference_ci95": [
+        -0.19996482100009416,
+        0.053361711000206924
+      ],
+      "second_win_fraction": 0.3333333333333333,
+      "two_sided_sign_test_p": 1.0,
+      "differences_by_seed": {
+        "11": 0.0015369440000085888,
+        "22": 0.053361711000206924,
+        "33": -0.19996482100009416
+      }
+    }
+  }
+}

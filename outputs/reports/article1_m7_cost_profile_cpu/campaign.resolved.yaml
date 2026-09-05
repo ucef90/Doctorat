@@ -1,0 +1,30 @@
+campaign:
+  name: article1_m7_cost_profile_cpu
+  report_dir: outputs/reports/article1_m7_cost_profile_cpu
+  methods:
+  - m5
+  - m6
+  - m7u
+  - m7
+  seeds:
+  - 101
+  - 202
+  - 303
+  - 404
+  - 505
+  contrasts:
+  - - m5
+    - m6
+  - - m5
+    - m7
+  - - m6
+    - m7
+  - - m7u
+    - m7
+  bootstrap_repeats: 5000
+  confidence: 0.95
+  experiments:
+  - id: burgers_sparse_noisy_cost
+    label: Burgers bruité — profilage CPU séquentiel
+    config: burgers_data_sparse_noisy.yaml
+    experiment_name: burgers_m7_cost_profile_cpu_v1

@@ -1,0 +1,84 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m7",
+  "problem": "burgers",
+  "controller_source": "measure_corrected_adaptive_training_sets",
+  "seed": 99,
+  "steps_requested": 600,
+  "elapsed_seconds": 1.9436183299999357,
+  "controller_weight_tv": 1.5033468580260378,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06013387432104152,
+  "mean_controller_weight_jump": 0.060133874321041524,
+  "bias_concentration_correlation": 0.49479650367953665,
+  "temporal_mean_gradient_distribution_tv": 0.037892263542863985,
+  "temporal_mean_loss_distribution_tv": 0.025899293669886286,
+  "temporal_mean_physics_gradient_log_gap": 0.12807665869782875,
+  "gradient_distribution_tv": 0.03274037584596787,
+  "loss_distribution_tv": 0.03209065280487637,
+  "physics_gradient_log_gap": 0.1901239802337689,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.5581017362503542,
+    "entropy_fraction": 0.9543952996672465,
+    "max_probability": 0.004441831153580347
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.61910069094187,
+    "mean": 0.9650213349354455,
+    "minimum": 0.2224790627188526,
+    "maximum": 4.848336930387243
+  },
+  "importance_effective_sample_fraction": 0.61910069094187,
+  "importance_weight_mean": 0.9650213349354455,
+  "importance_weight_max": 4.848336930387243,
+  "measure_correction": {
+    "enabled": true,
+    "matched_uncorrected_control": false,
+    "estimator": "hansen_hurwitz_finite_candidate",
+    "sampling_with_replacement": true
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.5012179757800337,
+  "max_abs_error": 0.9717032258843732,
+  "final_weights": {
+    "physics": 1.428181859552884,
+    "initial": 0.637434061644738,
+    "boundary": 1.1952330832401494,
+    "data": 0.7391509955622291
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_data_sparse_clean_v1/m7/seed_00099"
+}

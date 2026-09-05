@@ -1,0 +1,80 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m7u",
+  "problem": "wave",
+  "controller_source": "adaptive_training_sets_matched_resampling",
+  "seed": 33,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.5021779479999395,
+  "controller_weight_tv": 1.5258856004816133,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.06103542401926453,
+  "mean_controller_weight_jump": 0.06103542401926451,
+  "bias_concentration_correlation": 0.17555464389420514,
+  "temporal_mean_gradient_distribution_tv": 0.04183272300693425,
+  "temporal_mean_loss_distribution_tv": 0.04214036191453572,
+  "temporal_mean_physics_gradient_log_gap": 0.319576475398866,
+  "gradient_distribution_tv": 0.06127363439754559,
+  "loss_distribution_tv": 0.048136903944537714,
+  "physics_gradient_log_gap": 0.3646374245564515,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7175180567830272,
+    "entropy_fraction": 0.9742720443082947,
+    "max_probability": 0.0050366274708824295
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.6753616487994579,
+    "mean": 1.009784123415462,
+    "minimum": 0.24133538621561287,
+    "maximum": 4.908813002895003
+  },
+  "measure_correction": {
+    "enabled": false,
+    "matched_uncorrected_control": true,
+    "estimator": "hansen_hurwitz_finite_candidate",
+    "sampling_with_replacement": true
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.3015466247079345,
+  "max_abs_error": 0.4196440753052643,
+  "final_weights": {
+    "physics": 1.138064664688754,
+    "initial": 0.3493491849052188,
+    "boundary": 1.5125861504060274
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/wave_screen_v1/m7u/seed_00033"
+}

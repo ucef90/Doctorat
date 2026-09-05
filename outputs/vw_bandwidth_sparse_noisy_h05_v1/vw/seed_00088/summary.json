@@ -1,0 +1,89 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vw",
+  "problem": "burgers",
+  "controller_source": "fixed_component_weights",
+  "seed": 88,
+  "steps_requested": 600,
+  "elapsed_seconds": 2.1440137740000864,
+  "controller_weight_tv": 0.0,
+  "controller_updates": 0,
+  "controller_weight_tv_per_update": 0.0,
+  "mean_controller_weight_jump": 0.0,
+  "bias_concentration_correlation": 0.3532648868849163,
+  "temporal_mean_gradient_distribution_tv": 0.05616011747875559,
+  "temporal_mean_loss_distribution_tv": 0.04093978009503837,
+  "temporal_mean_physics_gradient_log_gap": 0.19496642512692738,
+  "gradient_distribution_tv": 0.07907341678855548,
+  "loss_distribution_tv": 0.03749393193423657,
+  "physics_gradient_log_gap": 0.26791628238580584,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.5931021414611851,
+    "entropy_fraction": 0.9556175301777412,
+    "max_probability": 0.003091823796617389
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.2616707947916797,
+    "mean": 1.0,
+    "minimum": 0.21060385623921984,
+    "maximum": 14.075116957545834
+  },
+  "importance_effective_sample_fraction": 0.2616707947916797,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 14.075116957545834,
+  "kde_pairwise_distance_evaluations": 1638400,
+  "measure_correction": {
+    "enabled": true,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": true,
+    "matched_uncorrected_control": false,
+    "estimator": "gaussian_kde_inverse_density_volume_squared",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 0.5
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 0,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 190976,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 190976,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 128,
+    "fraction": 0.1,
+    "noise_kind": "gaussian",
+    "noise_level": 0.1,
+    "outlier_fraction": 0.05,
+    "outlier_scale": 5.0,
+    "loss": "huber",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 13
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.4522187497472686,
+  "max_abs_error": 0.9844345394011945,
+  "final_weights": {
+    "physics": 1.0,
+    "initial": 1.0,
+    "boundary": 1.0,
+    "data": 1.0
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/vw_bandwidth_sparse_noisy_h05_v1/vw/seed_00088"
+}

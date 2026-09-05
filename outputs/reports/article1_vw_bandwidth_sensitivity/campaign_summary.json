@@ -1,0 +1,41 @@
+{
+  "campaign": "article1_vw_bandwidth_sensitivity",
+  "report_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity",
+  "n_experiments": 6,
+  "expected_runs": 120,
+  "successful_runs": 120,
+  "files": {
+    "report": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/REPORT.md",
+    "runs_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/data/runs.csv",
+    "method_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/tables/method_summary.csv",
+    "paired_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/tables/paired_summary.csv",
+    "figures": [
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/relative_l2_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/relative_l2_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/stability_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/stability_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/training_time_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/training_time_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/paired_relative_l2_forest.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/paired_relative_l2_forest.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/cost_accuracy.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/cost_accuracy.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_sparse_noisy_h05.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_sparse_noisy_h05.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_sparse_noisy_h10.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_sparse_noisy_h10.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_sparse_noisy_h20.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_sparse_noisy_h20.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_wave_h05.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_wave_h05.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_wave_h10.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_wave_h10.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_wave_h20.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_vw_bandwidth_sensitivity/figures/convergence_wave_h20.pdf"
+    ]
+  },
+  "new_runs": 120,
+  "reused_runs": 0,
+  "failures": [],
+  "missing_runs": []
+}

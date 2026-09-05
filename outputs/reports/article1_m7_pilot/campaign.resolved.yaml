@@ -1,0 +1,27 @@
+campaign:
+  name: article1_m7_pilot
+  report_dir: outputs/reports/article1_m7_pilot
+  methods:
+  - m5
+  - m6
+  - m7u
+  - m7
+  seeds:
+  - 11
+  - 22
+  - 33
+  contrasts:
+  - - m5
+    - m6
+  - - m5
+    - m7
+  - - m6
+    - m7
+  - - m7u
+    - m7
+  bootstrap_repeats: 2000
+  confidence: 0.95
+  experiments:
+  - id: burgers_quick
+    label: Burgers — pilote M7
+    config: pilot_quick.yaml

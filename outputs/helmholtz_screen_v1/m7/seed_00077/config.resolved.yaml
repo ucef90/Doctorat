@@ -1,0 +1,70 @@
+experiment:
+  name: helmholtz_screen_v1
+  output_dir: /workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs
+  device: cpu
+  dtype: float64
+  deterministic: true
+problem:
+  name: helmholtz
+  x_min: 0.0
+  x_max: 1.0
+  y_min: 0.0
+  y_max: 1.0
+  wavenumber: 10.0
+  mode_x: 2
+  mode_y: 3
+model:
+  hidden_layers: 3
+  hidden_width: 32
+  activation: tanh
+training:
+  steps: 600
+  learning_rate: 0.001
+  n_collocation: 256
+  n_initial: 0
+  n_boundary: 128
+  log_every: 25
+  eval_every: 200
+  checkpoint_every: 600
+  grad_clip: 100.0
+  num_threads: 1
+adaptation:
+  controller_every: 25
+  sampler_every: 25
+  diagnostic_every: 25
+  candidate_size: 1024
+  audit_collocation: 256
+  audit_initial: 0
+  audit_boundary: 128
+  ema_beta: 0.95
+  progress_alpha: 0.5
+  weight_min: 0.1
+  weight_max: 10.0
+  residual_power: 1.0
+  residual_mix: 0.8
+  replace_fraction: 0.5
+observations:
+  n_observations: 0
+  fraction: 1.0
+  noise_kind: none
+  noise_level: 0.0
+  outlier_fraction: 0.0
+  outlier_scale: 5.0
+  loss: mse
+  missing_pattern: none
+  missing_fraction: 0.0
+ablation:
+  audit_size_multiplier: 1.0
+  audit_design: random
+  audit_rotation_every: 0
+  disable_smoothing: false
+  disable_bounds: false
+  disable_uniform_floor: false
+evaluation:
+  nx: 81
+  nt: 81
+  reference_nx: 257
+  reference_dt: 0.0001
+run:
+  method: m7
+  seed: 77

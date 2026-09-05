@@ -1,0 +1,47 @@
+campaign:
+  name: article1_m7_confirmatory
+  report_dir: outputs/reports/article1_m7_confirmatory
+  methods:
+  - m5
+  - m6
+  - m7u
+  - m7
+  seeds:
+  - 11
+  - 22
+  - 33
+  - 44
+  - 55
+  - 66
+  - 77
+  - 88
+  - 99
+  - 111
+  contrasts:
+  - - m5
+    - m6
+  - - m5
+    - m7
+  - - m6
+    - m7
+  - - m7u
+    - m7
+  bootstrap_repeats: 10000
+  confidence: 0.95
+  experiments:
+  - id: burgers_long
+    label: Burgers — confirmation M7
+    config: burgers_confirmatory_long.yaml
+    experiment_name: burgers_confirmatory_long_v1
+  - id: allen_cahn
+    label: Allen–Cahn — confirmation M7
+    config: allen_cahn_screen.yaml
+    experiment_name: allen_cahn_screen_v1
+  - id: helmholtz
+    label: Helmholtz — confirmation M7
+    config: helmholtz_screen.yaml
+    experiment_name: helmholtz_screen_v1
+  - id: wave
+    label: Ondes — confirmation M7
+    config: wave_screen.yaml
+    experiment_name: wave_screen_v1

@@ -1,0 +1,33 @@
+{
+  "config": "configs/burgers_confirmatory_long.yaml",
+  "runs_root": "outputs/burgers_confirmatory_long_v1",
+  "methods": [
+    "m5",
+    "m6",
+    "vrba"
+  ],
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55,
+    66,
+    77,
+    88,
+    99,
+    111
+  ],
+  "grid": {
+    "nt": 81,
+    "nx": 161
+  },
+  "outputs": [
+    "spatial_summary.csv",
+    "spatial_by_seed.csv",
+    "burgers_spatial_error_maps.png",
+    "burgers_spatial_error_maps.pdf",
+    "burgers_spatial_error_profiles.png",
+    "burgers_spatial_error_profiles.pdf"
+  ]
+}

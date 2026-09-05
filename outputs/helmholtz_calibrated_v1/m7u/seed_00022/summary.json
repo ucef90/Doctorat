@@ -1,0 +1,87 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m7u",
+  "problem": "helmholtz",
+  "controller_source": "adaptive_training_sets_matched_resampling",
+  "seed": 22,
+  "steps_requested": 1500,
+  "elapsed_seconds": 25.676562873999956,
+  "controller_weight_tv": 1.7296767981769876,
+  "controller_updates": 61,
+  "controller_weight_tv_per_update": 0.028355357347163733,
+  "mean_controller_weight_jump": 0.028355357347163733,
+  "bias_concentration_correlation": 0.16457898444517172,
+  "temporal_mean_gradient_distribution_tv": 0.047453373302290366,
+  "temporal_mean_loss_distribution_tv": 0.069014212033306,
+  "temporal_mean_physics_gradient_log_gap": 0.6084365181973163,
+  "gradient_distribution_tv": 0.0346251440633082,
+  "loss_distribution_tv": 0.0857603438608499,
+  "physics_gradient_log_gap": 0.5528673502671134,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.789101541272881,
+    "entropy_fraction": 0.9826762841212981,
+    "max_probability": 0.0018431846136609397
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.7351653328158637,
+    "mean": 1.0090075000739982,
+    "minimum": 0.26491174371848414,
+    "maximum": 3.969971614366405
+  },
+  "importance_effective_sample_fraction": 0.7351653328158637,
+  "importance_weight_mean": 1.0090075000739982,
+  "importance_weight_max": 3.969971614366405,
+  "kde_pairwise_distance_evaluations": 0,
+  "measure_correction": {
+    "enabled": false,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": true,
+    "estimator": "none",
+    "sampling_with_replacement": true,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "budget": {
+    "optimization": 768000,
+    "controller": 31232,
+    "sampler": 122880,
+    "diagnostic": 62464,
+    "total_residual_evaluations": 984576,
+    "training_collocation_cardinality": 512,
+    "audit_collocation_cardinality": 512,
+    "controller_collocation_cardinality": 512,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 984576,
+  "parameter_count": 7249,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.11219029465404824,
+  "max_abs_error": 0.2500129344916526,
+  "final_weights": {
+    "physics": 0.13516160091150617,
+    "boundary": 1.864838399088494
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/helmholtz_calibrated_v1/m7u/seed_00022"
+}

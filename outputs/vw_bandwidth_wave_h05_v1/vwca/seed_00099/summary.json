@@ -1,0 +1,88 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "vwca",
+  "problem": "wave",
+  "controller_source": "volume_weighted_adaptive_training_sets",
+  "seed": 99,
+  "steps_requested": 600,
+  "elapsed_seconds": 3.06248071500022,
+  "controller_weight_tv": 2.3636470098998923,
+  "controller_updates": 25,
+  "controller_weight_tv_per_update": 0.0945458803959957,
+  "mean_controller_weight_jump": 0.0945458803959957,
+  "bias_concentration_correlation": 0.154915068023102,
+  "temporal_mean_gradient_distribution_tv": 0.11748528221617471,
+  "temporal_mean_loss_distribution_tv": 0.11294247402038174,
+  "temporal_mean_physics_gradient_log_gap": 0.31033075423927836,
+  "gradient_distribution_tv": 0.07446053266310754,
+  "loss_distribution_tv": 0.17668732415566799,
+  "physics_gradient_log_gap": 0.07661470339431124,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.71592990054072,
+    "entropy_fraction": 0.9744198411078345,
+    "max_probability": 0.003611582666983893
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.4906352554759428,
+    "mean": 1.0,
+    "minimum": 0.3243431733959902,
+    "maximum": 10.848230129794878
+  },
+  "importance_effective_sample_fraction": 0.4906352554759428,
+  "importance_weight_mean": 1.0,
+  "importance_weight_max": 10.848230129794878,
+  "kde_pairwise_distance_evaluations": 1638400,
+  "measure_correction": {
+    "enabled": true,
+    "exact_proposal_correction": false,
+    "kde_volume_weighting": true,
+    "matched_uncorrected_control": false,
+    "estimator": "gaussian_kde_inverse_density_volume_squared",
+    "sampling_with_replacement": false,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 0.5
+  },
+  "budget": {
+    "optimization": 153600,
+    "controller": 6400,
+    "sampler": 24576,
+    "diagnostic": 12800,
+    "total_residual_evaluations": 197376,
+    "training_collocation_cardinality": 256,
+    "audit_collocation_cardinality": 256,
+    "controller_collocation_cardinality": 256,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 197376,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.31438734874216867,
+  "max_abs_error": 0.5378492329241829,
+  "final_weights": {
+    "physics": 2.1818235049499464,
+    "initial": 0.34780787884586073,
+    "boundary": 0.4703686162041933
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/vw_bandwidth_wave_h05_v1/vwca/seed_00099"
+}

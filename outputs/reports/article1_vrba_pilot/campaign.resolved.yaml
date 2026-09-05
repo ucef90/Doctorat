@@ -1,0 +1,44 @@
+campaign:
+  name: article1_vrba_pilot
+  report_dir: outputs/reports/article1_vrba_pilot
+  methods:
+  - m0
+  - m5
+  - m6
+  - m7
+  - vw
+  - vrba
+  seeds:
+  - 11
+  - 22
+  - 33
+  contrasts:
+  - - m0
+    - vrba
+  - - m5
+    - vrba
+  - - m6
+    - vrba
+  - - m7
+    - vrba
+  - - vw
+    - vrba
+  bootstrap_repeats: 2000
+  confidence: 0.95
+  experiments:
+  - id: burgers_quick
+    label: Burgers — pilote vRBA sur backbone commun
+    config: pilot_quick.yaml
+    overrides:
+      adaptation.vrba_potential: exponential
+      adaptation.vrba_eta: 0.01
+      adaptation.vrba_phi: 0.8
+      adaptation.vrba_temperature_scale: 1.0
+      adaptation.vrba_lambda_max_initial: 10.0
+      adaptation.vrba_lambda_cap: 20.0
+      adaptation.vrba_stage_steps: 50000
+      adaptation.vrba_initial_fraction: 0.1
+      adaptation.vrba_gradient_ema: 0.99
+      adaptation.vrba_global_ema: 0.99975
+      adaptation.vrba_local_every: 1
+      adaptation.vrba_global_every: 1

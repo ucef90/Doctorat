@@ -1,0 +1,692 @@
+{
+  "runs": [
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m0",
+      "controller_source": "fixed_weights",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.4789312160000918,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "gradient_distribution_tv": 0.028345231982366784,
+      "loss_distribution_tv": 0.0057860022893407095,
+      "physics_gradient_log_gap": 0.04434634260734511,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 28032,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 28032,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.8693163753560754,
+      "max_abs_error": 1.036582427484632,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m0/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m1",
+      "controller_source": "uniform_training_sets",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.5549338119999447,
+      "controller_weight_tv": 1.251040868700163,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09623391297693562,
+      "gradient_distribution_tv": 0.024208172316604326,
+      "loss_distribution_tv": 0.003659425735973644,
+      "physics_gradient_log_gap": 0.014217609559082118,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 30528,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 30528,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.9147305689429789,
+      "max_abs_error": 1.053166752327989,
+      "final_weights": {
+        "physics": 0.5773925873893627,
+        "initial": 0.8812299076947782,
+        "boundary": 1.5413775049158591
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m1/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m3",
+      "controller_source": "fixed_weights",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.5775183710002239,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "gradient_distribution_tv": 0.03934516260324306,
+      "loss_distribution_tv": 0.009719820482570453,
+      "physics_gradient_log_gap": 0.33125388238253306,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.8995149588359085,
+        "entropy_fraction": 0.9902036213899652,
+        "max_probability": 0.0018081330730379877
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 37248,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 37248,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.8582552900259475,
+      "max_abs_error": 1.0262564855171408,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m3/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m5",
+      "controller_source": "adaptive_training_sets",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6681508859996939,
+      "controller_weight_tv": 1.0631763579045377,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.08178279676188752,
+      "gradient_distribution_tv": 0.05371223559308047,
+      "loss_distribution_tv": 0.019590586449348746,
+      "physics_gradient_log_gap": 0.35693496968724053,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.871277941604318,
+        "entropy_fraction": 0.9877346577941553,
+        "max_probability": 0.002132762032116177
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.8988539319484549,
+      "max_abs_error": 1.0566097222956303,
+      "final_weights": {
+        "physics": 0.6127246466861838,
+        "initial": 0.9791136942092771,
+        "boundary": 1.4081616591045396
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m5/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m6",
+      "controller_source": "fixed_audit_sets",
+      "seed": 11,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6525453059998654,
+      "controller_weight_tv": 1.237909160902403,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09522378160787716,
+      "gradient_distribution_tv": 0.07051999719485433,
+      "loss_distribution_tv": 0.022101129285487055,
+      "physics_gradient_log_gap": 0.5075388120553201,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.8658246574703936,
+        "entropy_fraction": 0.9871731174915819,
+        "max_probability": 0.002195827979659575
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.9110896457787373,
+      "max_abs_error": 1.0459055451758366,
+      "final_weights": {
+        "physics": 0.5586708114012203,
+        "initial": 0.8916198826480105,
+        "boundary": 1.5497093059507687
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m6/seed_00011"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m0",
+      "controller_source": "fixed_weights",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.5548393359999864,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "gradient_distribution_tv": 0.11332881027773484,
+      "loss_distribution_tv": 0.0969980305711377,
+      "physics_gradient_log_gap": 0.09194672403579962,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 28032,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 28032,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6188029838491315,
+      "max_abs_error": 1.1059794529408409,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m0/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m1",
+      "controller_source": "uniform_training_sets",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6130671529999745,
+      "controller_weight_tv": 1.1947277766242907,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09190213666340698,
+      "gradient_distribution_tv": 0.11510128800717587,
+      "loss_distribution_tv": 0.1073690118191212,
+      "physics_gradient_log_gap": 0.10113446561951406,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 30528,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 30528,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6059538294859554,
+      "max_abs_error": 1.0931766868092039,
+      "final_weights": {
+        "physics": 1.0232432265035807,
+        "initial": 0.967210231761232,
+        "boundary": 1.009546541735187
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m1/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m3",
+      "controller_source": "fixed_weights",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.6526339779998125,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "gradient_distribution_tv": 0.1584772504061805,
+      "loss_distribution_tv": 0.14927864136772018,
+      "physics_gradient_log_gap": 0.5704063793298471,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.7163547551621411,
+        "entropy_fraction": 0.9715951843569096,
+        "max_probability": 0.0036884199067812257
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 37248,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 37248,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6493870935880994,
+      "max_abs_error": 1.0910549015538553,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m3/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m5",
+      "controller_source": "adaptive_training_sets",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.841747989000396,
+      "controller_weight_tv": 1.1988593247997958,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.09221994806152276,
+      "gradient_distribution_tv": 0.1940364703183226,
+      "loss_distribution_tv": 0.20234741754328142,
+      "physics_gradient_log_gap": 0.764982366417399,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.678508805760918,
+        "entropy_fraction": 0.9667278704186498,
+        "max_probability": 0.003599839120518704
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6209098308153889,
+      "max_abs_error": 1.041599838768379,
+      "final_weights": {
+        "physics": 0.9849260448458714,
+        "initial": 1.0433378306160197,
+        "boundary": 0.971736124538109
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m5/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m6",
+      "controller_source": "fixed_audit_sets",
+      "seed": 22,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.7237757549996786,
+      "controller_weight_tv": 1.1459021457381688,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.08814631890293606,
+      "gradient_distribution_tv": 0.17752421305150695,
+      "loss_distribution_tv": 0.17774876059579958,
+      "physics_gradient_log_gap": 0.643417157634887,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.688376407591421,
+        "entropy_fraction": 0.9679105889902706,
+        "max_probability": 0.0038082399467381134
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6387708176476454,
+      "max_abs_error": 1.0985073895667925,
+      "final_weights": {
+        "physics": 1.0006558139142936,
+        "initial": 0.989061629946195,
+        "boundary": 1.0102825561395112
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m6/seed_00022"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m0",
+      "controller_source": "fixed_weights",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.5425772909998159,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "gradient_distribution_tv": 0.03289782332451996,
+      "loss_distribution_tv": 0.029993062119270476,
+      "physics_gradient_log_gap": 0.1254236488214563,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 28032,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 28032,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.5735510665140904,
+      "max_abs_error": 0.9368234720435358,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m0/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m1",
+      "controller_source": "uniform_training_sets",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.5429729830002543,
+      "controller_weight_tv": 2.0613339968899673,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.15856415360692055,
+      "gradient_distribution_tv": 0.029648883103826254,
+      "loss_distribution_tv": 0.005767814339882581,
+      "physics_gradient_log_gap": 0.12996748800137298,
+      "sampler_statistics": {
+        "effective_sample_fraction": 1.0,
+        "entropy_fraction": 1.0,
+        "max_probability": 0.0013020833333333333
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 0,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 30528,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 30528,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6850242267130773,
+      "max_abs_error": 0.9562591677937391,
+      "final_weights": {
+        "physics": 1.5906514739618032,
+        "initial": 0.36474736492855453,
+        "boundary": 1.0446011611096424
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m1/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m3",
+      "controller_source": "fixed_weights",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.667271540999991,
+      "controller_weight_tv": 0.0,
+      "controller_updates": 0,
+      "controller_weight_tv_per_update": 0.0,
+      "gradient_distribution_tv": 0.11913020245400754,
+      "loss_distribution_tv": 0.11864877662903241,
+      "physics_gradient_log_gap": 0.43697933790008764,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.6520250823373572,
+        "entropy_fraction": 0.9634993996632705,
+        "max_probability": 0.004087822201946527
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 0,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 37248,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 37248,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.6267709943055171,
+      "max_abs_error": 0.9105954634019733,
+      "final_weights": {
+        "physics": 1.0,
+        "initial": 1.0,
+        "boundary": 1.0
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m3/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m5",
+      "controller_source": "adaptive_training_sets",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.627171952000026,
+      "controller_weight_tv": 2.023685830263866,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.15566814078952815,
+      "gradient_distribution_tv": 0.04955681876730982,
+      "loss_distribution_tv": 0.028708070852872736,
+      "physics_gradient_log_gap": 0.4106007274586883,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.7127316340254186,
+        "entropy_fraction": 0.9717846197502363,
+        "max_probability": 0.0034977172317464346
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.7393877714149296,
+      "max_abs_error": 1.0418254434894139,
+      "final_weights": {
+        "physics": 1.6247176631204545,
+        "initial": 0.3714071828304316,
+        "boundary": 1.003875154049114
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m5/seed_00033"
+    },
+    {
+      "status": "succeeded",
+      "failure_reason": null,
+      "method": "m6",
+      "controller_source": "fixed_audit_sets",
+      "seed": 33,
+      "steps_requested": 120,
+      "elapsed_seconds": 1.5569678930000919,
+      "controller_weight_tv": 2.0693362273453166,
+      "controller_updates": 13,
+      "controller_weight_tv_per_update": 0.1591797097957936,
+      "gradient_distribution_tv": 0.05640838668695457,
+      "loss_distribution_tv": 0.032384610428039494,
+      "physics_gradient_log_gap": 0.42921812988766544,
+      "sampler_statistics": {
+        "effective_sample_fraction": 0.700250478109083,
+        "entropy_fraction": 0.9700996820551806,
+        "max_probability": 0.0035296045461649253
+      },
+      "budget": {
+        "optimization": 23040,
+        "controller": 2496,
+        "sampler": 9216,
+        "diagnostic": 4992,
+        "total_residual_evaluations": 39744,
+        "training_collocation_cardinality": 192,
+        "audit_collocation_cardinality": 192,
+        "equal_controller_cardinality": true
+      },
+      "residual_evaluations": 39744,
+      "parameter_count": 2241,
+      "peak_gpu_memory_bytes": null,
+      "relative_l2": 0.725692571563,
+      "max_abs_error": 0.999449655588087,
+      "final_weights": {
+        "physics": 1.5753286487890876,
+        "initial": 0.3691259419853142,
+        "boundary": 1.0555454092255983
+      },
+      "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/burgers_pilot_quick/m6/seed_00033"
+    }
+  ],
+  "methods": {
+    "m0": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.6188029838491315,
+      "median_elapsed_seconds": 1.5425772909998159,
+      "median_controller_weight_tv": 0.0,
+      "median_controller_weight_tv_per_update": 0.0,
+      "median_gradient_distribution_tv": 0.03289782332451996,
+      "median_residual_evaluations": 28032.0
+    },
+    "m1": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.6850242267130773,
+      "median_elapsed_seconds": 1.5549338119999447,
+      "median_controller_weight_tv": 1.251040868700163,
+      "median_controller_weight_tv_per_update": 0.09623391297693562,
+      "median_gradient_distribution_tv": 0.029648883103826254,
+      "median_residual_evaluations": 30528.0
+    },
+    "m3": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.6493870935880994,
+      "median_elapsed_seconds": 1.6526339779998125,
+      "median_controller_weight_tv": 0.0,
+      "median_controller_weight_tv_per_update": 0.0,
+      "median_gradient_distribution_tv": 0.11913020245400754,
+      "median_residual_evaluations": 37248.0
+    },
+    "m5": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.7393877714149296,
+      "median_elapsed_seconds": 1.6681508859996939,
+      "median_controller_weight_tv": 1.1988593247997958,
+      "median_controller_weight_tv_per_update": 0.09221994806152276,
+      "median_gradient_distribution_tv": 0.05371223559308047,
+      "median_residual_evaluations": 39744.0
+    },
+    "m6": {
+      "n_success": 3,
+      "n_total": 3,
+      "median_relative_l2": 0.725692571563,
+      "median_elapsed_seconds": 1.6525453059998654,
+      "median_controller_weight_tv": 1.237909160902403,
+      "median_controller_weight_tv_per_update": 0.09522378160787716,
+      "median_gradient_distribution_tv": 0.07051999719485433,
+      "median_residual_evaluations": 39744.0
+    }
+  },
+  "paired_analysis": {
+    "m6_minus_m5": {
+      "paired_seeds": [
+        11,
+        22,
+        33
+      ],
+      "median_relative_l2_difference": 0.012235713830282435,
+      "relative_l2_difference_ci95": [
+        -0.013695199851929574,
+        0.017860986832256565
+      ],
+      "m6_error_win_fraction": 0.3333333333333333,
+      "median_weight_tv_per_update_difference": 0.0035115690062654525,
+      "weight_tv_difference_ci95": [
+        -0.004073629158586695,
+        0.013440984845989642
+      ],
+      "m6_stability_win_fraction": 0.3333333333333333
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "status": "succeeded",
+  "failure_reason": null,
+  "method": "m7",
+  "problem": "burgers",
+  "controller_source": "measure_corrected_adaptive_training_sets",
+  "seed": 33,
+  "steps_requested": 120,
+  "elapsed_seconds": 2.690871103000063,
+  "controller_weight_tv": 2.0585075870362255,
+  "controller_updates": 13,
+  "controller_weight_tv_per_update": 0.15834673746432504,
+  "mean_controller_weight_jump": 0.15834673746432504,
+  "bias_concentration_correlation": 0.1590340127325127,
+  "temporal_mean_gradient_distribution_tv": 0.01706388098822446,
+  "temporal_mean_loss_distribution_tv": 0.005234263053680523,
+  "temporal_mean_physics_gradient_log_gap": 0.0609634430260292,
+  "gradient_distribution_tv": 0.032928353313118726,
+  "loss_distribution_tv": 0.012842112525927561,
+  "physics_gradient_log_gap": 0.01445939933392916,
+  "sampler_statistics": {
+    "effective_sample_fraction": 0.7024272088796084,
+    "entropy_fraction": 0.9701078380013783,
+    "max_probability": 0.0032137199321170787
+  },
+  "importance_statistics": {
+    "effective_sample_fraction": 0.6151119344337004,
+    "mean": 1.0531429181398746,
+    "minimum": 0.36666655015571653,
+    "maximum": 4.920047228531931
+  },
+  "importance_effective_sample_fraction": 0.6151119344337004,
+  "importance_weight_mean": 1.0531429181398746,
+  "importance_weight_max": 4.920047228531931,
+  "measure_correction": {
+    "enabled": true,
+    "exact_proposal_correction": true,
+    "kde_volume_weighting": false,
+    "matched_uncorrected_control": false,
+    "estimator": "hansen_hurwitz_finite_candidate",
+    "sampling_with_replacement": true,
+    "kde_bandwidth": null,
+    "kde_bandwidth_scale": 1.0
+  },
+  "budget": {
+    "optimization": 23040,
+    "controller": 2496,
+    "sampler": 9216,
+    "diagnostic": 4992,
+    "total_residual_evaluations": 39744,
+    "training_collocation_cardinality": 192,
+    "audit_collocation_cardinality": 192,
+    "controller_collocation_cardinality": 192,
+    "equal_controller_cardinality": true
+  },
+  "residual_evaluations": 39744,
+  "parameter_count": 2241,
+  "observations": {
+    "n_observations": 0,
+    "fraction": 1.0,
+    "noise_kind": "none",
+    "noise_level": 0.0,
+    "outlier_fraction": 0.0,
+    "outlier_scale": 5.0,
+    "loss": "mse",
+    "missing_pattern": "none",
+    "missing_fraction": 0.0,
+    "effective_count": 0
+  },
+  "ablation": {
+    "audit_size_multiplier": 1.0,
+    "audit_design": "random",
+    "audit_rotation_every": 0,
+    "disable_smoothing": false,
+    "disable_bounds": false,
+    "disable_uniform_floor": false
+  },
+  "peak_gpu_memory_bytes": null,
+  "relative_l2": 0.6923398167604503,
+  "max_abs_error": 1.0123289808452662,
+  "final_weights": {
+    "physics": 1.6246088059179864,
+    "initial": 0.36902970743282193,
+    "boundary": 1.0063614866491921
+  },
+  "run_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/article1_vw_pilot/burgers_quick/m7/seed_00033"
+}

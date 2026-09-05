@@ -1,0 +1,9 @@
+experiment,steps,seeds,m5_median_l2,m6_median_l2,median_delta_l2,ci95_l2_low,ci95_l2_high,m6_error_wins,median_delta_weight_tv,ci95_tv_low,ci95_tv_high,m6_stability_wins,decision
+burgers_confirmatory_long,2500,10,0.500681,0.470633,-0.029085,-0.120790,0.167827,0.6,-0.001088,-0.003736,0.001604,0.6,inconclusive
+allen_cahn_screen,600,10,0.096300,0.098015,0.001950,-0.002211,0.003025,0.3,-0.000210,-0.001304,0.003046,0.6,inconclusive
+helmholtz_screen,600,10,1.152065,1.141832,-0.005808,-0.028444,0.014413,0.7,0.000000094,-0.000000007,0.000000169,0.3,undertrained_inconclusive
+wave_screen,600,10,0.308849,0.309323,-0.001491,-0.005896,0.002264,0.6,-0.004069,-0.005390,-0.001309,0.8,stability_signal_only
+burgers_sparse_clean,600,10,0.573644,0.562878,-0.005438,-0.010557,0.017268,0.6,0.001534,-0.002154,0.003964,0.4,inconclusive
+burgers_sparse_noisy,600,10,0.590423,0.587113,-0.004401,-0.020789,0.007777,0.5,0.001721,-0.002676,0.002316,0.3,inconclusive
+burgers_extreme_one_sensor,600,10,0.599693,0.597275,0.002301,-0.013992,0.014881,0.4,-0.001426,-0.003804,0.003917,0.6,inconclusive
+burgers_block_missing,600,10,0.557081,0.554156,-0.001838,-0.005842,0.004378,0.6,0.000288,-0.003173,0.003051,0.5,inconclusive

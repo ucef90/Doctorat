@@ -1,0 +1,27 @@
+{
+  "campaign": "article1_m7_cost_profile_cpu",
+  "report_dir": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu",
+  "n_experiments": 1,
+  "expected_runs": 20,
+  "successful_runs": 20,
+  "files": {
+    "report": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/REPORT.md",
+    "runs_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/data/runs.csv",
+    "method_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/tables/method_summary.csv",
+    "paired_summary_csv": "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/tables/paired_summary.csv",
+    "figures": [
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/relative_l2_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/relative_l2_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/stability_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/stability_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/training_time_boxplot.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/training_time_boxplot.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/paired_relative_l2_forest.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/paired_relative_l2_forest.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/cost_accuracy.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/cost_accuracy.pdf",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/convergence_burgers_sparse_noisy_cost.png",
+      "/workspace/scratch/a5f0879dfaa7/recoa-pinn/outputs/reports/article1_m7_cost_profile_cpu/figures/convergence_burgers_sparse_noisy_cost.pdf"
+    ]
+  }
+}

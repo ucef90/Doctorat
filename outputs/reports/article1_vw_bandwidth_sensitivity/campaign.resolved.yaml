@@ -1,0 +1,59 @@
+campaign:
+  name: article1_vw_bandwidth_sensitivity
+  report_dir: outputs/reports/article1_vw_bandwidth_sensitivity
+  methods:
+  - vw
+  - vwca
+  seeds:
+  - 11
+  - 22
+  - 33
+  - 44
+  - 55
+  - 66
+  - 77
+  - 88
+  - 99
+  - 111
+  contrasts:
+  - - vw
+    - vwca
+  bootstrap_repeats: 10000
+  confidence: 0.95
+  experiments:
+  - id: sparse_noisy_h05
+    label: Burgers bruité — KDE 0,5×Scott
+    config: burgers_data_sparse_noisy.yaml
+    experiment_name: vw_bandwidth_sparse_noisy_h05_v1
+    overrides:
+      adaptation.vw_bandwidth_scale: 0.5
+  - id: sparse_noisy_h10
+    label: Burgers bruité — KDE 1×Scott
+    config: burgers_data_sparse_noisy.yaml
+    experiment_name: vw_bandwidth_sparse_noisy_h10_v1
+    overrides:
+      adaptation.vw_bandwidth_scale: 1.0
+  - id: sparse_noisy_h20
+    label: Burgers bruité — KDE 2×Scott
+    config: burgers_data_sparse_noisy.yaml
+    experiment_name: vw_bandwidth_sparse_noisy_h20_v1
+    overrides:
+      adaptation.vw_bandwidth_scale: 2.0
+  - id: wave_h05
+    label: Ondes — KDE 0,5×Scott
+    config: wave_screen.yaml
+    experiment_name: vw_bandwidth_wave_h05_v1
+    overrides:
+      adaptation.vw_bandwidth_scale: 0.5
+  - id: wave_h10
+    label: Ondes — KDE 1×Scott
+    config: wave_screen.yaml
+    experiment_name: vw_bandwidth_wave_h10_v1
+    overrides:
+      adaptation.vw_bandwidth_scale: 1.0
+  - id: wave_h20
+    label: Ondes — KDE 2×Scott
+    config: wave_screen.yaml
+    experiment_name: vw_bandwidth_wave_h20_v1
+    overrides:
+      adaptation.vw_bandwidth_scale: 2.0
