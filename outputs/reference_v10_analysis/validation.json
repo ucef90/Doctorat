@@ -1,0 +1,38 @@
+{
+  "quadrature_64_128_max": 1.8079127084291713e-10,
+  "quadrature_128_256_max": 9.109571353398856e-15,
+  "adaptive_quad_max_discrepancy_20_points": 4.440892098500626e-16,
+  "finite_volume": [
+    {
+      "nx": 257,
+      "dt": 0.0001,
+      "relative_l2": 0.03409644238741617,
+      "max_abs_error": 0.28578064271778836,
+      "q95_abs_error": 0.013303751148547649,
+      "q99_abs_error": 0.09994599300849139
+    },
+    {
+      "nx": 513,
+      "dt": 5e-05,
+      "relative_l2": 0.016195379182402585,
+      "max_abs_error": 0.15375908843427566,
+      "q95_abs_error": 0.006391844760363363,
+      "q99_abs_error": 0.035148717507086924
+    },
+    {
+      "nx": 1025,
+      "dt": 2.5e-05,
+      "relative_l2": 0.007331556162899319,
+      "max_abs_error": 0.06968927104162803,
+      "q95_abs_error": 0.003188488820505486,
+      "q99_abs_error": 0.014851770096472783
+    }
+  ],
+  "evaluated_models": 50,
+  "evaluation_grid": [
+    161,
+    321
+  ],
+  "interpretation": "Quadrature convergence and cross-rule checks; no certified continuum error bound",
+  "inference": "Exploratory reanalysis; Holm family of four contrasts separately for each metric"
+}

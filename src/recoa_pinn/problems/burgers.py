@@ -21,12 +21,20 @@ class BurgersProblem:
         self.t_min = float(config["t_min"])
         self.t_max = float(config["t_max"])
         self.viscosity = float(config["viscosity"])
+        self.reference_method = config.get("reference_method", "rusanov")
+        if self.reference_method not in {"rusanov", "cole_hopf"}:
+            raise ValueError("Unknown Burgers reference method")
+        if self.reference_method == "cole_hopf" and (
+            self.x_min != -1 or self.x_max != 1 or self.t_min != 0
+        ):
+            raise ValueError("Cole-Hopf reference requires x in [-1,1] and t_min=0")
         self.device = device
         self.dtype = dtype
         self.domain_lower = (self.t_min, self.x_min)
         self.domain_upper = (self.t_max, self.x_max)
         self.observation_config: dict = {}
         self._reference_cache: tuple[np.ndarray, np.ndarray, np.ndarray] | None = None
+        self._reference_cache_key: tuple[int, float] | None = None
 
     def sample_collocation(self, n: int, generator: torch.Generator) -> torch.Tensor:
         raw = torch.rand((n, 2), generator=generator, device=self.device, dtype=self.dtype)
@@ -152,8 +160,14 @@ class BurgersProblem:
         return times, x, history
 
     def reference_at(self, points: torch.Tensor, nx: int, dt: float) -> torch.Tensor:
-        if self._reference_cache is None or self._reference_cache[1].size != nx:
+        if self.reference_method == "cole_hopf":
+            from ..burgers_reference import cole_hopf
+            values = cole_hopf(points.detach().cpu().numpy(), self.viscosity, order=128)
+            return torch.as_tensor(values, device=self.device, dtype=self.dtype)
+        cache_key = (int(nx), float(dt))
+        if self._reference_cache is None or self._reference_cache_key != cache_key:
             self._reference_cache = self._solve_reference(nx, dt)
+            self._reference_cache_key = cache_key
         times, x_grid, values = self._reference_cache
         query = points.detach().cpu().numpy()
         t_idx = np.clip(np.searchsorted(times, query[:, 0], side="right") - 1, 0, len(times) - 2)
