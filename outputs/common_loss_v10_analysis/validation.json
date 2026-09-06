@@ -1,0 +1,11 @@
+{
+  "expected_new": 160,
+  "expected_reused": 40,
+  "evaluated_new": 160,
+  "evaluated_reused": 40,
+  "failed": 0,
+  "paired_blocks": 40,
+  "all_initial_hashes_match": true,
+  "stored_scores_verified": true,
+  "analysis_sha256": "881b3deee760429773b70c94e30e2f527a5eb41cfe68a90362988debecdef2ca"
+}

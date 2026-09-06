@@ -1,0 +1,432 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{french}
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Latin Modern Roman}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{float}
+\usepackage{fvextra}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\AtBeginEnvironment{CSLReferences}{\small\setstretch{1.0}\interlinepenalty=10000}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\small Article 1 / V11 / Author-review copy \quad \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{4pt}
+\floatplacement{figure}{H}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Article 1 - dossier de validation et de soumission},
+  pdfauthor={Youssef EL MOUTEE - document de travail},
+  pdflang={fr-FR},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Article 1 - dossier de validation et de soumission}
+\author{Youssef EL MOUTEE - document de travail}
+\date{6 septembre 2026 - V11}
+
+\begin{document}
+\maketitle
+
+\setstretch{1.12}
+\hypertarget{sujet-et-plan-conservuxe9s}{%
+\section{Sujet et plan conservés}\label{sujet-et-plan-conservuxe9s}}
+
+Le sujet de thèse et le plan des articles restent ceux déjà engagés.
+L'Article 1 conserve son titre original : \textbf{Reference-Set
+Decoupled Co-Adaptive Training for Physics-Informed Neural Networks}.
+Les corrections portent sur la précision des affirmations, la
+bibliographie et la présentation du dossier.
+
+\hypertarget{de-quelle-soumission-parle-t-on}{%
+\section{De quelle soumission parle-t-on
+?}\label{de-quelle-soumission-parle-t-on}}
+
+Il s'agit de proposer \textbf{un article scientifique} à une revue. Cela
+se distingue de l'inscription au doctorat, du dépôt de la thèse et de la
+soutenance. Le dépôt sur GitHub conserve le travail ; il ne soumet pas
+l'article à une revue.
+
+L'auteur correspondant, désigné par l'équipe d'auteurs, ouvre le dossier
+sur la plateforme de la revue, renseigne les auteurs et joint manuscrit,
+figures, annexes et déclarations. Youssef peut tenir ce rôle s'il est
+désigné ; l'encadrant peut aussi le tenir. La qualité d'encadrant ne
+suffit pas, à elle seule, à fixer la liste ou l'ordre des auteurs.
+
+Aucune date n'a été fixée. Le rappel prévu le 7 septembre est un point
+d'avancement, pas une échéance de dépôt. La soumission pourra avoir lieu
+après validation scientifique, informations d'auteurs complètes et
+approbation finale. Aucune revue n'a reçu ce manuscrit dans ce travail.
+
+Après le dépôt, la rédaction peut rejeter l'article d'emblée ou le
+transmettre à des évaluateurs. Ceux-ci peuvent demander des révisions.
+L'auteur correspondant transmet ensuite une version révisée et une
+réponse point par point. L'acceptation éventuelle précède les épreuves
+et la publication. Les délais dépendent de la revue et des révisions ;
+aucune durée n'est promise.
+
+\hypertarget{revue-retenue-pour-pruxe9parer-le-dossier}{%
+\section{Revue retenue pour préparer le
+dossier}\label{revue-retenue-pour-pruxe9parer-le-dossier}}
+
+\textbf{Cible de travail : Journal of Computational Science, Elsevier,
+ISSN 1877-7503.} Mon appréciation est que l'étude comparative, ses
+contrôles numériques et sa reproductibilité correspondent au périmètre
+de recherche par simulation affiché par la revue. Cette adéquation ne
+préjuge pas de l'acceptation.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Critère
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Décision de préparation
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Type de travail & Article de recherche numérique ; évaluation de
+ReCoA-PINN et de mécanismes concurrents \\
+Format & Source LaTeX modifiable et PDF de lecture ; tableaux et figures
+numérotés \\
+Évaluation & Le guide officiel indexé indique une évaluation en simple
+anonymat \\
+Highlights & Cinq points, chacun inférieur ou égal à 85 caractères \\
+Accès & Voie par abonnement envisagée : le site indique l'absence de
+frais de publication pour les auteurs sur cette voie \\
+Accès ouvert & Option distincte ; aucun coût ni engagement n'est accepté
+dans cette préparation \\
+Décision finale & À valider avec l'encadrant et les auteurs avant
+dépôt \\
+\end{longtable}
+
+Alternative : \textbf{Journal of Computational Physics} si les auteurs
+jugent la contribution méthodologique suffisamment forte. La revue cible
+reste unique lors d'une soumission ; aucun dépôt simultané n'est
+préparé.
+
+Sources consultées le 6 septembre 2026 :
+\href{https://www.sciencedirect.com/journal/journal-of-computational-science}{périmètre
+de Journal of Computational Science},
+\href{https://www.sciencedirect.com/journal/journal-of-computational-science/publish/guide-for-authors}{guide
+des auteurs},
+\href{https://www.sciencedirect.com/journal/journal-of-computational-science/about/insights}{options
+de publication}. Le guide complet a refusé l'ouverture directe ; les
+exigences ci-dessus proviennent des extraits officiels indexés.
+L'ensemble des champs de la plateforme devra être revérifié au moment du
+dépôt. Le résumé est volontairement limité à moins de 250 mots comme
+choix de préparation, sans présenter ce seuil comme vérifié pour cette
+revue.
+
+\hypertarget{auteurs-et-duxe9clarations-uxe0-confirmer}{%
+\section{Auteurs et déclarations à
+confirmer}\label{auteurs-et-duxe9clarations-uxe0-confirmer}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Élément
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Information disponible / validation requise
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Auteur identifié dans le projet & Youssef EL MOUTEE \\
+Encadrant identifié par Youssef & Professeur Adil Echchelh \\
+Coauteurs et ordre & Non confirmés ; ne pas ajouter automatiquement
+l'encadrant \\
+Affiliation de Youssef & À confirmer ; aucune affiliation universitaire
+déduite \\
+Auteur correspondant et adresse & À désigner et à confirmer \\
+ORCID & À renseigner si disponible ; aucun identifiant inventé \\
+Contributions CRediT & À attribuer selon les contributions effectivement
+réalisées \\
+Financement & À confirmer ; « aucun financement » n'est pas présumé \\
+Conflits d'intérêts & Déclaration de chaque auteur à recueillir \\
+Validation du contenu et du dépôt & Accord explicite de tous les auteurs
+à obtenir \\
+\end{longtable}
+
+Le manuscrit de lecture identifie Youssef comme auteur de travail et
+signale les métadonnées non finalisées. Il ne contient ni signature, ni
+accord attribué à un coauteur.
+
+\hypertarget{ruxe9sultat-de-la-vuxe9rification-sur-une-autre-machine}{%
+\section{Résultat de la vérification sur une autre
+machine}\label{ruxe9sultat-de-la-vuxe9rification-sur-une-autre-machine}}
+
+L'exécution du 6 septembre 2026 sur un serveur Ubuntu GitHub indépendant
+a restauré les trois campagnes et passé \textbf{55 tests automatisés}.
+Les \textbf{560 scores} et les \textbf{96 contrastes statistiques} sont
+reproduits aux tolérances fixées avant l'exécution. Les \textbf{12
+réentraînements} sont terminés ; leurs erreurs L2 et maximales
+respectent toutes les tolérances numériques prévues. L'écart absolu le
+plus élevé vaut \(9{,}53\times10^{-9}\) en L2 et \(1{,}40\times10^{-8}\)
+en erreur maximale.
+
+Le contrôle strict comprenant l'identité binaire des données initiales
+reste à \textbf{8 réussites sur 12}. Les modèles initiaux sont
+identiques dans les douze cas ; les empreintes des jeux d'entraînement
+et de référence diffèrent pour les quatre essais bruités.
+L'environnement original utilisait PyTorch 2.14.0+cpu ; l'environnement
+public utilise 2.8.0+cpu. Les tableaux de données initiaux originaux
+n'ayant pas été archivés, les octets différents ne peuvent pas être
+localisés rétrospectivement. Un effet numérique de version ou
+d'environnement est plausible, sans preuve permettant de l'attribuer à
+une opération précise.
+
+La conclusion retenue est donc une \textbf{reproduction numérique
+réussie, avec une limite documentée sur l'identité exacte des entrées}.
+Le fichier d'échec initial et les seuils restent inchangés. On ne
+remplace pas le résultat par un succès artificiel. Si une identité bit à
+bit est exigée, il faudra une campagne prospective archivant directement
+les tenseurs initiaux dans un environnement figé ; ce résultat n'est pas
+revendiqué dans le manuscrit.
+
+Preuves :
+\href{https://github.com/ucef90/Doctorat/actions/runs/34021530276}{exécution
+indépendante}, résumés et CSV conservés dans
+\texttt{submission/v11/reproduction/}.
+
+\hypertarget{contribution-proposuxe9e-uxe0-la-validation-scientifique}{%
+\section{Contribution proposée à la validation
+scientifique}\label{contribution-proposuxe9e-uxe0-la-validation-scientifique}}
+
+La question de recherche reste celle du projet : l'utilisation d'un
+ensemble de référence fixe pour contrôler l'apprentissage coadaptatif
+des PINNs. Les expériences permettent une étude comparative contrôlée,
+mais ne démontrent ni une supériorité générale de M6, ni un gain de
+temps. Le titre original est conservé, avec un résumé qui annonce ces
+limites.
+
+La relecture interne a précisé l'identité d'importance M7, la dépendance
+des trajectoires adaptatives, le rôle du jeu de référence, l'écrêtage
+suivi de renormalisation, les équations manufacturées et les familles
+statistiques. La bibliographie a été actualisée à partir des
+publications ou prépublications primaires, avec douze références dans le
+manuscrit. La nouveauté suffisante pour publication et l'interprétation
+finale doivent encore être examinées par l'encadrant et un lecteur
+scientifique humain.
+
+\hypertarget{avancement-des-cinq-demandes}{%
+\section{Avancement des cinq
+demandes}\label{avancement-des-cinq-demandes}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Demande
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Travail réalisé
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Validation encore attendue
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Contribution scientifique & Audit technique, positionnement et cinq
+questions de validation préparés & Avis de l'encadrant sur la
+contribution et la nouveauté \\
+Autre machine & 560 modèles recalculés, 96 contrastes reconstruits, 12
+réentraînements terminés & Accepter la limite d'identité des entrées ou
+demander une étude prospective plus stricte \\
+Relecture et bibliographie & Relecture interne, corrections et
+références actualisées & Relecture scientifique humaine indépendante \\
+Revue et auteurs & Journal of Computational Science retenu comme cible
+de préparation ; formulaire auteurs complet & Accord sur la revue, noms,
+ordre, affiliations, contact et déclarations \\
+Dossier éditorial & Manuscrit, figures, annexes, sources LaTeX,
+highlights et lettre préparés & Guide complet au dépôt, intégration des
+retours et accord final des auteurs \\
+\end{longtable}
+
+\hypertarget{documents-pruxeats-pour-la-relecture}{%
+\section{Documents prêts pour la
+relecture}\label{documents-pruxeats-pour-la-relecture}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ARTICLE1\_MANUSCRIPT\_V11.pdf} : manuscrit anglais révisé,
+  titre original conservé.
+\item
+  \texttt{ARTICLE1\_SUPPLEMENT\_V11.pdf} : détails de protocole et
+  ensemble des 96 contrastes V10, y compris résultats non significatifs.
+\item
+  \texttt{SCIENTIFIC\_AUDIT.md} : corrections et points à examiner par
+  l'encadrant.
+\item
+  \texttt{LITERATURE\_UPDATE.md} et \texttt{references.json} :
+  actualisation et bibliographie modifiable.
+\item
+  \texttt{HIGHLIGHTS.txt} et \texttt{COVER\_LETTER\_DRAFT.md} :
+  documents éditoriaux préparés.
+\item
+  \texttt{reproduce\_article1\_v11.py} et workflow GitHub : reproduction
+  et sous-ensemble de 12 entraînements fixés avant exécution.
+\end{itemize}
+
+\hypertarget{grille-de-validation-pour-lencadrant}{%
+\section{Grille de validation pour
+l'encadrant}\label{grille-de-validation-pour-lencadrant}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Le titre et la question scientifique reflètent-ils correctement le
+  projet doctoral maintenu ?
+\item
+  Les limites de M6 et de l'identité de correction M7 sont-elles
+  correctement interprétées ?
+\item
+  La distinction entre résultats historiques et V09-V10 exploratoires
+  est-elle suffisante ?
+\item
+  La contribution est-elle assez forte pour la revue retenue ? Une
+  reproduction fidèle d'un concurrent ou une autre baseline de placement
+  est-elle nécessaire pour les revendications maintenues ?
+\item
+  Les auteurs acceptent-ils le choix de la revue, leur contribution,
+  leur affiliation et les déclarations ?
+\end{enumerate}
+
+Une réponse écrite à ces points permettra d'intégrer les corrections
+avant la validation finale du manuscrit.
+
+\hypertarget{lettre-de-soumission-pruxe9paruxe9e---uxe0-valider}{%
+\section{Lettre de soumission préparée - à
+valider}\label{lettre-de-soumission-pruxe9paruxe9e---uxe0-valider}}
+
+Le brouillon ci-dessous n'est pas envoyé. Son ouverture au futur reflète
+l'absence actuelle d'approbation finale. Après validation des auteurs,
+l'auteur correspondant pourra adapter l'ouverture au dépôt effectif et
+ajouter les déclarations confirmées.
+
+Dear Editors of the Journal of Computational Science,
+
+We intend to submit the research manuscript entitled ``Reference-Set
+Decoupled Co-Adaptive Training for Physics-Informed Neural Networks''
+for consideration as a research article, subject to final author
+approval.
+
+The study examines whether evaluating a global loss controller on a
+fixed reference set improves co-adaptive PINN training. It compares this
+mechanism with coupled control, proposal correction, kernel-density
+volume weighting and variational residual attention on a common
+computational backbone. The results do not establish universal
+superiority of the fixed-reference method. Instead, the manuscript
+reports configuration-dependent benefits and limitations, supported by
+paired experiments, reference-solution validation and an explicit audit
+of observation-loss comparability.
+
+The experimental package includes 200 V09 ablations and 560 additional
+V10 training runs. Frozen checkpoints, configurations, evaluation tables
+and analysis scripts accompany the study. The manuscript distinguishes
+exploratory findings, reused comparisons and computational timing
+limitations. Its emphasis on controlled numerical evidence and
+reproducible simulation motivates our selection of the Journal of
+Computational Science.
+
+Before submission, the corresponding author will confirm the final
+author list and affiliations, originality and exclusive consideration,
+funding and competing-interest declarations, and approval of the final
+manuscript by all authors.
+
+Sincerely,
+
+Youssef EL MOUTEE
+
+Corresponding-author designation, affiliation and contact details:
+pending confirmation.
+
+\end{document}

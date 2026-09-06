@@ -1,0 +1,661 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{american}
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Latin Modern Roman}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{float}
+\usepackage{fvextra}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\AtBeginEnvironment{CSLReferences}{\small\setstretch{1.0}\interlinepenalty=10000}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\small Article 1 / V11 / Author-review copy \quad \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{4pt}
+\floatplacement{figure}{H}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Supplement - Reference-Set Decoupled Co-Adaptive Training for Physics-Informed Neural Networks},
+  pdfauthor={Youssef EL MOUTEE},
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Supplement - Reference-Set Decoupled Co-Adaptive Training for
+Physics-Informed Neural Networks}
+\author{Youssef EL MOUTEE}
+\date{V11 - 6 September 2026}
+
+\begin{document}
+\maketitle
+
+\setstretch{1.12}
+\hypertarget{scope-and-evidence}{%
+\section{Scope and evidence}\label{scope-and-evidence}}
+
+The supplement preserves the complete V10 paired-contrast families. It
+introduces no new method-ranking evidence. Original V10 data are frozen
+at commit \texttt{4161ed57f232ea7b796480b38201502b3cabbf67}.
+
+\hypertarget{observation-regimes}{%
+\section{Observation regimes}\label{observation-regimes}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sensors
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Noise
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Noise level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Outlier fraction
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Missing pattern
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+sparse clean & 13 & none & 0.0 & 0.0 & none \\
+sparse noisy & 13 & gaussian & 0.1 & 0.05 & none \\
+extreme & 1 & heteroscedastic & 0.2 & 0.05 & none \\
+block missing & 64 & correlated & 0.05 & 0.0 & time\_block \\
+\end{longtable}
+
+Counts above are checked against stored run summaries. The code defines
+noise scaling and the missing-time-block construction in
+\texttt{src/recoa\_pinn/problems/base.py}. All V10 comparisons use MSE
+for observations; the historical Huber recipes remain separately
+identified.
+
+\hypertarget{inference-and-notation}{%
+\section{Inference and notation}\label{inference-and-notation}}
+
+Ten paired seeds are used: 11, 22, 33, 44, 55, 66, 77, 88, 99, 111. The
+exact two-sided sign test ignores zero differences. Percentile intervals
+use 10,000 paired bootstrap resamples and seed 9092026. Holm correction
+is applied to 16 contrasts separately for each metric and campaign.
+Intervals are marginal, not simultaneous. A nonsignificant difference
+does not establish equivalence.
+
+Notation: F = full exponential; Q = full quadratic; G = global only; L =
+local only; N = neither; V = vRBA. Interaction = F - G - L + N on the
+additive error scale. L2 is relative solution error; max is the maximum
+absolute error on the declared grid, not a certified continuous-domain
+bound. Negative F-G and V-M contrasts favor F and V, respectively.
+
+\newpage
+
+\hypertarget{difficult-observation-ablations-l2}{%
+\section{Difficult-observation ablations:
+L2}\label{difficult-observation-ablations-l2}}
+
+\begingroup\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contrast
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median difference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Marginal 95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sign p
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Holm p
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+extreme & F-L & 0.00177 & {[}-0.00424, 0.00659{]} & 0.75391 & 1.00000 \\
+extreme & F-G & -0.06077 & {[}-0.08657, -0.02842{]} & 0.02148 &
+0.32227 \\
+extreme & F-Q & -0.00411 & {[}-0.01567, 0.01379{]} & 0.75391 &
+1.00000 \\
+extreme & F-G-L+N & 0.00082 & {[}-0.00372, 0.00242{]} & 1.00000 &
+1.00000 \\
+sparse noisy & F-L & 0.00354 & {[}-0.00138, 0.00505{]} & 0.10938 &
+1.00000 \\
+sparse noisy & F-G & -0.08674 & {[}-0.14774, -0.00986{]} & 0.10938 &
+1.00000 \\
+sparse noisy & F-Q & -0.01086 & {[}-0.02904, 0.00601{]} & 0.34375 &
+1.00000 \\
+sparse noisy & F-G-L+N & 0.00305 & {[}-0.00081, 0.00723{]} & 0.34375 &
+1.00000 \\
+sparse clean & F-L & -0.00007 & {[}-0.00625, 0.00318{]} & 1.00000 &
+1.00000 \\
+sparse clean & F-G & -0.09553 & {[}-0.18198, -0.01658{]} & 0.02148 &
+0.32227 \\
+sparse clean & F-Q & -0.01835 & {[}-0.15562, 0.00926{]} & 0.34375 &
+1.00000 \\
+sparse clean & F-G-L+N & -0.00044 & {[}-0.00503, 0.00391{]} & 0.75391 &
+1.00000 \\
+block missing & F-L & -0.00496 & {[}-0.00795, 0.00149{]} & 0.34375 &
+1.00000 \\
+block missing & F-G & -0.06999 & {[}-0.09386, -0.03466{]} & 0.00195 &
+0.03125 \\
+block missing & F-Q & 0.00128 & {[}-0.00782, 0.01082{]} & 0.75391 &
+1.00000 \\
+block missing & F-G-L+N & -0.00186 & {[}-0.00506, 0.00248{]} & 0.34375 &
+1.00000 \\
+\end{longtable}
+
+\endgroup
+
+All 16 planned contrasts are retained. The corresponding CSV contains
+full numerical precision, sign counts, sample size and mean differences.
+\newpage
+
+\hypertarget{difficult-observation-ablations-maximum-error}{%
+\section{Difficult-observation ablations: maximum
+error}\label{difficult-observation-ablations-maximum-error}}
+
+\begingroup\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contrast
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median difference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Marginal 95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sign p
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Holm p
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+extreme & F-L & -0.00454 & {[}-0.01929, 0.00157{]} & 0.34375 &
+1.00000 \\
+extreme & F-G & 0.00263 & {[}-0.10959, 0.17301{]} & 0.75391 & 1.00000 \\
+extreme & F-Q & -0.06696 & {[}-0.12910, -0.00587{]} & 0.00195 &
+0.03125 \\
+extreme & F-G-L+N & -0.00083 & {[}-0.01066, 0.00812{]} & 1.00000 &
+1.00000 \\
+sparse noisy & F-L & 0.00978 & {[}0.00026, 0.02206{]} & 0.10938 &
+1.00000 \\
+sparse noisy & F-G & 0.16010 & {[}-0.02661, 0.30880{]} & 0.10938 &
+1.00000 \\
+sparse noisy & F-Q & -0.07692 & {[}-0.11896, 0.06072{]} & 0.34375 &
+1.00000 \\
+sparse noisy & F-G-L+N & 0.00251 & {[}-0.00598, 0.01383{]} & 0.34375 &
+1.00000 \\
+sparse clean & F-L & 0.00568 & {[}-0.00648, 0.03043{]} & 0.75391 &
+1.00000 \\
+sparse clean & F-G & 0.15141 & {[}-0.25719, 0.36344{]} & 0.75391 &
+1.00000 \\
+sparse clean & F-Q & -0.08965 & {[}-0.55148, -0.02004{]} & 0.02148 &
+0.32227 \\
+sparse clean & F-G-L+N & 0.00115 & {[}-0.01364, 0.02103{]} & 0.75391 &
+1.00000 \\
+block missing & F-L & 0.00468 & {[}-0.00191, 0.01363{]} & 0.10938 &
+1.00000 \\
+block missing & F-G & 0.05695 & {[}-0.06434, 0.11975{]} & 0.75391 &
+1.00000 \\
+block missing & F-Q & -0.06488 & {[}-0.17483, 0.05398{]} & 0.75391 &
+1.00000 \\
+block missing & F-G-L+N & 0.00533 & {[}-0.00413, 0.01167{]} & 0.10938 &
+1.00000 \\
+\end{longtable}
+
+\endgroup
+
+All 16 planned contrasts are retained. The corresponding CSV contains
+full numerical precision, sign counts, sample size and mean differences.
+\newpage
+
+\hypertarget{doubled-step-ablations-l2}{%
+\section{Doubled-step ablations: L2}\label{doubled-step-ablations-l2}}
+
+\begingroup\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contrast
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median difference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Marginal 95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sign p
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Holm p
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+helmholtz & F-L & -0.02571 & {[}-0.04356, 0.00804{]} & 0.10938 &
+1.00000 \\
+helmholtz & F-G & -0.01177 & {[}-0.03579, 0.02646{]} & 0.34375 &
+1.00000 \\
+helmholtz & F-Q & -0.01091 & {[}-0.01696, 0.00680{]} & 0.10938 &
+1.00000 \\
+helmholtz & F-G-L+N & 0.03543 & {[}0.01198, 0.07751{]} & 0.10938 &
+1.00000 \\
+allen cahn & F-L & 0.00105 & {[}-0.00404, 0.00642{]} & 0.75391 &
+1.00000 \\
+allen cahn & F-G & 0.00072 & {[}-0.00409, 0.00376{]} & 0.75391 &
+1.00000 \\
+allen cahn & F-Q & 0.00585 & {[}-0.01123, 0.01091{]} & 0.34375 &
+1.00000 \\
+allen cahn & F-G-L+N & 0.00322 & {[}-0.00235, 0.01041{]} & 0.34375 &
+1.00000 \\
+burgers & F-L & 0.01041 & {[}-0.02607, 0.10724{]} & 0.75391 & 1.00000 \\
+burgers & F-G & -0.03001 & {[}-0.14295, 0.17147{]} & 1.00000 &
+1.00000 \\
+burgers & F-Q & 0.01883 & {[}-0.04312, 0.09074{]} & 0.10938 & 1.00000 \\
+burgers & F-G-L+N & 0.07100 & {[}-0.03707, 0.34977{]} & 0.75391 &
+1.00000 \\
+wave & F-L & 0.00158 & {[}0.00057, 0.00336{]} & 0.10938 & 1.00000 \\
+wave & F-G & -0.10001 & {[}-0.14629, -0.08958{]} & 0.00195 & 0.03125 \\
+wave & F-Q & 0.00109 & {[}-0.00036, 0.00280{]} & 0.10938 & 1.00000 \\
+wave & F-G-L+N & -0.01386 & {[}-0.02277, 0.00113{]} & 0.10938 &
+1.00000 \\
+\end{longtable}
+
+\endgroup
+
+All 16 planned contrasts are retained. The corresponding CSV contains
+full numerical precision, sign counts, sample size and mean differences.
+\newpage
+
+\hypertarget{doubled-step-ablations-maximum-error}{%
+\section{Doubled-step ablations: maximum
+error}\label{doubled-step-ablations-maximum-error}}
+
+\begingroup\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contrast
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median difference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Marginal 95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sign p
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Holm p
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+helmholtz & F-L & -0.03847 & {[}-0.05139, -0.02822{]} & 0.02148 &
+0.30078 \\
+helmholtz & F-G & -0.01649 & {[}-0.05188, 0.00328{]} & 0.10938 &
+1.00000 \\
+helmholtz & F-Q & -0.00826 & {[}-0.01515, -0.00038{]} & 0.10938 &
+1.00000 \\
+helmholtz & F-G-L+N & 0.11349 & {[}0.08393, 0.13949{]} & 0.00195 &
+0.03125 \\
+allen cahn & F-L & 0.00047 & {[}-0.00457, 0.00833{]} & 0.75391 &
+1.00000 \\
+allen cahn & F-G & -0.01222 & {[}-0.02147, 0.00237{]} & 0.10938 &
+1.00000 \\
+allen cahn & F-Q & 0.00777 & {[}-0.00100, 0.01426{]} & 0.10938 &
+1.00000 \\
+allen cahn & F-G-L+N & 0.00800 & {[}0.00025, 0.01194{]} & 0.10938 &
+1.00000 \\
+burgers & F-L & 0.01202 & {[}-0.02989, 0.23255{]} & 0.75391 & 1.00000 \\
+burgers & F-G & 0.11224 & {[}-0.07725, 0.35343{]} & 0.75391 & 1.00000 \\
+burgers & F-Q & 0.06338 & {[}-0.00675, 0.24252{]} & 0.34375 & 1.00000 \\
+burgers & F-G-L+N & 0.01725 & {[}-0.15208, 0.32778{]} & 0.75391 &
+1.00000 \\
+wave & F-L & 0.00265 & {[}-0.00032, 0.00652{]} & 0.34375 & 1.00000 \\
+wave & F-G & -0.19593 & {[}-0.30415, -0.14881{]} & 0.00195 & 0.03125 \\
+wave & F-Q & 0.00005 & {[}-0.01243, 0.00539{]} & 1.00000 & 1.00000 \\
+wave & F-G-L+N & -0.03552 & {[}-0.04417, -0.01935{]} & 0.02148 &
+0.30078 \\
+\end{longtable}
+
+\endgroup
+
+All 16 planned contrasts are retained. The corresponding CSV contains
+full numerical precision, sign counts, sample size and mean differences.
+\newpage
+
+\hypertarget{common-loss-baselines-l2}{%
+\section{Common-loss baselines: L2}\label{common-loss-baselines-l2}}
+
+\begingroup\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contrast
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median difference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Marginal 95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sign p
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Holm p
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+block missing & V-M5 & -0.19580 & {[}-0.24059, -0.18515{]} & 0.00195 &
+0.03125 \\
+block missing & V-M6 & -0.19318 & {[}-0.24042, -0.18069{]} & 0.00195 &
+0.03125 \\
+block missing & V-M7 & -0.17172 & {[}-0.20840, -0.12736{]} & 0.00195 &
+0.03125 \\
+block missing & V-VW & -0.13158 & {[}-0.15465, -0.09959{]} & 0.00195 &
+0.03125 \\
+sparse clean & V-M5 & -0.22439 & {[}-0.32713, -0.15273{]} & 0.00195 &
+0.03125 \\
+sparse clean & V-M6 & -0.21344 & {[}-0.32406, -0.15757{]} & 0.00195 &
+0.03125 \\
+sparse clean & V-M7 & -0.17495 & {[}-0.24497, -0.13279{]} & 0.00195 &
+0.03125 \\
+sparse clean & V-VW & -0.13281 & {[}-0.22278, -0.08119{]} & 0.02148 &
+0.10742 \\
+sparse noisy & V-M5 & -0.19789 & {[}-0.30269, -0.17423{]} & 0.00195 &
+0.03125 \\
+sparse noisy & V-M6 & -0.18849 & {[}-0.26506, -0.17001{]} & 0.02148 &
+0.10742 \\
+sparse noisy & V-M7 & -0.15852 & {[}-0.21516, -0.13597{]} & 0.02148 &
+0.10742 \\
+sparse noisy & V-VW & -0.14824 & {[}-0.22659, -0.04931{]} & 0.10938 &
+0.10938 \\
+extreme & V-M5 & -0.13299 & {[}-0.20818, -0.06938{]} & 0.00195 &
+0.03125 \\
+extreme & V-M6 & -0.13806 & {[}-0.20866, -0.11213{]} & 0.00195 &
+0.03125 \\
+extreme & V-M7 & -0.13349 & {[}-0.15551, -0.06411{]} & 0.00195 &
+0.03125 \\
+extreme & V-VW & -0.10754 & {[}-0.13560, -0.08287{]} & 0.02148 &
+0.10742 \\
+\end{longtable}
+
+\endgroup
+
+All 16 planned contrasts are retained. The corresponding CSV contains
+full numerical precision, sign counts, sample size and mean differences.
+\newpage
+
+\hypertarget{common-loss-baselines-maximum-error}{%
+\section{Common-loss baselines: maximum
+error}\label{common-loss-baselines-maximum-error}}
+
+\begingroup\small
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Case
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contrast
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Median difference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Marginal 95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Sign p
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Holm p
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+block missing & V-M5 & 0.01235 & {[}-0.06933, 0.09525{]} & 0.75391 &
+1.00000 \\
+block missing & V-M6 & 0.02269 & {[}-0.06887, 0.10446{]} & 0.75391 &
+1.00000 \\
+block missing & V-M7 & 0.04613 & {[}-0.05002, 0.11892{]} & 0.34375 &
+1.00000 \\
+block missing & V-VW & -0.00873 & {[}-0.04619, 0.09590{]} & 0.75391 &
+1.00000 \\
+sparse clean & V-M5 & 0.11144 & {[}-0.18579, 0.44740{]} & 0.75391 &
+1.00000 \\
+sparse clean & V-M6 & 0.15185 & {[}-0.17668, 0.51708{]} & 0.75391 &
+1.00000 \\
+sparse clean & V-M7 & 0.09863 & {[}-0.17485, 0.46107{]} & 1.00000 &
+1.00000 \\
+sparse clean & V-VW & 0.11941 & {[}-0.09695, 0.54083{]} & 0.34375 &
+1.00000 \\
+sparse noisy & V-M5 & 0.19446 & {[}-0.11534, 0.57683{]} & 0.75391 &
+1.00000 \\
+sparse noisy & V-M6 & 0.23125 & {[}-0.08381, 0.58432{]} & 0.10938 &
+1.00000 \\
+sparse noisy & V-M7 & 0.20019 & {[}-0.06998, 0.45182{]} & 0.75391 &
+1.00000 \\
+sparse noisy & V-VW & 0.21063 & {[}-0.10367, 0.56513{]} & 0.75391 &
+1.00000 \\
+extreme & V-M5 & 0.00121 & {[}-0.06042, 0.35473{]} & 1.00000 &
+1.00000 \\
+extreme & V-M6 & -0.01976 & {[}-0.05792, 0.33513{]} & 0.75391 &
+1.00000 \\
+extreme & V-M7 & 0.00441 & {[}-0.03341, 0.29312{]} & 0.75391 &
+1.00000 \\
+extreme & V-VW & -0.04333 & {[}-0.13082, 0.22889{]} & 0.75391 &
+1.00000 \\
+\end{longtable}
+
+\endgroup
+
+All 16 planned contrasts are retained. The corresponding CSV contains
+full numerical precision, sign counts, sample size and mean differences.
+\newpage
+
+\begingroup\small
+
+\hypertarget{independent-host-reproduction-protocol}{%
+\section{Independent-host reproduction
+protocol}\label{independent-host-reproduction-protocol}}
+
+The protocol reconstructs scores of all 560 archived V10 models and all
+96 paired contrasts, then retrains 12 cases chosen before execution:
+seed 11, global-only and full-exponential for all four doubled-budget
+PDEs; noisy Burgers M5, M6, M7 and full-exponential at the V10
+robustness budget. Selection uses the lowest declared seed, not
+favorable outcomes.
+
+Frozen-score/table tolerance: relative 1e-8, absolute 1e-10. Retraining
+tolerance: relative 1e-3, absolute 1e-5 for L2 and maximum error, with
+exact matching initial tensor fingerprints and completed step counts.
+Discrepancies are retained and thresholds are not relaxed after
+observation.
+
+The original runtime reports Python 3.12.13, PyTorch 2.14.0+cpu and
+NumPy 2.3.5. The portable public environment pins Python 3.12, PyTorch
+2.8.0+cpu and NumPy 2.3.5, with SciPy 1.16.1 and Matplotlib 3.10.5. It
+therefore tests portability across both host and PyTorch version, not
+bitwise replication of an identical software stack.
+
+Execution evidence is included in \texttt{submission/v11/reproduction/}.
+
+The independent Ubuntu execution reproduced all 560 frozen scores and
+all 96 contrast statistics. The 55 automated tests passed. All 12
+retrainings met the original numerical tolerances and completed the
+prescribed steps.
+
+The complete predeclared gate passed for 8/12 cases; overall gate =
+False. Initial model fingerprints match in all 12 cases.
+Training/reference-set fingerprints differ in the four noisy-observation
+cases, so their strict gate remains failed.
+
+The maximum absolute differences in final errors are 9.5275e-9 for L2
+and 1.3997e-8 for maximum error. The original raw initial tensor arrays
+were not archived; hashes alone cannot identify the differing entries or
+establish the cause. A cross-version numerical effect is plausible but
+unproven. The original validation file remains unchanged.
+
+\href{https://github.com/ucef90/Doctorat/actions/runs/34021530276}{Independent
+workflow and preserved failure}. The complete 12-case comparison and
+original/new fingerprints are archived with this submission package.
+
+\hypertarget{observation-model-details}{%
+\section{Observation model details}\label{observation-model-details}}
+
+For clean sensor values y, the scale is the maximum of their population
+standard deviation, mean absolute value and 1e-12. Gaussian corruption
+adds noise level times scale times independent standard-normal draws.
+Correlated corruption first applies z{[}j{]} = 0.8 z{[}j-1{]} + 0.6
+e{[}j{]}, initialized with z{[}0{]} = e{[}0{]}. This correlation follows
+sensor-array order; it is not a prescribed physical time-covariance
+model. Outliers add random signed shifts of 5 times max(noise level,
+0.01) times scale to the configured fraction of entries. The
+missing-block case removes the middle 50 percent of 128 sensors ranked
+by time, retaining 64; the removed interval depends on the seed rather
+than a fixed pair of endpoints.
+
+\hypertarget{limitations-of-the-independent-check}{%
+\section{Limitations of the independent
+check}\label{limitations-of-the-independent-check}}
+
+These 12 retrainings are numerical portability checks, not 12 new
+independent physical cases or a new confirmatory statistical campaign.
+They do not establish portability across all GPUs, compilers and
+accelerators. All scientific conclusions remain tied to the original
+controlled experiments and stated limitations.
+
+\endgroup
+
+\end{document}

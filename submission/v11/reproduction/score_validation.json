@@ -1,0 +1,23 @@
+{
+  "frozen_models": 560,
+  "tables": [
+    {
+      "suite": "robustness",
+      "contrasts": 32,
+      "all_statistics_match": true
+    },
+    {
+      "suite": "budget",
+      "contrasts": 32,
+      "all_statistics_match": true
+    },
+    {
+      "suite": "common_loss",
+      "contrasts": 32,
+      "all_statistics_match": true
+    }
+  ],
+  "passed": true,
+  "score_rtol": 1e-08,
+  "score_atol": 1e-10
+}

@@ -1,0 +1,59 @@
+{
+  "selection": [
+    [
+      "budget",
+      "burgers__global_only__11"
+    ],
+    [
+      "budget",
+      "burgers__full_exp__11"
+    ],
+    [
+      "budget",
+      "allen_cahn__global_only__11"
+    ],
+    [
+      "budget",
+      "allen_cahn__full_exp__11"
+    ],
+    [
+      "budget",
+      "helmholtz__global_only__11"
+    ],
+    [
+      "budget",
+      "helmholtz__full_exp__11"
+    ],
+    [
+      "budget",
+      "wave__global_only__11"
+    ],
+    [
+      "budget",
+      "wave__full_exp__11"
+    ],
+    [
+      "common_loss",
+      "sparse_noisy__m5__11"
+    ],
+    [
+      "common_loss",
+      "sparse_noisy__m6__11"
+    ],
+    [
+      "common_loss",
+      "sparse_noisy__m7__11"
+    ],
+    [
+      "robustness",
+      "sparse_noisy__full_exp__11"
+    ]
+  ],
+  "seed_selection": "lowest declared seed, no score selection",
+  "score_rtol": 1e-08,
+  "score_atol": 1e-10,
+  "training_rtol": 0.001,
+  "training_atol": 1e-05,
+  "same_initial_tensor_hashes_required": true,
+  "interpretation": "portability check, not new inferential evidence"
+}

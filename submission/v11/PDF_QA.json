@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-06",
+  "exports": [
+    {
+      "filename": "ARTICLE1_DOSSIER_VALIDATION_V11.pdf",
+      "pages": 5,
+      "sha256": "84d073f31f26ede7d106c473cea42f36256592fe4e8ea80dd76ed5df3c2aa305",
+      "visual_review": "All pages rendered and visually reviewed after working-copy revision. No layout or missing-font issues found."
+    },
+    {
+      "filename": "ARTICLE1_MANUSCRIPT_V11.pdf",
+      "pages": 16,
+      "sha256": "6096c8cc68ec53fe249ec216d4ef16181f3b08d7e9353656f9a8b0ad30895e4e",
+      "visual_review": "All pages rendered and visually reviewed after working-copy revision. No layout or missing-font issues found."
+    },
+    {
+      "filename": "ARTICLE1_SUPPLEMENT_V11.pdf",
+      "pages": 8,
+      "sha256": "6a040cc3b1e82e101d7e7dc27d023dcd83b285374bc022c38f3df8faf42e81c0",
+      "visual_review": "All pages rendered; layouts inspected, figures and final pages enlarged. No remaining missing-font warning."
+    }
+  ],
+  "manuscript_references": 12,
+  "complete_contrasts_in_supplement": 96
+}
