@@ -2,6 +2,15 @@
 
 6 septembre 2026. Sujet doctoral et plan des articles maintenus. Titre original conservé : **Reference-Set Decoupled Co-Adaptive Training for Physics-Informed Neural Networks**.
 
+## PDF et archive de contrôle
+
+- [Manuscrit de relecture](output/pdf/ARTICLE1_MANUSCRIPT_V11.pdf).
+- [Annexes et statistiques complètes](output/pdf/ARTICLE1_SUPPLEMENT_V11.pdf).
+- [Dossier de validation et lettre](output/pdf/ARTICLE1_DOSSIER_VALIDATION_V11.pdf).
+- [Archive complète du contrôle indépendant](outputs/campaign_archives/v11_independent_reproduction.zip) : 12 modèles, trajectoires, configurations et sorties originales. SHA-256 : `f0ea2da69b46dea7244318efef055a658da6d61a15372689283946c4ad005f17`.
+
+Voir aussi le [mode d’emploi du dépôt en revue](submission/v11/MODE_EMPLOI_DEPOT_FR.md) : pièces à fournir, rôle du mail et étapes du portail.
+
 ## Lire et relire
 
 - `submission/v11/MANUSCRIPT.md` et `ARTICLE1_MANUSCRIPT_V11.tex` : manuscrit révisé, affirmations scientifiques resserrées.

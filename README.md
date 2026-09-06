@@ -1,12 +1,24 @@
 # Doctorat — ReCoA-PINN
 
-État actuel : **V10**, extension scientifique après le push V09.
+État actuel : **V11**, copie de relecture de l'Article 1, sur la branche
+`article1/v11-submission-preparation`.
 
-Lire [START_HERE_V10.md](START_HERE_V10.md), le
-[bilan français](ARTICLE1_STATUS_V10.md) et le
-[manuscrit V10](ARTICLE1_MANUSCRIPT_V10.md). La V10 ajoute une référence Burgers
-indépendante, les ablations sous données difficiles, les budgets doublés et
-les contrôles M5/M6/M7/VW sous perte d'observation commune.
+Lire [START_HERE_V11.md](START_HERE_V11.md), le
+[manuscrit V11 en PDF](output/pdf/ARTICLE1_MANUSCRIPT_V11.pdf), les
+[annexes complètes](output/pdf/ARTICLE1_SUPPLEMENT_V11.pdf) et le
+[dossier français de validation](output/pdf/ARTICLE1_DOSSIER_VALIDATION_V11.pdf).
+Les [sources éditoriales et preuves](submission/v11/) conservent le titre original,
+les références actualisées et les limites des conclusions. La V10 reste accessible
+via [START_HERE_V10.md](START_HERE_V10.md).
+
+La reproduction sur une autre machine a passé 55 tests, reconstruit les 560 scores
+et les 96 contrastes, et reproduit les erreurs finales des 12 réentraînements aux
+tolérances prévues. Le critère strict incluant les empreintes initiales reste à
+**8/12** : quatre cas bruités ont des empreintes différentes. L'échec original
+est conservé. [Exécution et journal](https://github.com/ucef90/Doctorat/actions/runs/34021530276).
+
+Le sujet et le plan doctoral sont conservés. Aucune soumission à une revue n'a été
+effectuée ; l'avis de l'encadrant et la validation finale des auteurs restent attendus.
 
 Projet doctoral : *Trustworthy Physics-Informed Artificial Intelligence for Prediction
 and Control of Complex Dynamical Systems: Application to Tokamak Plasma Instabilities*.
@@ -18,6 +30,7 @@ and Control of Complex Dynamical Systems: Application to Tokamak Plasma Instabil
 | V08 | Pilote vRBA : cinq variantes, trois germes, 15 entraînements | article1-v0.8 |
 | V09 | Code courant, 200 entraînements, analyses, CPU et rapport final | article1-v0.9 |
 | V10 | Référence indépendante, 560 nouveaux entraînements, analyses et manuscrit actualisé | Branches article1/v10-* |
+| V11 | Relecture, bibliographie, dossier éditorial et reproduction sur autre machine | article1/v11-submission-preparation |
 
 Chaque étape conserve les fichiers précédents. Les anciens tags sont documentaires,
 sans garantie de code installable. Les dates de commit sont celles de la reconstruction.
