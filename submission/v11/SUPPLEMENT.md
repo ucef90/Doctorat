@@ -225,4 +225,3 @@ For clean sensor values y, the scale is the maximum of their population standard
 These 12 retrainings are numerical portability checks, not 12 new independent physical cases or a new confirmatory statistical campaign. They do not establish portability across all GPUs, compilers and accelerators. All scientific conclusions remain tied to the original controlled experiments and stated limitations.
 
 \endgroup
-

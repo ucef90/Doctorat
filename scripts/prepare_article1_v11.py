@@ -375,7 +375,7 @@ def supplement():
     text+=['', '# Observation model details','',noise_note,'', '# Limitations of the independent check','',
       'These 12 retrainings are numerical portability checks, not 12 new independent physical cases or a new confirmatory statistical campaign. They do not establish portability across all GPUs, compilers and accelerators. All scientific conclusions remain tied to the original controlled experiments and stated limitations.']
     text+=['','\\endgroup','']
-    write('SUPPLEMENT.md','\n'.join(text)+'\n')
+    write('SUPPLEMENT.md','\n'.join(text).rstrip()+'\n')
 
 def figure():
     import matplotlib
