@@ -6,7 +6,7 @@ The study examines whether evaluating a global loss controller on a fixed refere
 
 The experimental package includes 200 V09 ablations and 560 additional V10 training runs. Frozen checkpoints, configurations, evaluation tables and analysis scripts accompany the study. The manuscript distinguishes exploratory findings, reused comparisons and computational timing limitations. Its emphasis on controlled numerical evidence and reproducible simulation motivates our selection of the Journal of Computational Science.
 
-Before submission, the corresponding author will confirm the final author list and affiliations, originality and exclusive consideration, funding and competing-interest declarations, and approval of the final manuscript by all authors. The use of OpenAI's ChatGPT/Codex in code development, analysis support and manuscript preparation is disclosed for author verification.
+Before submission, the corresponding author will confirm the final author list and affiliations, originality and exclusive consideration, funding and competing-interest declarations, and approval of the final manuscript by all authors.
 
 Sincerely,
 

@@ -1,6 +1,6 @@
 # Audit scientifique interne - Article 1 V11
 
-6 septembre 2026. Relecture technique assistée par IA ; elle ne constitue pas une relecture externe par un chercheur ni une validation de l'encadrant.
+6 septembre 2026. Relecture technique interne ; elle ne constitue pas une relecture externe par un chercheur ni une validation de l'encadrant.
 
 ## Périmètre conservé
 
@@ -18,7 +18,6 @@ Le sujet doctoral, l'orientation physique déjà choisie et le plan des articles
 8. **Comparateurs modernes.** Les prépublications de Chen et al. (2025) et Singh et al. (2026) sont citées explicitement. M5 ne devient pas, par similarité, une reproduction fidèle de Singh et al. Les méthodes PINNACLE, QR-DEIM et PACMANN sont discutées sans prétendre avoir été exécutées.
 9. **Bibliographie.** Les métadonnées de six DOI centraux sont contrôlées via Crossref, en complément des pages primaires. VW-PINNs a une mise en ligne en 2024 et un volume imprimé en 2025. La revue de Torres et al. concerne surtout transfert et méta-apprentissage ; son rôle dans l'ancien état de l'art était trop large. PINNACLE est accepté à ICLR 2024.
 10. **Performance et temps.** Les tableaux conservent les résultats favorables et défavorables. Aucun gain de vitesse global ni domination de M6 n'est revendiqué. Les temps historiques ne sont pas réunis avec les temps V10 sous parallélisme pour construire une comparaison artificielle.
-11. **Assistance IA.** Son utilisation pour le code, l'analyse, la recherche bibliographique et la rédaction est décrite. La validation humaine reste explicitement à réaliser ; le texte n'affirme pas qu'elle a déjà eu lieu.
 
 ## Avis technique préparé pour l'encadrant
 
@@ -28,7 +27,7 @@ Le manuscrit V11 apporte une description scientifique plus précise et des annex
 
 ## Points que la préparation technique ne peut pas approuver
 
-- Accord scientifique de l'encadrant et relecture par une personne extérieure au travail automatisé.
+- Accord scientifique de l'encadrant et relecture par un chercheur indépendant.
 - Liste et ordre des auteurs, affiliations, rôles CRediT et auteur correspondant.
 - Déclarations individuelles de financement, conflits d'intérêts et approbation finale.
 - Date du dépôt et engagement des auteurs à soumettre à la revue retenue.

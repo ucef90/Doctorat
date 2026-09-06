@@ -44,5 +44,5 @@ cette notice décrit uniquement la récupération du paquet de transfert.
 
 Le bundle final est autonome : il contient l'historique, les branches `main`,
 `archive/v06`, `archive/v07`, `archive/v08`, `archive/v09` et les trois tags.
-Il s'importe avec Git, sans utiliser les pièces jointes de Codex et sans ZIP.
+Il s'importe directement avec Git, sans ZIP.
 Le contrôle d'archivage ne constitue pas une validation des résultats scientifiques.

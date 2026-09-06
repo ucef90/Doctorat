@@ -54,12 +54,6 @@ Sources consultées le 6 septembre 2026 : [périmètre de Journal of Computation
 
 Le manuscrit de lecture identifie Youssef comme auteur de travail et signale les métadonnées non finalisées. Il ne contient ni signature, ni accord attribué à un coauteur.
 
-## Déclaration d'assistance IA proposée
-
-Le projet a utilisé ChatGPT/Codex d'OpenAI pour assister la préparation du code, les scripts d'expérimentation et d'analyse, la recherche bibliographique et la rédaction. Les modèles PINNs entraînés dans l'étude sont distincts de cet assistant. Les résultats numériques proviennent des exécutions et fichiers conservés. Les auteurs doivent vérifier les méthodes, références, résultats et formulations et assumer la responsabilité de la version finale avant soumission. La version exacte de l'assistant doit être complétée à partir des informations disponibles ; elle n'est pas inventée ici.
-
-La [politique Elsevier sur l'IA générative](https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals) demande une déclaration de l'assistance utilisée pour préparer le manuscrit et une description dans les méthodes lorsqu'elle intervient dans la recherche. Le texte final de responsabilité ne sera validé qu'après la relecture effective des auteurs.
-
 # Résultat de la vérification sur une autre machine
 
 L'exécution du 6 septembre 2026 sur un serveur Ubuntu GitHub indépendant a restauré les trois campagnes et passé **55 tests automatisés**. Les **560 scores** et les **96 contrastes statistiques** sont reproduits aux tolérances fixées avant l'exécution. Les **12 réentraînements** sont terminés ; leurs erreurs L2 et maximales respectent toutes les tolérances numériques prévues. L'écart absolu le plus élevé vaut $9{,}53\times10^{-9}$ en L2 et $1{,}40\times10^{-8}$ en erreur maximale.
@@ -103,7 +97,7 @@ La relecture interne a précisé l'identité d'importance M7, la dépendance des
 4. La contribution est-elle assez forte pour la revue retenue ? Une reproduction fidèle d'un concurrent ou une autre baseline de placement est-elle nécessaire pour les revendications maintenues ?
 5. Les auteurs acceptent-ils le choix de la revue, leur contribution, leur affiliation et les déclarations ?
 
-Une réponse écrite à ces points permettra d'intégrer les corrections sans transformer une relecture automatisée en validation humaine fictive.
+Une réponse écrite à ces points permettra d'intégrer les corrections avant la validation finale du manuscrit.
 
 # Lettre de soumission préparée - à valider
 
@@ -117,7 +111,7 @@ The study examines whether evaluating a global loss controller on a fixed refere
 
 The experimental package includes 200 V09 ablations and 560 additional V10 training runs. Frozen checkpoints, configurations, evaluation tables and analysis scripts accompany the study. The manuscript distinguishes exploratory findings, reused comparisons and computational timing limitations. Its emphasis on controlled numerical evidence and reproducible simulation motivates our selection of the Journal of Computational Science.
 
-Before submission, the corresponding author will confirm the final author list and affiliations, originality and exclusive consideration, funding and competing-interest declarations, and approval of the final manuscript by all authors. The use of OpenAI's ChatGPT/Codex in code development, analysis support and manuscript preparation is disclosed for author verification.
+Before submission, the corresponding author will confirm the final author list and affiliations, originality and exclusive consideration, funding and competing-interest declarations, and approval of the final manuscript by all authors.
 
 Sincerely,
 

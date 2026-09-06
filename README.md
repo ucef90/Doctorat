@@ -1,7 +1,6 @@
 # Doctorat — ReCoA-PINN
 
-État actuel : **V11**, copie de relecture de l'Article 1, sur la branche
-`article1/v11-submission-preparation`.
+État actuel : **V11**, copie de relecture de l'Article 1.
 
 Lire [START_HERE_V11.md](START_HERE_V11.md), le
 [manuscrit V11 en PDF](output/pdf/ARTICLE1_MANUSCRIPT_V11.pdf), les
