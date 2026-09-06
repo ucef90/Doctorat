@@ -1,0 +1,5 @@
+Fixed-reference control is tested without assuming universal stabilization.
+An independent Burgers reference changes the interpretation of local errors.
+Common-loss experiments address a Huber-versus-MSE comparison confound.
+Paired ablations reveal effects that depend on PDE and training horizon.
+Frozen checkpoints and protocols support independent numerical verification.

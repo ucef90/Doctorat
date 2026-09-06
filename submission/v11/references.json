@@ -1,0 +1,384 @@
+[
+  {
+    "id": "raissi2019",
+    "type": "article-journal",
+    "title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+    "author": [
+      {
+        "given": "M.",
+        "family": "Raissi"
+      },
+      {
+        "given": "P.",
+        "family": "Perdikaris"
+      },
+      {
+        "given": "G.E.",
+        "family": "Karniadakis"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          2
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.jcp.2018.10.045",
+    "URL": "https://doi.org/10.1016/j.jcp.2018.10.045",
+    "volume": "378",
+    "page": "686-707",
+    "container-title": "Journal of Computational Physics"
+  },
+  {
+    "id": "wang2021",
+    "type": "article-journal",
+    "title": "Understanding and Mitigating Gradient Flow Pathologies in Physics-Informed Neural Networks",
+    "author": [
+      {
+        "given": "Sifan",
+        "family": "Wang"
+      },
+      {
+        "given": "Yujun",
+        "family": "Teng"
+      },
+      {
+        "given": "Paris",
+        "family": "Perdikaris"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1
+        ]
+      ]
+    },
+    "DOI": "10.1137/20m1318043",
+    "URL": "https://doi.org/10.1137/20m1318043",
+    "volume": "43",
+    "page": "A3055-A3081",
+    "container-title": "SIAM Journal on Scientific Computing"
+  },
+  {
+    "id": "nabian2021",
+    "type": "article-journal",
+    "title": "Efficient training of physics‐informed neural networks via importance sampling",
+    "author": [
+      {
+        "given": "Mohammad Amin",
+        "family": "Nabian"
+      },
+      {
+        "given": "Rini Jasmine",
+        "family": "Gladstone"
+      },
+      {
+        "given": "Hadi",
+        "family": "Meidani"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          8
+        ]
+      ]
+    },
+    "DOI": "10.1111/mice.12685",
+    "URL": "https://doi.org/10.1111/mice.12685",
+    "volume": "36",
+    "page": "962-977",
+    "container-title": "Computer-Aided Civil and Infrastructure Engineering"
+  },
+  {
+    "id": "wu2023",
+    "type": "article-journal",
+    "title": "A comprehensive study of non-adaptive and residual-based adaptive sampling for physics-informed neural networks",
+    "author": [
+      {
+        "given": "Chenxi",
+        "family": "Wu"
+      },
+      {
+        "given": "Min",
+        "family": "Zhu"
+      },
+      {
+        "given": "Qinyang",
+        "family": "Tan"
+      },
+      {
+        "given": "Yadhu",
+        "family": "Kartha"
+      },
+      {
+        "given": "Lu",
+        "family": "Lu"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          1
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.cma.2022.115671",
+    "URL": "https://doi.org/10.1016/j.cma.2022.115671",
+    "volume": "403",
+    "page": "115671",
+    "container-title": "Computer Methods in Applied Mechanics and Engineering"
+  },
+  {
+    "id": "song2025",
+    "type": "article-journal",
+    "title": "VW-PINNs: A volume weighting method for PDE residuals in physics-informed neural networks",
+    "author": [
+      {
+        "given": "Jiahao",
+        "family": "Song"
+      },
+      {
+        "given": "Wenbo",
+        "family": "Cao"
+      },
+      {
+        "given": "Fei",
+        "family": "Liao"
+      },
+      {
+        "given": "Weiwei",
+        "family": "Zhang"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          3
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10409-024-24140-x",
+    "URL": "https://doi.org/10.1007/s10409-024-24140-x",
+    "volume": "41",
+    "page": "324140",
+    "container-title": "Acta Mechanica Sinica"
+  },
+  {
+    "id": "toscano2026",
+    "type": "article-journal",
+    "title": "A variational framework for residual-based adaptivity in neural PDE solvers and operator learning",
+    "author": [
+      {
+        "given": "Juan Diego",
+        "family": "Toscano"
+      },
+      {
+        "given": "Daniel T.",
+        "family": "Chen"
+      },
+      {
+        "given": "Vivek",
+        "family": "Ooomen"
+      },
+      {
+        "given": "Jérôme",
+        "family": "Darbon"
+      },
+      {
+        "given": "George Em",
+        "family": "Karniadakis"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          7
+        ]
+      ]
+    },
+    "DOI": "10.1038/s44387-026-00084-4",
+    "URL": "https://doi.org/10.1038/s44387-026-00084-4",
+    "volume": "2",
+    "page": "32",
+    "container-title": "npj Artificial Intelligence"
+  },
+  {
+    "id": "chen2025",
+    "type": "article",
+    "title": "Self-adaptive weighting and sampling for physics-informed neural networks",
+    "author": [
+      {
+        "given": "Wenqian",
+        "family": "Chen"
+      },
+      {
+        "given": "Amanda",
+        "family": "Howard"
+      },
+      {
+        "given": "Panos",
+        "family": "Stinis"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2511.05452v2",
+    "publisher": "arXiv preprint"
+  },
+  {
+    "id": "singh2026",
+    "type": "article",
+    "title": "Stabilized Adaptive Loss and Residual-Based Collocation for Physics-Informed Neural Networks",
+    "author": [
+      {
+        "given": "Divyavardhan",
+        "family": "Singh"
+      },
+      {
+        "given": "Shubham",
+        "family": "Kamble"
+      },
+      {
+        "given": "Dimple",
+        "family": "Sonone"
+      },
+      {
+        "given": "Kishor",
+        "family": "Upla"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2603.03224",
+    "publisher": "arXiv preprint"
+  },
+  {
+    "id": "lau2024",
+    "type": "article",
+    "title": "PINNACLE: PINN Adaptive ColLocation and Experimental points selection",
+    "author": [
+      {
+        "given": "Gregory Kang Ruey",
+        "family": "Lau"
+      },
+      {
+        "given": "Apivich",
+        "family": "Hemachandra"
+      },
+      {
+        "given": "See-Kiong",
+        "family": "Ng"
+      },
+      {
+        "given": "Bryan Kian Hsiang",
+        "family": "Low"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2404.07662",
+    "publisher": "ICLR 2024; arXiv version"
+  },
+  {
+    "id": "celaya2025",
+    "type": "article",
+    "title": "Adaptive Collocation Point Strategies For Physics Informed Neural Networks via the QR Discrete Empirical Interpolation Method",
+    "author": [
+      {
+        "given": "Adrian",
+        "family": "Celaya"
+      },
+      {
+        "given": "David",
+        "family": "Fuentes"
+      },
+      {
+        "given": "Beatrice",
+        "family": "Riviere"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2501.07700v4",
+    "publisher": "arXiv preprint"
+  },
+  {
+    "id": "visser2025",
+    "type": "article",
+    "title": "PACMANN: Point Adaptive Collocation Method for Artificial Neural Networks",
+    "author": [
+      {
+        "given": "Coen",
+        "family": "Visser"
+      },
+      {
+        "given": "Alexander",
+        "family": "Heinlein"
+      },
+      {
+        "given": "Bianca",
+        "family": "Giovanardi"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2411.19632v2",
+    "publisher": "arXiv preprint"
+  },
+  {
+    "id": "burkardt",
+    "type": "webpage",
+    "title": "burgers_exact: Integral solution of the Burgers equation",
+    "author": [
+      {
+        "given": "John",
+        "family": "Burkardt"
+      }
+    ],
+    "URL": "https://people.sc.fsu.edu/~jburkardt/f77_src/burgers_exact/burgers_exact.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          6
+        ]
+      ]
+    }
+  }
+]

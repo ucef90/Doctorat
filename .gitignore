@@ -14,3 +14,8 @@ outputs/robustness_v10_campaign/
 outputs/budget_v10_campaign/
 outputs/common_loss_v10_campaign/
 outputs/campaign_archives/budget_v10_raw.tar.gz
+
+# Rebuildable V11 local outputs
+outputs/v11_reproduction/
+outputs/v11_ci_tests/
+outputs/article1_v11_pdf/

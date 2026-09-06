@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "score_reproduction": true,
+  "retrainings": 12,
+  "retrainings_passed": 8,
+  "independent_github_runner": true
+}

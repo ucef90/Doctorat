@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-06",
+  "exports": [
+    {
+      "filename": "ARTICLE1_DOSSIER_VALIDATION_V11.pdf",
+      "pages": 5,
+      "sha256": "770fc74e466b3f782964adee482ae6f9ac0be88804ce213e127817788e736173",
+      "visual_review": "All pages rendered; layouts inspected, figures and final pages enlarged. No remaining missing-font warning."
+    },
+    {
+      "filename": "ARTICLE1_MANUSCRIPT_V11.pdf",
+      "pages": 16,
+      "sha256": "d96d50cac72ad12d84ba4c57d85beba38bced20860409335b8e336ce12ccb5d2",
+      "visual_review": "All pages rendered; layouts inspected, figures and final pages enlarged. No remaining missing-font warning."
+    },
+    {
+      "filename": "ARTICLE1_SUPPLEMENT_V11.pdf",
+      "pages": 8,
+      "sha256": "6a040cc3b1e82e101d7e7dc27d023dcd83b285374bc022c38f3df8faf42e81c0",
+      "visual_review": "All pages rendered; layouts inspected, figures and final pages enlarged. No remaining missing-font warning."
+    }
+  ],
+  "manuscript_references": 12,
+  "complete_contrasts_in_supplement": 96
+}
